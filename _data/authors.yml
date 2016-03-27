@@ -1,0 +1,23 @@
+paterne_gaye:
+  name: Paterne GAYE
+  bio: "Architecte logiciel"
+  location: Cotonou
+  email: paterne.gaye@qanbio.com
+  twitter: ptngaye
+  github: ptngaye
+  email_md5: 8a91630f0544cbba16e9c5e70d37d6d6
+fabrice_kiki:
+  name: Thilaw Fabrice KIKI
+  bio: Developer
+  location: Cotonou
+  email: fabrice.kiki@qanbio.com
+  twitter: xyz
+  github: xyz
+  email_md5: d3422ef3db556982f46d045b06561168
+qanbio:
+  name: QANBIO
+  bio: IT Consulting, Training & Outsourcing
+  location: Cotonou
+  email: contact@qanbio.com
+  twitter: qanbio
+  email_md5: c8c2b5ed5b1461886283596ab241e14a

@@ -1,0 +1,13 @@
+#Intellij
+.idea/
+*.iml
+*.iws
+
+
+#Mac
+.DS_Store
+
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-metadata

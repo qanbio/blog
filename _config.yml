@@ -1,0 +1,48 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+disqus: blog-qanbio-com
+google_analytics: qanbio
+fullview: false
+locale                   : "en"
+title                    : "QANBIO"
+title_separator          : "-"
+name                     : "QANBIO"
+description              : "QANBIO SAS - IT Consulting, Training & Outsourcing"
+url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: QANBIO
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+# sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+gems:
+  - jekyll-paginate
+
+editor:
+  name: QANBIO SAS
+  bio: Ensemble, innover, créer de la valeur.
+  location: Cotonou
+  email: contact@qanbio.com
+  twitter: qanbio
+  email_md5: c8c2b5ed5b1461886283596ab241e14a
+
+
