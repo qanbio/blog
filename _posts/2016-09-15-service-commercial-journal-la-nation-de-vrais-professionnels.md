@@ -5,11 +5,8 @@ categories: [opinion]
 tags: [onip, lanation, fonctionnaire, benin]
 author: paterne_gaye
 comments: true
-fullview: false
+description: Parce que certes, tout n’est pas rose mais il y a beaucoup plus de choses qui fonctionnent qu’on ne le dit; parce que tout n'est pas qu'échec; parce que tous les fonctionnaires ne sont pas des feignants, grincheux et incapables.
 ---
-
-
-*Parce que certes, tout n’est pas rose mais il y a beaucoup plus de choses qui fonctionnent qu’on ne le dit; parce que tout n'est pas qu'échec; parce que tous les fonctionnaires ne sont pas des feignants, grincheux et incapables.*
 
 ## Idée reçue #1 : un fonctionnaire ne décroche jamais, surtout pas un vendredi apres 17h
 Il est 17h, un vendredi après-midi, j’appelle le numéro d’un organe de presse publique. A vrai dire, je n’y crois pas vraiment, je crois que c’était plus pour me rassurer, me dire « je l’ai fait, j’ai essayé ». Déjà en fin de journée, ce n’est pas évident habituellement ; mais nous sommes un vendredi... Et là, miracle, quelqu’un au bout du fil. Il ne s’agit pas du tout d’une voix agacée attendant que je raccroche pour partir en weekend comme on pourrait s’y attendre. : « ONIP Bonjour, Que pouvons-nous faire pour vous ? ». NDLR ONIP = Office National d’Imprimerie et de la Presse.

@@ -2,17 +2,16 @@
 layout: post
 title: Création d'un blog statique avec Jekyll et Github (1/2)
 categories: [tech]
-tags: [jekyll, github, blog]
+tags: [jekyll, github, blog, markdown]
 author: paterne_gaye
 comments: true
+description: Chez Qanbio, quand nous avons voulu créer notre blog, nous avions le choix entre plusieurs alternatives. Notamment les mastodontes : Blogger, Wordpress etc. Nous avons fini par opter pour un blog statique généré à l'aide de Jekyll et hébergé sur Github. Dans cet article nous allons présenter ce qui a motivé notre choix et la procédure pour développer un blog analogue.
 ---
-
-*Chez Qanbio, quand nous avons voulu créer notre blog, nous avions le choix entre plusieurs alternatives. Notamment les mastodontes : Blogger, Wordpress etc. Nous avons fini par opter pour un blog statique généré à l'aide de Jekyll et hébergé sur Github. Dans cet article nous allons présenter ce qui a motivé notre choix et la procédure pour développer un blog analogue.*
 
 # Pré-requis
 
-## Markdawn
-Ce format, moins intrusif que le html, permet de mélanger la mise en forme et le texte tout en gardant un texte lisible pour l'humain. Le véritable point fort de Markdawn, c'est sa légereté et sa simplicité. Par exemple dans Markdawn, pour mettre un texte en italique on l'entour de deux caractères "*". Par ailleurs Mardawn a l'avantage de pouvoir être convertible en HTML. Certes Markdawn n'a pas la puissance de html et ne prétend d'ailleurs pas le remplacer mais pour la rédactions d'un grand nombre de documents : commentaires, articles de blog, documentation utilisateurs ... Markdawn suffit aisément et permet au rédacteur non informaticien de rédiger un document tout en spéciant la mise en forme.
+## Markdown
+Ce format, moins intrusif que le html, permet de mélanger la mise en forme et le texte tout en gardant un texte lisible pour l'humain. Le véritable point fort de Markdown, c'est sa légereté et sa simplicité. Par exemple dans Markdown, pour mettre un texte en italique on l'entour de deux caractères "*". Par ailleurs Mardawn a l'avantage de pouvoir être convertible en HTML. Certes Markdown n'a pas la puissance de html et ne prétend d'ailleurs pas le remplacer mais pour la rédactions d'un grand nombre de documents : commentaires, articles de blog, documentation utilisateurs ... Markdown suffit aisément et permet au rédacteur non informaticien de rédiger un document tout en spéciant la mise en forme.
 
 ## Git
 Git est un système de gestion de fichiers. Grosso-modo, il permet à plusieurs personnes de collaborer sur les même fichiers en garantissant un historique des modifications effectuées. Git a été créé par Linux Torvald, le créateur du système d'exploitation Linux. Dans le monde open source, Git est aujourd'hui la référence dans le versionning du code code source.
@@ -45,7 +44,7 @@ comments: true
 * author: l'indentiant de l'auteur, les auteurs sont définis dans un fichier yaml
 * comments: autorise t-on les commentaires sur cet articles
 
-Le reste du fichier correspond au contenu del'article au format Markdawn.
+Le reste du fichier correspond au contenu del'article au format Markdown.
 
 ## Publication du blog
 Lorsque nous rajoutons ou modifions un article sur notre post, nous validons nos modification à l'aide de Git vers Github. Presque immédiatement, notre blog est redéployé et nos modifications sont en ligne.
@@ -77,7 +76,7 @@ Au fond, pour citer Tom Preston-Werner, nous souhaitions "bloger comme des hacke
 
 
 ### L'indépendance
-Avec nos articles au format Markdawn, nous pouvons sans effort, changer d'hébergeur et de technoogie. Par contre migrer des CMS tels que Wordpress n'est pas toujours aisé.
+Avec nos articles au format Markdown, nous pouvons sans effort, changer d'hébergeur et de technoogie. Par contre migrer des CMS tels que Wordpress n'est pas toujours aisé.
 
 # Installation de Jekyll
 To be continued ...

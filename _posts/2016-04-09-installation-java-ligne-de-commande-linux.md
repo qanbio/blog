@@ -6,10 +6,8 @@ tags: [java, linux, debian, jdk, jre, installation, setup]
 author: paterne_gaye
 comments: true
 fullview: false
+description: Ce post est un aide-mémoire pour installation en ligne de commande à partir de fichiers .tar.
 ---
-
-*Ce post est un aide-mémoire pour installation en ligne de commande à partir de fichiers .tar.*
-
 
 # Pré-requis
 
