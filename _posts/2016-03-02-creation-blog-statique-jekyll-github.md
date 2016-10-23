@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Création d'un blog statique avec Jekyll et Github (1/2)
+title: "Création d'un blog statique avec Jekyll et Github (1/2)"
 categories: [tech]
 tags: [jekyll, github, blog, markdown]
 author: paterne_gaye
