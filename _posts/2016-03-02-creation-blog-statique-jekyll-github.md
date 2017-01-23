@@ -12,6 +12,7 @@ description: "Chez Qanbio, quand nous avons voulu créer notre blog, nous avions
 # Pré-requis
 
 ## Markdown
+Elle est pas belle la vie ? 
 Ce format, moins intrusif que le html, permet de mélanger la mise en forme et le texte tout en gardant un texte lisible pour l'humain. Le véritable point fort de Markdown, c'est sa légereté et sa simplicité. Par exemple dans Markdown, pour mettre un texte en italique on l'entour de deux caractères "*". Par ailleurs Mardawn a l'avantage de pouvoir être convertible en HTML. Certes Markdown n'a pas la puissance de html et ne prétend d'ailleurs pas le remplacer mais pour la rédactions d'un grand nombre de documents : commentaires, articles de blog, documentation utilisateurs ... Markdown suffit aisément et permet au rédacteur non informaticien de rédiger un document tout en spéciant la mise en forme.
 
 ## Git

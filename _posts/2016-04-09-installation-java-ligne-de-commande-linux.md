@@ -110,11 +110,11 @@ sudo update-alternatives --config java
 
 A noter que si vous n'avez qu'une version disponible, cette commande sera sans effet.
 
+### Rajouter les emplacements des exécutables Java dans le PATH
+Normalement, pour ne pas avoir à préciser à chaque fois le chemin complet des exécutables Java et Javac nous devrions rajouter ces chemins dans la variable d'environnement PATH. Mais, étant donné que  nous venons de rajouter les liens */usr/bin/javac* et */usr/bin/java* , pour le système tout se passe comme si les exutables Java étaient dans */usr/bin/* or ce dossier est par défaut dans le PATH. Nous n'avons donc plus aucune configuration à effectuer à ce niveau.
+
+
 ## Les variables d'environnement
-
-### PATH
-Comme nous avons rajouté les liens */usr/bin/javac* et */usr/bin/java* , pour le système tout se passe comme si les exutables Java étaient dans */usr/bin/* or ce dossier est par défaut dans le PATH.
-
 Vérifier ceci en exécutant la commande :
 
 {% highlight bash %}
@@ -129,3 +129,5 @@ export JAVA_HOME=/opt/jdk1.8.0_101/bin/
 {% endhighlight %}
 
 A noter que la variable d'environnement ainsi créée ne sera valable que dans la session courante. Pour créer une variable d'environnement persistante qui existe toujours parès le redémérage de votre machine, vous devriez le faire dans /etc/profile ou un autre fichier de config.
+
+Nous aborderons plus en détail la manipulation des variables d'environnement sous Linux dans un prochain post.

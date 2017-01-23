@@ -6,6 +6,14 @@ paterne_gaye:
   twitter: ptngaye
   github: ptngaye
   email_md5: 8a91630f0544cbba16e9c5e70d37d6d6
+crepin_fadjo:
+  name: Crépin Hugues FADJO
+  bio: Developer
+  location: Cotonou
+  email: crepin.fadjo@qanbio.com
+  twitter: fadcrepin
+  github: fadcrepin
+  email_md5: 30101b565969cecac0827f32a767c1d4
 fabrice_kiki:
   name: Thilaw Fabrice KIKI
   bio: Developer
@@ -21,3 +29,4 @@ qanbio:
   email: contact@qanbio.com
   twitter: qanbio
   email_md5: c8c2b5ed5b1461886283596ab241e14a
+
