@@ -2,7 +2,7 @@
 layout: post
 title: Génération de clés SSH sous Linux
 categories: [tech]
-tags: [linux, debian, env, var, variable, environnement]
+tags: [linux, debian, ssh]
 author: crepin_fadjo
 comments: true
 fullview: false
