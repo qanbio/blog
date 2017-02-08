@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Les variables d'environnement sur une machine Linux Debian
+title: Les variables d'environnement sur une machine Linux
 categories: [tech]
 tags: [linux, debian, env, var, variable, environnement]
 author: crepin_fadjo
@@ -66,14 +66,14 @@ Si nous ouvrons une nouvelle session, nous pouvons constater que notre variable 
 # Création d'une variable d’environnement pour l'utilisateur courant
 En étant connecté en tant que crepin_fadjo :
 {% highlight bash %}
-sudo echo "export JAVA_HOME=/opt/jdk1.8.0_101/" >>> /home/crepin_fadjo/.bash_profile
+sudo echo "export JAVA_HOME=/opt/jdk1.8.0_101/" >> /home/crepin_fadjo/.bash_profile
 {% endhighlight %}
 Si nous changeons d'utilisateurs, nous pouvons constater que notre variable n'y existe pas.
 
 # Création d'une variable d’environnement pour tous les utilisateurs
 Avec un utilisateur autorisé :
 {% highlight bash %}
-sudo echo "export JAVA_HOME=/opt/jdk1.8.0_10/" >>> /etc/profile
+sudo echo "export JAVA_HOME=/opt/jdk1.8.0_10/" >> /etc/profile
 {% endhighlight %}
 Il faut noter que l'utilisateur crepin_fadjo continuera à avoir JAVA_HOME=/opt/jdk1.8.0_101 car il a surchagé la config réalisée dans /etc/profile
 
