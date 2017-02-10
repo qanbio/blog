@@ -23,7 +23,7 @@ La gestion de dépendance est un mécanisme de centralisation des informations d
 Un archétype est un modèle de projet. Maven propose en standard plusieurs :En voici quelques exemples
 
 |          Archétype            |                        Description                            |
-| ----------------------------- |: -----------------------------------------------------------: |
+| ----------------------------- |---------------------------------------------------------------|
 | maven-archetype-archetype     | Un archétype pour un exemple d'archétype                      |
 | maven-archetype-j2ee-simple   | Un archétype pour un projet de type application J2EE simplifié|
 | maven-archetype-mojo          | Un archétype pour un exemple de plugin Maven                  |
