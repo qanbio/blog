@@ -27,7 +27,9 @@ Un archétype est un modèle de projet. Maven propose en standard plusieurs :En 
 | maven-archetype-archetype     | Un archétype pour un exemple d'archétype                      |
 | maven-archetype-j2ee-simple   | Un archétype pour un projet de type application J2EE simplifié|
 | maven-archetype-mojo          | Un archétype pour un exemple de plugin Maven                  |
-{:.mbtablestyle}
+
+
+
 
 D'autres achétypes peuvent être proposés par des tiers. Il est aussi possible de développer ses propres archétypes
 
