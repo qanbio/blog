@@ -82,37 +82,15 @@ A cette étape, java est installé. Vérifier ceci en exécutant la commande :
 
 
 # Configuration
+Reformuler ce qui suit
+* Rajouter varenv JAVA_HOME
+* Rajouter JAVA_HOME/bin au pATH
 
-## Faire cohabiter de mutiples versions de Java
-Il peut arriver qu'on ait besoin d'avoir plusieurs versions de Java sur la même machine. C'est le cas lorsque vous installer un OS (Ubuntu) qui vient avec java 7 ou 6 alors que vous avez besoin de Java 8. Dans ce cas, vous devez pouvoir switcher aisément d'une version à l'autre en indiquant au système quelle doit être la version courante.
 
-Dans le l'univers Linux, update-alternatives est une des solutions pour gérer les cas ou on a plusieurs versions d'un même logiciel sur une machine.
 
-Pour rappel, au quotidien nous utilisons deux commandes Java :
-
-* **java** qui permet d'exécuter un binaire (*.jar, .class* )
-* **javac** qui permet de compiler un fichier source *.java*
-
-Cette liste n'est pas exhaustive. Il existe d'autres commandes Java notament *javaws* . Pour chacune de ces commandes il faudra reprendre la procédure ci-dessous.
-
-L'objectif de ce qui suit c'est que nous puissions exécuter toujours */usr/bin/javac* ou */usr/bin/java* sans nous soucier de l'emplacement exacte des exécutables ni de la leur versions.Le chiffre *1* ci-dessus indique la priorité de la version.
-
-{% highlight bash %}
-sudo update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_101/bin/javac 1
-sudo update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_101/bin/java 1
-{% endhighlight %}
-
-Vous pouvez maintenant indiquer au système quelle version vous souhaitez utiliser :
-{% highlight bash %}
-sudo update-alternatives --config javac
-sudo update-alternatives --config java
-{% endhighlight %}
-
-A noter que si vous n'avez qu'une version disponible, cette commande sera sans effet.
-
-### Rajouter les emplacements des exécutables Java dans le PATH
 Normalement, pour ne pas avoir à préciser à chaque fois le chemin complet des exécutables Java et Javac nous devrions rajouter ces chemins dans la variable d'environnement PATH. Mais, étant donné que  nous venons de rajouter les liens */usr/bin/javac* et */usr/bin/java* , pour le système tout se passe comme si les exutables Java étaient dans */usr/bin/* or ce dossier est par défaut dans le PATH. Nous n'avons donc plus aucune configuration à effectuer à ce niveau.
 
+Supprimer ce qui suit apres usage
 
 ## Les variables d'environnement
 Vérifier ceci en exécutant la commande :

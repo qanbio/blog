@@ -84,7 +84,7 @@ A cette étape, Maven est installé. Vérifier ceci en exécutant la commande :
 
 {% highlight bash %}
 sudo export M2_HOME=/opt/apache-maven-3.3.9
-sudo export PATH=$M2/bin:$PATH
+sudo export PATH=$M2_HOME/bin:$PATH
 {% endhighlight %}
 
 Nous pouvons donc désormais saisir directement *mvn* en ligne de commande sans avoir à préciser le chemin de l'installation.
