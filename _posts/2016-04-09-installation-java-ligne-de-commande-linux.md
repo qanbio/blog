@@ -83,12 +83,7 @@ A cette étape, java est installé. Vérifier ceci en exécutant la commande :
 
 # Configuration
 
-## Créer la variable d'environnement JAVA_HOME
-
-### C'est quoi une variable d'environnement?
-
- [ici](http://blog.qanbio.com/tech/2017/02/07/variables-environnement-linux.html "")
-
+###### Créer la [variable d'environnement](http://blog.qanbio.com/tech/2017/02/07/variables-environnement-linux.html "plus d'infos sur cet article") JAVA_HOME
 
 ### A quoi sert JAVA_HOME?
 
@@ -100,9 +95,7 @@ Pour créer donc JAVA_HOME il faut exécuter la commande
 export JAVA_HOME=/opt/jdk1.8.0_101
 {% endhighlight %}
 
-## Rajouter JAVA_HOME/bin au PATH
-
-Normalement, pour ne pas avoir à préciser à chaque fois le chemin complet des exécutables Java et Javac nous devrions rajouter ces chemins dans la variable d'environnement PATH. Mais, étant donné que  nous venons de rajouter les liens */usr/bin/javac* et */usr/bin/java* , pour le système tout se passe comme si les exutables Java étaient dans */usr/bin/* or ce dossier est par défaut dans le PATH.Nous n'avons donc plus aucune configuration à effectuer à ce niveau.
+###### Rajouter JAVA_HOME/bin au PATH
 
 {% highlight bash %}
 export PATH=$JAVA_HOME/bin:$PATH
