@@ -11,11 +11,7 @@ description: Ce post est un aide-mémoire pour la gestion de plusieurs versions 
 
 Dans le l'univers Linux, update-alternatives est une des solutions pour gérer les cas ou on a plusieurs versions d'un même logiciel sur une machine.
 
-Prenons le cas de Java ...
-
-Todo : a aranger
-
-Pour rappel, au quotidien nous utilisons deux commandes Java :
+Prenons le cas de Java, pour rappel, au quotidien nous utilisons deux commandes Java :
 
 * **java** qui permet d'exécuter un binaire (*.jar, .class* )
 * **javac** qui permet de compiler un fichier source *.java*
