@@ -14,14 +14,24 @@ description: Ce post est un aide-mémoire pour l'installation de Apache Maven su
 Maven est un outil multifonctions et une des manière les plus simple de l'appréhender est sans doute d'introduire ses fonctionnalités.
 
 ## Fonctionnalités de Maven
-### Notion de gestionnaire de dépendance
-Todo !!!
 
-### Notion de d'Archetype
-Todo !!!
+### Notion de gestion de dépendance
+La gestion de dépendance est un mécanisme de centralisation des informations de dépendance. Lorsque vous avez un ensemble de projets qui hérite d'un parent commun, il est possible de mettre toutes les informations sur la dépendance dans le POM commun et d'avoir des références plus simples aux artefacts dans les POM enfant.
+
+
+## Notion de d'Archetype
+Un archétype est un modèle de projet. Maven propose en standard plusieurs :En voici quelques exemples
+
+|          Archétype            |                        Description                            |
+| ----------------------------- |: -----------------------------------------------------------: |
+| maven-archetype-archetype     | Un archétype pour un exemple d'archétype                      |
+| maven-archetype-j2ee-simple   | Un archétype pour un projet de type application J2EE simplifié|
+| maven-archetype-mojo          | Un archétype pour un exemple de plugin Maven                  |
+
+D'autres achétypes peuvent être proposés par des tiers. Il est aussi possible de développer ses propres archétypes
 
 ### Notion de gestionnaire de build
-Todo !!!
+Un gestionnaire de build est un outil qui permet d'éxecuter un script qui contient une suite d'objectifs souvent appelés cibles ou "target". Chaque target a un rôle bien particulier par rapport au code qu'il accompagne. Certain target prépare l'environnement de compilation, d'autre le compile ou encore le nettoie. On peut aussi générer la documentation à partir des commentaires du code. Les outils les plus répandus sont ceux de la fondation Apache tels que : MAVEN
 
 ## Alternatives de Maven
 * Gradle le dernier et sans doute le concurrent le plus sérieux
