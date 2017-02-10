@@ -31,7 +31,7 @@ Il y a trois paramètres :
 
 Dans ce qui suit nous installerons la JDK 8, update 101, pour une machine Linux 64 bits.
 
-Pour obtenir la valeur de l'URL, il faut se rendre sur le site d'Oracle. Au moment de la rédaction de cet artoicle, la page en question est [ici](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "")
+Pour obtenir la valeur de l'URL, il faut se rendre sur le site d'Oracle. Au moment de la rédaction de cet artoicle, la page en questions est [ici](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "")
 
 A noter que tant que vous n'aurez pas cocher le bouton radio "Accept License Agreement", le lien ne sera pas accessible.
 
