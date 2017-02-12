@@ -18,8 +18,11 @@ description: Ce post est un aide-mémoire pour la génération de clés SSH sous
 Source:wikipédia
 
 # Usage des clés SSH
+Les clés SSH sont un des moyens d'utiliser le protocole SSH.
+Les clé ssh s’utilisent par paire : une publique et une privée; la publique servant à crypter le message el la privée à la décrypter.
+Pour un developpeur, elles ont un intéret pratique évident : ne pas avoir à saisir ses identifiants (login/password) à chaque connection sur une machine tiers.
+Par exemple, pour se connecter à Github, une fois, notre clé publique connue de Github, nous avons juste à crypter nos messages à l'aide de notre clés privée et nous pourrons nous connecter à Github sans avoir à fournir de username:password
 
-Les clé ssh s’utilisent par paire : une publique et une privée; la publique servant à crypter le message el la privée à la décrypter.En pratique les clés ssh sont généré de plusieurs manières.Dans notre cas on va la générer avec ssh-keygen
 
 # Génération d'une paire de clés ssh
 
@@ -33,7 +36,7 @@ ssh-keygen -t rsa -b 4096 -C "Jenkins"
 
 * -b: Indique la longueur de la clé en bits, ici 4096
 
-* -C: Permet de rajouter un commentaire. Par exemple, nous indiquons en commentaire "Jenkins"
+* -C: Permet de rajouter un commentaire. Par exemple, nous indiquons en commentaire "Jenkins" car nous comptons utiliser cette clé pour notre instance Jenkins.
 
 A l'issue de cette commande, nous avons dans le dossier *~/.ssh* deux fichiers :
 * id_rsa ou est stockée la clé privée
