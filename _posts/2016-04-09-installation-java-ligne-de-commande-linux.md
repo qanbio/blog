@@ -83,19 +83,15 @@ A cette étape, java est installé. Vérifier ceci en exécutant la commande :
 
 # Configuration
 
-#### Créer la [variable d'environnement](http://blog.qanbio.com/tech/2017/02/07/variables-environnement-linux.html "plus d'infos sur cet article") JAVA_HOME
+## Créer la [variable d'environnement](http://blog.qanbio.com/tech/2017/02/07/variables-environnement-linux.html "plus d'infos sur cet article") JAVA_HOME
+Dans notre cas, cette variable aura la valeur */opt/jdk1.8.0_101/*
 
-### A quoi sert JAVA_HOME?
+## A quoi sert JAVA_HOME?
 
-JAVA_HOME est  utilisée par de nombreux logiciels pour déterminer l’emplacement ou est installé Java. Configurer cette variable est quasiment indispensable.
+*JAVA_HOME* est  utilisée par de nombreux logiciels pour déterminer l’emplacement ou est installé Java. Configurer cette variable est quasiment indispensable.
 
-Pour créer donc JAVA_HOME il faut exécuter la commande
-
-{% highlight bash %}
-export JAVA_HOME=/opt/jdk1.8.0_101
-{% endhighlight %}
-
-#### Rajouter JAVA_HOME/bin au PATH
+## Rajouter JAVA_HOME/bin au PATH
+Il faut maintenant rajouter le dossier JAVA_HOME dans la variable PATH.
 
 {% highlight bash %}
 export PATH=$JAVA_HOME/bin:$PATH
