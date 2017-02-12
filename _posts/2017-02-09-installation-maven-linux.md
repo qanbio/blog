@@ -9,38 +9,6 @@ fullview: false
 description: Ce post est un aide-mémoire pour l'installation de Apache Maven sur une machine Linux.
 ---
 
-# Présentation de Maven
-
-Maven est un outil multifonctions et une des manière les plus simple de l'appréhender est sans doute d'introduire ses fonctionnalités.
-
-## Fonctionnalités de Maven
-
-### Notion de gestion de dépendance
-La gestion de dépendance est un mécanisme de centralisation des informations de dépendance. Lorsque vous avez un ensemble de projets qui hérite d'un parent commun, il est possible de mettre toutes les informations sur la dépendance dans le POM commun et d'avoir des références plus simples aux artefacts dans les POM enfant.
-
-
-## Notion de d'Archetype
-Un archétype est un modèle de projet. Maven propose en standard plusieurs :En voici quelques exemples
-
-|          Archétype            |                        Description                            |
-| ----------------------------- |---------------------------------------------------------------|
-| maven-archetype-archetype     | Un archétype pour un exemple d'archétype                      |
-| maven-archetype-j2ee-simple   | Un archétype pour un projet de type application J2EE simplifié|
-| maven-archetype-mojo          | Un archétype pour un exemple de plugin Maven                  |
-
-
-
-
-D'autres achétypes peuvent être proposés par des tiers. Il est aussi possible de développer ses propres archétypes
-
-### Notion de gestionnaire de build
-Un gestionnaire de build est un outil qui permet d'éxecuter un script qui contient une suite d'objectifs souvent appelés cibles ou "target". Chaque target a un rôle bien particulier par rapport au code qu'il accompagne. Certain target prépare l'environnement de compilation, d'autre le compile ou encore le nettoie. On peut aussi générer la documentation à partir des commentaires du code. Les outils les plus répandus sont ceux de la fondation Apache tels que : MAVEN
-
-## Alternatives de Maven
-* Gradle le dernier et sans doute le concurrent le plus sérieux
-* Ant, dont Maven est "le successeur" mais qui est fonctionnellement beaucoup plus limité
-* Ivy,
-
 # Pré-requis
 
 ## Maven
@@ -51,7 +19,6 @@ Maven a besoin de Java pour fonctionner. Il faut donc s'assurer que Java est (co
 Les liens de téléchargements sont disponible sici : http://maven.apache.org/download.cgi
 
 Dans notre cas, nous avons opté pour http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz qui nous permet de télécharger les binaires de la version 3.3.9 archivés et compressés au format tar.gz
-
 
 # Installation
 
