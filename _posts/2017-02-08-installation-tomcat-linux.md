@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installer Tomcat en ligne de commande sur une machine Linux
+title: Installation de Tomcat sur une machine Linux
 categories: [tech]
 tags: [java, linux, debian, tomcat, installation, setup,apache]
 author: crepin_fadjo
