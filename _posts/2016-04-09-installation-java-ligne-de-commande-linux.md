@@ -53,11 +53,15 @@ cd
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
 {% endhighlight %}
 
+![téléchargement](../assets/media/java-wget.png "téléchargement")
+
 A la fin de cette étape, vous aurez un fichier **jdk-8u101-linux-x64.tar.gz** . Vérifier ceci en exécutant la commande :
 
 {% highlight bash %}
 ls -la
 {% endhighlight %}
+
+![image](../assets/media/java-ls-apres-wget.png "ls-la wget")
 
 
 ## Extraire les fichiers de l'archive
@@ -67,6 +71,8 @@ Nous allons extraire l'archive dans le dossier /opt  qui est historiquement rés
 sudo tar zxvf jdk-8u101-linux-x64.tar.gz -C /opt
 {% endhighlight %}
 
+![image](../assets/media/java-extract-archive.png "extract")
+
 A l'issue de cette étape, vous devriez avoir un nouveau répertoire dans le dossier */opt* : **jdk1.8.0_101**
 
 Vérifier ceci en exécutant la commande :
@@ -74,12 +80,15 @@ Vérifier ceci en exécutant la commande :
 ls -la
 {% endhighlight %}
 
+![image](../assets/media/ls-la-opt-apres-extract.png "ls-la extract")
+
 A cette étape, java est installé. Vérifier ceci en exécutant la commande :
 
 {% highlight bash %}
 /opt/jdk1.8.0_101/bin/java -version
 {% endhighlight %}
 
+![image](../assets/media/verif-version-java-javac.png "ls-la extract")
 
 # Configuration
 
@@ -96,3 +105,5 @@ Il faut maintenant rajouter le dossier JAVA_HOME dans la variable PATH.
 {% highlight bash %}
 export PATH=$JAVA_HOME/bin:$PATH
 {% endhighlight %}
+
+![image](../assets/media/java-conf-finale-avec-varenv.png "var env")
