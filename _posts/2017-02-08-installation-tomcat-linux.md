@@ -21,7 +21,7 @@ Dans ce qui suit nous installerons la Tomcat 8, update 5.11, pour une machine Li
 
 Pour obtenir la valeur de l'URL, il faut se rendre sur le site d'Oracle. Au moment de la rédaction de cet article, la page en question est [ici](http://tomcat.apache.org/download-80.cgi"")
 
-![page de téléchargement de tomcat](../assets/media/2017-02-08-installation-tomcat-linux/url_tomcat.png " page de téléchargement de tomcat")
+![page de téléchargement de tomcat](../../../../assets/media/2017-02-08-installation-tomcat-linux/url_tomcat.png " page de téléchargement de tomcat")
 
 # Installation
 
