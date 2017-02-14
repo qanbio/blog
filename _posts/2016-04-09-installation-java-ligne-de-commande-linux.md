@@ -55,7 +55,7 @@ cd
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
 {% endhighlight %}
 
-![Téléchargement de Java](../../../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-wget-bon.png "Téléchargement de Java")
+![Téléchargement de Java](../../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-wget-bon.png "Téléchargement de Java")
 
 
 A la fin de cette étape, vous aurez un fichier **jdk-8u101-linux-x64.tar.gz** . Vérifier ceci en exécutant la commande :
@@ -64,7 +64,7 @@ A la fin de cette étape, vous aurez un fichier **jdk-8u101-linux-x64.tar.gz** .
 ls -la
 {% endhighlight %}
 
-![Vérifier si l'archive de Java a été téléchargé](../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-ls-apres-wget.png "Vérifier si l'archive de Java a été téléchargé")
+![Vérifier si l'archive de Java a été téléchargé](../../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-ls-apres-wget.png "Vérifier si l'archive de Java a été téléchargé")
 
 
 ## Extraire les fichiers de l'archive
@@ -74,7 +74,7 @@ Nous allons extraire l'archive dans le dossier /opt  qui est historiquement rés
 sudo tar zxvf jdk-8u101-linux-x64.tar.gz -C /opt
 {% endhighlight %}
 
-![Extraction de l'archive Java](../../../../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-extract-archive.png "Extraction de l'archive Java ")
+![Extraction de l'archive Java](../../../../assets/media/2016-04-09-installation-java-ligne-de-commande-linux/java-extract-archive.png "Extraction de l'archive Java ")
 
 
 A l'issue de cette étape, vous devriez avoir un nouveau répertoire dans le dossier */opt* : **jdk1.8.0_101**
