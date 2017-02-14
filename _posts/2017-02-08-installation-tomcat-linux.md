@@ -23,6 +23,7 @@ Pour obtenir la valeur de l'URL, il faut se rendre sur le site d'Oracle. Au mome
 
 ![page de téléchargement de tomcat](../../../../assets/media/2017-02-08-installation-tomcat-linux/url_tomcat.PNG " page de téléchargement de tomcat")
 
+
 # Installation
 
 Avant tout positionnez vous dans votre dossier *home* en exécutant la commande suivante

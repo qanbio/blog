@@ -91,38 +91,12 @@ Nous sommes ensuite invités à installer les plugins. Pour commencer nous pouvo
 ![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/Jenkins-choix-plugins.png " ")
 
 
-# Configuration de Jenkins
-
 ## Ajout des comptes utilisateurs
+Une fois, l'étape des plugins passée, nous pouvons créer notre premier utilisateur :
 
-![ajouter utilisateur](../assets/media/adduser.PNG "ajouter utilisateur")
+![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/jenkins-creation-first-user.png " ")
 
+Cette étape conclu l'installation
 
-Maintenant aller jusqu'au niveau de *HTTP_PORT* et changer la valeur.
+![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/jenkins-install-terminee.png " ")
 
-## Authentification sur le repository
-Chez QANBIO, nos repos sont hébergés sur Bitbucket. Il s'agit donc de mettre au user Jenkins depuis la machine de CI cloner le projet à chaque build. Cette opération se passe en deux temps :
-* Génération des clés SSH pour le user Jenkins
-* Ajout de la clé publique du user Jenkins sur Bitbucket
-* Configuration de Jenkins pour lui indiquer avec quelle clé privée il doit communiquer avec Bitbucket
-
-### Générations des clés SSH
-{% highlight bash %}
-$ sudo -i -u jenkins
-ssh-keygen -t rsa -b 4096 -C "Jenkins"
-{% endhighlight %}
-
-### Ajout de la clé publique du user Jenkins sur Bitbucket
-{% highlight bash %}
-#Todo : insérer une commande ici
-{% endhighlight %}
-
-### Configuration de Jenkins pour lui indiquer avec quelle clé privée il doit communiquer avec Bitbucket
-{% highlight bash %}
-#Todo : insérer une commande ici
-{% endhighlight %}
-
-
-# Tester la configuration : création d'un Job qui build et teste notre projet
-
-Todo : captures d'écran
