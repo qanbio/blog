@@ -1,13 +1,14 @@
 ---
 layout: post
-title: Connection à une instance MySQL depuis une machine tierce
+title: Connection à une instance MySQL depuis une machine distante
 categories: [tech]
 tags: [linux, debian, mysql, db, sgbd, remote, connection, acces ]
 author: paterne_gaye
 comments: true
 fullview: false
-description: Durant un projet de développement, on a souvent besoin d'accéder à une instance de MySQL installée non pas sur notre machine mais sur un serveur partagé dans le cloud par exemple ou même sur l'intranet. Nous allons nous intérersser à la configuration spécifique pour ce type d'accès distant.
+description: Durant un projet de développement, on a souvent besoin d'accéder à une instance de MySQL installée non pas sur notre machine mais sur un serveur partagé dans le cloud par exemple ou même sur l'intranet. Nous allons nous intéresser à la configuration spécifique pour ce type d'accès distant.
 ---
+
 # Pré-requis
 
 ## Intérêt d'avoir des utilisateurs spécifiques
@@ -34,6 +35,7 @@ Pour tous ces cas nous avons besoin que des utilisateurs puissent accéder à My
 ## Autoriser la machine serveur à accepter des requêtes MySQL provenant de machines distantes
 MySQL écoute sur le port 3306 par défaut. Il faut donc s'assurer que la machine serveur autorise les requêtes sur ce port ou le port qui aurait été défini dans la configuration.
 
+La manière d'ouvrir le port 3306 dépend de votre infrastructure. Dans notre cas, nos servés étant hébergés sur le cloud de Google, nous pouvons le faire en deux clics en rajoutant une règle de parefeu.
 
 ## Autoriser MySQL à accepter des requêtes provenant de machines distantes
 Il nous faut modifier le fichier de config de MySQL :
@@ -46,7 +48,7 @@ Il faut ensuite retrouver le paramètre **bind-address** et lui donner la valeur
 
 ![image](../../../../assets/media/2017-02-18-mysql-remote-connection/mysql-config-file-bind-adress.png " ")
 
-## Autoriser un utilisateur donnée à accéder à MySQL depuis une machine distante
+## Autoriser un utilisateur donné à accéder à MySQL depuis une machine distante
 Avant tout nous allons créer l'utilisateur
 
 {% highlight sql %}
