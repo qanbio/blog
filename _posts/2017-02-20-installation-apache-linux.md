@@ -27,12 +27,14 @@ Maintenant on peut installer apache avec la commande
 sudo apt-get install apache2
 {% endhighlight bash %}
 
+![installation apache](../../../../assets/media/2017-02-20-installation-lamp-linux/instal_apache.PNG "installation apache")
+
 ### Configuration
 On peut configurer apache en modifiant son port de démarage et mmettant la valeur voulu.
 Pour ce fait exécuter ouvrir le fichier /etc/apache2/port.conf et modifier la valeur du port
 
 {% highlight bash %}
-sudo vi /etc/apache2/port.conf
+sudo vi /etc/apache2/ports.conf
 {% endhighlight bash %}
 
 ![configuration port apache](../../../../assets/media/2017-02-20-installation-lamp-linux/port.PNG "configuration port apache")

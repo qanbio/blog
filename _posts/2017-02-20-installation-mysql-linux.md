@@ -24,10 +24,12 @@ sudo apt-get update
 Maintenant on peut installer MySQL avec la commande
 
 {% highlight bash %}
-sudo apt-get install MySQL
+sudo apt-get install mysql-server mysql-client
 {% endhighlight bash %}
 
 Lors de l’installation un mot de passe vous sera demandé pour le compte d’administration de MySQL, il est impératif pour des raisons de sécurité d’en spécifier un.
+
+![installation mysql](../../../../assets/media/2017-02-20-installation-lamp-linux/install_mysql.PNG "installation mysql")
 
 ### Configuration
 Pour en savoir plus sur la configuration se référer à cet [article](http://blog.qanbio.com/tech/2017/02/18/mysql-remote-connection.html)
@@ -37,8 +39,10 @@ Pour en savoir plus sur la configuration se référer à cet [article](http://bl
 Connectez vous à MySQL avec la commande
 
 {% highlight bash %}
-mysql -u root -p password
+sudo mysql -u root -p'password'
 {% endhighlight bash %}
+
+![verification mysql](../../../../assets/media/2017-02-20-installation-lamp-linux/mysql_verif.PNG "verification mysql")
 
 Créer d’autres users pour qu’ils puissent accéder à MySQL.Ici on en a créé 3 : paterne, fabrice et crépin
 {% highlight bash %}
@@ -46,3 +50,5 @@ GRANT ALL ON *.*  TO 'paterne'@'%' IDENTIFIED BY 'paterne';
 GRANT ALL ON *.*  TO 'fabrice'@'%' IDENTIFIED BY 'fabrice';
 GRANT ALL ON *.*  TO 'crepin'@'%' IDENTIFIED BY 'crepin';
 {% endhighlight bash %}
+
+![utilisateurs mysql](../../../../assets/media/2017-02-20-installation-lamp-linux/mysql_users.PNG "utilisateur mysql")
