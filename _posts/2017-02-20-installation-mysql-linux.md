@@ -30,7 +30,7 @@ sudo apt-get install MySQL
 Lors de l’installation un mot de passe vous sera demandé pour le compte d’administration de MySQL, il est impératif pour des raisons de sécurité d’en spécifier un.
 
 ### Configuration
-Pour en savoir plus sur la configuration se référer à cet [article](http://blog.qanbio.com/tech/2017/02/18/MySQL-remote-connection.html)
+Pour en savoir plus sur la configuration se référer à cet [article](http://blog.qanbio.com/tech/2017/02/18/mysql-remote-connection.html)
 
 ## Tester MySQL
 
