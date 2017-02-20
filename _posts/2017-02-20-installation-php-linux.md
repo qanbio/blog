@@ -30,7 +30,7 @@ Maintenant on peut installer php avec la commande
 $ sudo apt-get install php5
 {% endhighlight bash %}
 
-![installation php](../../../../assets/media/2017-02-20-installation-lamp-linux/port.PNG "installation php")
+![installation php](../../../../assets/media/2017-02-20-installation-lamp-linux/install_php.PNG "installation php")
 
 ### Tester PHP
 
