@@ -8,10 +8,13 @@ comments: true
 fullview: false
 description: Ce post est un aide-mémoire pour l'installation en ligne de commande de php
 ---
-##PHP
+## PHP
 >PHP: Hypertext Preprocessor, plus connu sous son sigle PHP (acronyme récursif), est un langage de programmation libre7, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP6, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet.
 
 Source : [wikipedia](https://fr.wikipedia.org/wiki/PHP)
+
+### Pré requis
+Pour pouvoir exécuter php dans un navigateur il faudrait l'installation d'un serveur web comme apache.Vous avez un article sur son installation [ici]()
 
 ### Installation php
 
