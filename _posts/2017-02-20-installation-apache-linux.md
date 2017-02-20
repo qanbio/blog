@@ -2,7 +2,7 @@
 layout: post
 title: Installation de apache en ligne de commande sur une machine Linux
 categories: [tech]
-tags: [apache, linux, debian, installation, setup]
+tags: [apache, linux, debian, installation,server, setup]
 author: crepin_fadjo
 comments: true
 fullview: false
