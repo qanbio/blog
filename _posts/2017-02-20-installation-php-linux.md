@@ -32,19 +32,8 @@ $ sudo apt-get install php5
 
 ### Tester PHP
 
-Créons un fichier de test
+Pour tester si php est bien installé,exécuter la commande suivant:
 
 {% highlight bash %}
-sudo sh -c 'echo "<?php phpinfo();?>" > /var/www/html/phpinfo.php'
+sudo php -v
 {% endhighlight bash %}
-
-
-Maintenant ouvrez un navigateur et aller sur l’url suivante:
-
-{% highlight bash %}
-<adresse IP>:<port>/phpinfo.php
-{% endhighlight bash %}
-
-Vous devez avoir ceci
-
-![verification fonctionnement php](../../../../assets/media/2017-02-20-installation-lamp-linux/php.PNG "verification fonctionnement php")

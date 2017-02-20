@@ -37,7 +37,7 @@ Pour en savoir plus sur la configuration se référer à cet [article](http://bl
 Connectez vous à MySQL avec la commande
 
 {% highlight bash %}
-MySQL -u “root” -p “password”
+mysql -u root -p password
 {% endhighlight bash %}
 
 Créer d’autres users pour qu’ils puissent accéder à MySQL.Ici on en a créé 3 : paterne, fabrice et crépin
