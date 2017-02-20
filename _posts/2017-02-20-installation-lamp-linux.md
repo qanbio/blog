@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installer LAMP en ligne de commande sur une machine Linux
+title: Installation de LAMP en ligne de commande sur une machine Linux
 categories: [tech]
 tags: [java, linux, debian, installation, setup,apache mysql,php]
 author: crepin_fadjo
