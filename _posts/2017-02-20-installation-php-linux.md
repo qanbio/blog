@@ -40,4 +40,4 @@ Pour tester si php est bien installé,exécuter la commande suivant:
 php -v
 {% endhighlight bash %}
 
-![php version](../../../../assets/media/2017-02-20-installation-lamp-linux/port.PNG "php version")
+![php version](../../../../assets/media/2017-02-20-installation-lamp-linux/php_version.PNG "php version")
