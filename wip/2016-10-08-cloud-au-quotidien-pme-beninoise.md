@@ -6,14 +6,26 @@ tags: [cloud, gsuite, gcloud, jira, bitbucket, github, disqus]
 author: paterne_gaye
 comments: true
 ---
-GSuite :
-* Emails
-* Disque partagé
-* Outils de bureautique avec travail collaboratif
 
-Gestion de projet : Jira de Atlassian
+* GSuite :
+** Emails
+** Disque partagé, 30 GO
+** Outils de bureautique avec travail collaboratif : Google docs, Google sheets, Google slides
 
-Versionning du code source : Github et Bitbucket
+* Communication instantanée : Slack
+
+* Gestion de projet : Jira de Atlassian
+
+* Versionning du code source : Bitbucket
+
+* IAAS :  Google Cloud Engine
+
+
+
+---connection internet
+
+
+---combien ca coute
 
 
 
