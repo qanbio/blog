@@ -14,7 +14,7 @@ description: Ce post est un aide-mémoire pour l'installation en ligne de comman
 Source : [wikipedia](https://fr.wikipedia.org/wiki/PHP)
 
 ### Pré requis
-Pour pouvoir exécuter php dans un navigateur il faudrait l'installation d'un serveur web comme apache.Vous avez un article sur son installation [ici]()
+Pour pouvoir utiliser php côté serveur dans le cadre du développement d'une webapp, il vous faudra un serveur Web capable d'interpréter PHP. C'est le cas du serveur apache dont l'installation est décrite [ici](http://blog.qanbio.com/tech/2017/02/20/installation-apache-linux.html)
 
 ### Installation php
 
