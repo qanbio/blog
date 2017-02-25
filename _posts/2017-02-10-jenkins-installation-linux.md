@@ -25,10 +25,9 @@ Jenkins est une application web Java et pour l'installation, il est possible de 
 
 ## Ajouter le repo de Jenkins dans la liste des repo de notre machine Linux
 {% highlight bash %}
-sudo vi /etc/default/jenkins
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 {% endhighlight %}
 
-![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/vi-etc-apt-sources-list.png " ")
 
 ## Mettre à jour le système et installer le "paquet jenkins"
 
@@ -43,7 +42,7 @@ sudo apt-get install jenkins
 ## Demarrer Jenkins
 Nous venons d'installer Jenkins comme un service Linux; Ceci peut se vérifier en consultant le contenu du dossier /etc/init.d/
 {% highlight bash %}
- ls -la /etc/init.d/
+ ls -la /etc/init.d/jenkins
 {% endhighlight %}
 
 ![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/ls-la-jenkins-service.png " ")
@@ -75,13 +74,13 @@ La webapp Jenkins est ainsi démarré en HTTP sur le port 3333.
 ### Débloquer Jenkins
 Jenkins est certes démarré mais un petit test en ligne de commande nous montre que nous avons un problème de droits
 
-![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/jenkins-wget-avec-echec-403.png" ")
+![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/jenkins-wget-avec-echec-403.png " ")
 
 Ceci est confirmé par un accès à la page d'accueil dans le navigateur  (HTTP sur port 3333 dans notre cas).
 
 ![image](../../../../assets/media/2017-02-10-jenkins-installation-linux/jenkins-accueil-avant-passwd.png " ")
 
-En suivant les instruction et copiant le mot de passe administrateur depuis le fichier indiqué, nous "débloquons Jenkins"
+En suivant les instructions et copiant le mot de passe administrateur depuis le fichier indiqué, nous "débloquons Jenkins"
 
 A cette étape il faut se connecter avec le mode de passe par défaut envoyé par jenkins
 
