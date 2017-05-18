@@ -8,3 +8,8 @@ comments: true
 fullview: false
 description: Ce post est un aide-mémoire pour gérer le déploiement de plusieurs versions d'une même application Android avec Android Studio.
 ---
+### Problématique :
+Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) dans différentes cibles , notamment : la dev (pour le développement), la prod (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres variantes significatives.
+
+### Pré requis
+Avoir une certaine connaissance de l’IDE (Outil de développement Intégré) [Android Studio](https://developer.android.com/studio/index.html). 
