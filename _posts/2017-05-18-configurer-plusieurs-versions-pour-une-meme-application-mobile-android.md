@@ -21,7 +21,7 @@ Une seconde solution serait quand même dans un premier temps d’élaborer une 
 
 Cependant, il existe une autre approche plus simple et plus flexible. Une approche avec laquelle n’importe quel développeur et son équipe peuvent gérer et déployer plusieurs versions d’une application Android avec une seule copie du projet, comme sus-cité. Cette technique est déjà intégrée dans l’IDE officiel d’Android Studio et repose sur son moteur de compilation [Gradle](https://gradle.org/). C’est la méthode des flavor (c-à-d “saveur” en Anglais). Les flavor permettent d’avoir une multitude de variantes d’une même application Mobile avec chacune ses éléments de différenciation, tout en assurant le maintien des points communs qui font l’originalité du projet. 
 
-### Comment marche les Flavors
+### Les Flavors : comment ça marche
 
 Android Studio génère les variantes d’application (ou Build Variant) en combinant  chaque Flavor de l’application avec un “type de compilation” (ou Build Type).
 Un type de compilation spécifie les critères de compilation et de mise en paquet (fichier APK) d’une application tels que la clé de chiffrement, l’activation du débogage, ainsi que la minification de la taille du fichier APK.  En complément, un Flavor spécifie les critères tels que les ressources à exploiter (layouts, code java, images), les versions OS compatibles, ou  les dimensions d’écran autorisées. Par défaut, Android Studio spécifie automatiquement deux types de compilation : debug (débogage) et release (production), pour chaque projet d’application.
@@ -44,6 +44,17 @@ Créons un projet Android comme à l’ordinaire, sans aucun paramétrage partic
 
 ### Ajouter un Flavor
 Clicker ensuite sur : **Build** puis **Edit Flavors**
+
 ![ajouter un nouveau flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_new_flavor.png "ajouter un noouveau flavor")
+
+Il est possible, pour chaque nouveau flavor, de modifier les valeurs des paramètres tels que : Min Sdk Version, Application Id, Target Sdk Version et même configurer le chiffrement
+
+![configurer un flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_new_flavor_details.png "configurer un flavor")
+
+Cliquez sur OK lorsque après avoir fini de remplir les champs souhaités. Gradle fera une synchronisation du projet, après laquelle le nouveau flavor sera prêt à l’usage. On a la largesse de créer de mettre un identifiant unique (Application Id) différent pour chaque flavor. Cela garantit que toutes les versions de l’application pourront être installées sur un même appareil (pour tester au besoin)
+
+Pour vérifier que votre nouveau flavor a été bien créé, cliquez sur l’onglet latéral Build variants, et vous verrez la liste des variantes possibles de votre application. Si vous sélectionnez une variante dans la liste, Gradle fera chargera les paramètres et ressources liés uniquement au Flavor et au Build Type combinés de cette variante. Ensuite, elle fera une nouvelle synchro du projet.
+
+![variantes de compilation](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/display_flavors_window.png "variantes de compilation")
 
 
