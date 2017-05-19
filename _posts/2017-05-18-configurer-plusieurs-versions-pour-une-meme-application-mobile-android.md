@@ -112,7 +112,7 @@ et les images vectorielles :
 
 
 ### Ajouter du code spécifique à un flavor
-Contrairement aux ressources de type drawable (image, vecteurs, icônes, layouts), les fichiers .JAVA nécessitent un traitement particulier pour être répartis par flavor. Lorsque Android Studio compile un projet, il combine l’ensemble des fichiers .JAVA qui s’y trouvent. Donc pour avoir un fichier example.java spécfique à un flavor, il faut le créer directement dans le répertoire **java/nom_du_pckage/**. Surtout éviter d’ajouter un fichier du même nom dans le répertoire **main/java/.../**, sinon il y aura conflict.
+Contrairement aux ressources de type drawable (image, vecteurs, icônes, layouts), les fichiers .JAVA nécessitent un traitement particulier pour être répartis par flavor. Lorsque Android Studio compile un projet, il combine l’ensemble des fichiers .JAVA qui s’y trouvent. Donc pour avoir un fichier example.java spécfique à un flavor, il faut le créer directement dans le répertoire **java/nom_du_package/**. Surtout éviter d’ajouter un fichier du même nom dans le répertoire **main/java/.../**, sinon il y aura conflict.
 
 
 ### Conclusion 
