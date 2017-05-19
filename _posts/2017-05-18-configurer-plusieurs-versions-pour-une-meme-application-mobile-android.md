@@ -6,7 +6,7 @@ tags: [android, java, flavors, gradle, android studio, application mobile, googl
 author: fabrice_kiki
 comments: true
 fullview: false
-description: Ce post est un aide-mémoire pour gérer le déploiement de plusieurs versions d'une même application Android avec Android Studio.
+description: Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) pour différentes cibles , notamment dev (pour le développement), recette (pour la recette), prod (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres différences significatives.
 ---
 ### Problématique :
 Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) pour différentes cibles , notamment : **dev** (pour le développement), **recette** (pour la recette), **prod** (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres différences significatives.
