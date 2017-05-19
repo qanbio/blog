@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Configurer-plusieurs-versions-pour-une-meme-application-mobile-android
+title: Configurer plusieurs versions pour une même application mobile android
 categories: [tech]
 tags: [android, java, flavors, gradle, android studio, application mobile, google, versionning, build type, apk, app variants, développement]
 author: fabrice_kiki
