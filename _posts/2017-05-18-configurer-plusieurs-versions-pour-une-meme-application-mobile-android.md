@@ -47,14 +47,55 @@ Clicker ensuite sur : **Build** puis **Edit Flavors**
 
 ![ajouter un nouveau flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_new_flavor.png "ajouter un noouveau flavor")
 
+
 Il est possible, pour chaque nouveau flavor, de modifier les valeurs des paramètres tels que : Min Sdk Version, Application Id, Target Sdk Version et même configurer le chiffrement
 
 ![configurer un flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_new_flavor_details.png "configurer un flavor")
 
 Cliquez sur OK lorsque après avoir fini de remplir les champs souhaités. Gradle fera une synchronisation du projet, après laquelle le nouveau flavor sera prêt à l’usage. On a la largesse de créer de mettre un identifiant unique (Application Id) différent pour chaque flavor. Cela garantit que toutes les versions de l’application pourront être installées sur un même appareil (pour tester au besoin)
 
+
 Pour vérifier que votre nouveau flavor a été bien créé, cliquez sur l’onglet latéral Build variants, et vous verrez la liste des variantes possibles de votre application. Si vous sélectionnez une variante dans la liste, Gradle fera chargera les paramètres et ressources liés uniquement au Flavor et au Build Type combinés de cette variante. Ensuite, elle fera une nouvelle synchro du projet.
 
 ![variantes de compilation](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/display_flavors_window.png "variantes de compilation")
 
+
+Dans le cadre du présent tutoriel, nous avons créé trois flavors pour notre projet. Les déclaration de  configuration des flavors ainsi créés pour le projet se trouvent par défaut dans le fichier build.gradle du module principal app. Ouvrez ce fichier, pour y retrouver les blocs suivants :
+
+{%productFlavors {
+   dev {
+       minSdkVersion 22
+       applicationId 'com.qanbio.threeflavorexample.dev'
+       targetSdkVersion 25
+       versionCode 1
+       versionName '1.0'
+       versionNameSuffix 'dev'
+   }
+       recette {
+       minSdkVersion 22
+       applicationId 'com.qanbio.threeflavorexample.recette'
+       targetSdkVersion 25
+       versionCode 1
+       versionName '1.0'
+       versionNameSuffix 'recette'
+   }
+
+   prod {
+       minSdkVersion 22
+       applicationId 'com.qanbio.threeflavorexample.prod'
+       targetSdkVersion 25
+       versionCode 1
+       versionName '1.0'
+       versionNameSuffix 'prod'
+   }
+}
+%}
+
+
+On peut bien créer les flavors au début ou pendant le développement du projet. 
+Par défaut, il y a un dossier main qui contient les fichiers du projet. Le principe est d’avoir un dossier unique pour chaque flavor créé, de sorte à y mettre toutes les ressources spécifiques au flavor.
+
+
+## Ajouter des ressources à un flavor
+Il est possible de créer une ressource pour un flavor, qui *surcharge* une autre de même nom. Pour l’exemple, nous allons surcharger le fichier par défaut activity_main.xml  contenu dan le dossier  main du projet ThreeFlavorExample .  Pour cela il suffit de créer un autre fichier portant le même nom, tout en prenant soin de selectionner le source set convenable pour le flavor ciblé.	
 
