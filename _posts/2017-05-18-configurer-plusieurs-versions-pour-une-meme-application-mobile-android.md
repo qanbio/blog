@@ -12,10 +12,10 @@ description: Développer une application Android devant être déployée en plus
 Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) pour différentes cibles , notamment : **dev** (pour le développement), **recette** (pour la recette), **prod** (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres différences significatives.
 
 ### Pré requis
-Avoir une certaine connaissance de l’IDE (Outil de développement Intégré) [Android Studio](https://developer.android.com/studio/index.html).
+Avoir une certaine connaissance de l’IDE (Envionnement de développement Intégré) [Android Studio](https://developer.android.com/studio/index.html).
 
 ### Solutions possibles
-Une solution d’amateur, consisterait à avoir une version originale du projet avec une multitude de duplicatas pour chaque environnement et y intégrer des modifications en parallèle. Cette méthode n'est évidemment pas du tout flexible et peut à la longue induire des complications dans la maintenance du code, au fur et à mesure que le projet prendra de l’ampleur.
+Une solution , consisterait à avoir une version originale du projet avec une multitude de duplicatas pour chaque environnement et y intégrer des modifications en parallèle. Cette méthode n'est évidemment pas du tout flexible et peut à la longue induire des complications dans la maintenance du code, au fur et à mesure que le projet prendra de l’ampleur.
 
 Une seconde solution conisterait, dans un premier temps à élaborer une version stable avec des fonctionnalités minimales requises du projet. Puis, de créer un nouveau projet d’application pour chaque environnement. Et d’y intégrer le projet stable sous forme de librairie. Cela pourrait bien fonctionner, puisque tout le code ne sera pas répliqué. Néanmoins, au final on aura créé une application-librairie mais pas une application autonome.
 
