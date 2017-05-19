@@ -97,7 +97,7 @@ Par défaut, il y a un dossier main qui contient les fichiers du projet. Le prin
 
 
 ## Ajouter des ressources à un flavor
-Il est possible de créer une ressource pour un flavor, qui *surcharge* une autre de même nom. Pour l’exemple, nous allons surcharger le fichier par défaut activity_main.xml  contenu dan le dossier  **main** du projet ThreeFlavorExample .  Pour cela il suffit de créer un autre fichier portant le même nom, tout en prenant soin de selectionner le **source set** convenable pour le flavor ciblé.
+Il est possible de créer une ressource pour un flavor, qui *surcharge* une autre de même nom. Pour l’exemple, nous allons surcharger le fichier par défaut activity_main.xml  contenu dan le dossier  **main** du projet ThreeFlavorExample . Pour cela il suffit de créer un autre fichier portant le même nom, tout en prenant soin de selectionner le **source set** convenable pour le flavor ciblé.
 
 ![ajouter un fichier ressource au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource.png "ajouter un fichier ressource au flavor")
 
