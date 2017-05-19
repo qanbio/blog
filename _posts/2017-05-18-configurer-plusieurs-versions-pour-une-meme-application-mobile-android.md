@@ -102,5 +102,10 @@ Il est possible de créer une ressource pour un flavor, qui *surcharge* une autr
 
 ![ajouter un fichier ressource au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource.png "ajouter un fichier ressource au flavor")
 
+Il en va de même pour les icônes, les images vectorielles :
 
+![ajouter un fichier image  au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource_image.png "ajouter un fichier image au flavor")
+
+
+![ajouter un fichier image vectiorielle  au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/separate_flavor_resources_drawable.png "ajouter un fichier image vectorielle au flavor")
 
