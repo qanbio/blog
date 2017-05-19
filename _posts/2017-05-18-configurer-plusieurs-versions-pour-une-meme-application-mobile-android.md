@@ -102,10 +102,18 @@ Il est possible de créer une ressource pour un flavor, qui *surcharge* une autr
 
 ![ajouter un fichier ressource au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource.png "ajouter un fichier ressource au flavor")
 
-Il en va de même pour les icônes, les images vectorielles :
+Il en va de même pour les icônes :
 
 ![ajouter un fichier image  au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource_image.png "ajouter un fichier image au flavor")
 
-
+et les images vectorielles :     
 ![ajouter un fichier image vectiorielle  au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/separate_flavor_resources_drawable.png "ajouter un fichier image vectorielle au flavor")
 
+
+### Ajouter du code spécifique à un flavor
+Contrairement aux ressources de type drawable (image, vecteurs, icônes, layouts), les fichiers .JAVA nécessitent un traitement particulier pour être répartis par flavor. Lorsque Android Studio compile un projet, il combine l’ensemble des fichiers .JAVA qui s’y trouvent. Donc pour avoir un fichier example.java spécfique à un flavor, il faut le créer directement dans le répertoire **java/nom_du_pckage/**. Surtout éviter d’ajouter un fichier du même nom dans le répertoire **main/java/.../**, sinon il y aura conflict.
+
+
+### Conclusion 
+Si vous avez des projets d’application qui se différencient par des aspects infimes, et qui sont quand même identiques du point de vue fonctionnel, alors l’usage des Flavors est recommandé. En revanche les flavors ne sont pas adéquats lorsque le même projet présentera des versions finales très différentes au niveau du code.
+Par ailleurs, retenez la différence entre les Flavors et les Buil Types. Les flavors sont convenables pour créer des versions différentes d’une même application sur PlayStore, par exemple une version gratuite et une autre version payante. En revanche, les Build Types sont une option indiquée lorsqu’il s’agit de gérer différents environnements pour le même projet comme dev, debug, prod. Une compilation de type debug peut communiquer avec un serveur local contrôlé avec des données fictives de test. Alors que pour une version prod de la même application, le serveur sera différent.
