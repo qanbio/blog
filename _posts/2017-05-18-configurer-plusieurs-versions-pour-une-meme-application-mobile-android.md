@@ -8,13 +8,6 @@ comments: true
 fullview: false
 description: Ce post est un aide-mémoire pour gérer le déploiement de plusieurs versions d'une même application Android avec Android Studio.
 ---
-
-
-## Ajouter des ressources à un flavor
-Il est possible de créer une ressource pour un flavor, qui *surcharge* une autre de même nom. Pour l’exemple, nous allons surcharger le fichier par défaut activity_main.xml  contenu dan le dossier  **main** du projet ThreeFlavorExample . Pour cela il suffit de créer un autre fichier portant le même nom, tout en prenant soin de selectionner le **source set** convenable pour le flavor ciblé.
-
-![ajouter un fichier ressource au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource.png "ajouter un fichier ressource au flavor")
-
 ### Problématique :
 Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) dans différentes cibles , notamment : **dev** (pour le développement), **recette** (pour la recette), **prod** (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres variantes significatives.
 
@@ -69,7 +62,8 @@ Pour vérifier que votre nouveau flavor a été bien créé, cliquez sur l’ong
 
 Dans le cadre du présent tutoriel, nous avons créé trois flavors pour notre projet. Les déclaration de  configuration des flavors ainsi créés pour le projet se trouvent par défaut dans le fichier build.gradle du module principal app. Ouvrez ce fichier, pour y retrouver les blocs suivants :
 
-{%productFlavors {
+{% highlight bash %}
+productFlavors {
    dev {
        minSdkVersion 22
        applicationId 'com.qanbio.threeflavorexample.dev'
@@ -96,10 +90,17 @@ Dans le cadre du présent tutoriel, nous avons créé trois flavors pour notre p
        versionNameSuffix 'prod'
    }
 }
-%}
+{% endhighlight%}
 
 
 On peut bien créer les flavors au début ou pendant le développement du projet. 
 Par défaut, il y a un dossier main qui contient les fichiers du projet. Le principe est d’avoir un dossier unique pour chaque flavor créé, de sorte à y mettre toutes les ressources spécifiques au flavor.
+
+
+## Ajouter des ressources à un flavor
+Il est possible de créer une ressource pour un flavor, qui *surcharge* une autre de même nom. Pour l’exemple, nous allons surcharger le fichier par défaut activity_main.xml  contenu dan le dossier  **main** du projet ThreeFlavorExample . Pour cela il suffit de créer un autre fichier portant le même nom, tout en prenant soin de selectionner le **source set** convenable pour le flavor ciblé.
+
+![ajouter un fichier ressource au flavor](../../../../assets/media/2017-05-18-configurer-plusieurs-versions-pour-une-meme-application-mobile-android/add_flavor_resource.png "ajouter un fichier ressource au flavor")
+
 
 
