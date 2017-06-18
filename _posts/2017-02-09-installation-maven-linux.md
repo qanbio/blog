@@ -5,7 +5,7 @@ categories: [tech]
 tags: [linux, debian, maven, build]
 author: paterne_gaye
 comments: true
-fullview: false
+fullview: true
 description: Ce post est un aide-mémoire pour l'installation de Apache Maven sur une machine Linux.
 ---
 

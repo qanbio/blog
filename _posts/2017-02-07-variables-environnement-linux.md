@@ -5,7 +5,7 @@ categories: [tech]
 tags: [linux, debian, env, var, variable, environnement]
 author: crepin_fadjo
 comments: true
-fullview: false
+fullview: true
 description: Ce post est un aide-mémoire pour la création de variables d'environnement sous linux.
 ---
 

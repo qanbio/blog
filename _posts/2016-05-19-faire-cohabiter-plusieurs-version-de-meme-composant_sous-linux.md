@@ -5,7 +5,7 @@ categories: [tech]
 tags: [java, linux, debian, jdk, jre, version, multiversioning, setup]
 author: paterne_gaye
 comments: true
-fullview: false
+fullview: true
 description: Ce post est un aide-mémoire pour la gestion de plusieurs versions d'un même logiciel sous Linux, en particulier Java
 ---
 

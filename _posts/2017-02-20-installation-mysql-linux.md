@@ -5,7 +5,7 @@ categories: [tech]
 tags: [MySQL, linux, debian,db,sgbd,acces, installation, setup]
 author: crepin_fadjo
 comments: true
-fullview: false
+fullview: true
 description: Ce post est un aide-mémoire pour l'installation en ligne de commande de MySQL
 ---
 ## MySQL

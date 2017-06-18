@@ -5,7 +5,7 @@ categories: [tech]
 tags: [apache, linux, debian, installation,server, setup]
 author: crepin_fadjo
 comments: true
-fullview: false
+fullview: true
 description: Ce post est un aide-mémoire pour l'installation en ligne de commande de apache
 ---
 ## Apache

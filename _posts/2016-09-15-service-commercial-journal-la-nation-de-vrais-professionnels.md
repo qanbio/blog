@@ -5,6 +5,7 @@ categories: [opinion]
 tags: [onip, lanation, fonctionnaire, benin]
 author: paterne_gaye
 comments: true
+fullview: true
 description: Parce que certes, tout n’est pas rose mais il y a beaucoup plus de choses qui fonctionnent qu’on ne le dit; parce que tout n'est pas qu'échec; parce que tous les fonctionnaires ne sont pas des feignants, grincheux et incapables.
 ---
 
