@@ -49,7 +49,7 @@ Créer une instance de type **LocalRequest** avec les contraintes telles que le 
 ![Créer une requete de localisation](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/setup_location_request.PNG "Créer une requete de localisation")
 
 #### Récupérer et vérifier la configuration actuelle
-Pour récupérer, les détails de la configuration actuelle du prériphérique d'un utilisateur, il faut instancier la classe **LocationSettingsRequest.Builder** et lui ajouter un ou plusieurs objets LocalRequest. Ensuite, on vérifie si la configuration retrouvée sur l'appareil de l'utilisateur sont convenables pour les besoins de l'application :
+Pour récupérer, les détails de la configuration actuelle du prériphérique d'un utilisateur, il faut instancier la classe **LocationSettingsRequest.Builder** et lui ajouter un ou plusieurs objets LocalRequest. Ensuite, on vérifie si la configuration retrouvée sur l'appareil de l'utilisateur est convenable pour les besoins de l'application :
 
 ![Récupérer et vérifier la configuration actuelle](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/recuperer_et_verifier_configuration.PNG "Récupérer et vérifier la configuration actuelle")
 
