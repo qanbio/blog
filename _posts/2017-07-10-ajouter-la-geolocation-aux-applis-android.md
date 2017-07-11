@@ -27,16 +27,18 @@ La permission ACCESS_COARSE_LOCATION permet d'obtenir une précision géolocalis
 
 #### Créer un client de localisation
 La prochaine étape consiste à créer une instance de type **FusedLocationProviderClient**, dans la méthode onCreate() de votre activité. Imitez ce qui suit :
+
 ![Créer un client de localisation](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/create__fuse_location_provider_instance.PNG "Créer un client de localisation")
  
 
 #### Obtenir la récente position de l'appareil d'un utilisateur
 Une fois le client de localisation créé, il suffit d'appeler la méthode __getLastLocation()__, pour déterminer la position actuelle de l'utlisateur. A cette méthode est rattachée une taupe, qui se déclenche lorsque la position est déterminée avec succès. En cas de succès, un objet de type Location est retourné, à partir duquel vous pourrez récupérer les coordonnées de latitude et de longitude de  l'emplacement géographique actuel de l'utilisateur.
+
 ![Obtenir la position actuelle](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/call_get_last_location.PNG "Obtenir la position actuelle")
  
 
-#### Ajuster les paramètres de localisation
-Dans la majorité des cas, une application de geolocalisation, invitera l'utilisateur à adjuster les paramètres de GPS ou Wi-Fi de son appareil, si nécessaire. Pour effectuer une telle demande, il faut :
+### Ajuster les paramètres de localisation
+Dans la majorité des cas, une application de geolocalisation, invitera l'utilisateur à adjuster les paramètres de GPS ou Wi-Fi de son appareil, si nécessaire. C'est une démarche recommandée pour éviter des situations de crash, pour votre application.  Pour effectuer une telle demande, il faut :
 * Créer une requete de localisation
 * Récupérer et vérifier la configuration actuelle de l'appareil
 * Inviter l'utilisateur à modifier la configuration de son appareil
@@ -47,7 +49,10 @@ Créer une instance de type **LocalRequest** avec les contraintes telles que le 
 ![Créer une requete de localisation](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/setup_location_request.PNG "Créer une requete de localisation")
 
 #### Récupérer et vérifier la configuration actuelle
-En cours de rédaction
+Pour récupérer, les détails de la configuration actuelle du prériphérique d'un utilisateur, il faut instancier la classe **LocationSettingsRequest.Builder** et lui ajouter un ou plusieurs objets LocalRequest. Ensuite, on vérifie si la configuration retrouvée sur l'appareil de l'utilisateur sont convenables pour les besoins de l'application :
+
+![Récupérer et vérifier la configuration actuelle](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/recuperer_et_verifier_configuration.PNG "Récupérer et vérifier la configuration actuelle")
+
 
 ### Conclusion 
 En cours de rédaction
