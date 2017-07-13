@@ -87,7 +87,7 @@ task.addOnFailureListener(this, new OnFailureListener() {
                 break;
             case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                 // Location settings are not satisfied. However, we have no way
-                // to fix the settings so we won't show the dialog.
+                // to fix the settings so we will not show the dialog.
                 break;
         }
     }
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                         // Location settings are not satisfied. However, we have no way
-                        // to fix the settings so we won't show the dialog.
+                        // to fix the settings so we will not show the dialog.
                         break;
                 }
             }
