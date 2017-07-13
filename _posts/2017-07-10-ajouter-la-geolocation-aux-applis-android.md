@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Ajouter la géolocation à votre application Android
+title: Ajouter la géolocation à votre application Android [PARTIE 1]
 categories: [tech]
 tags: [android, java, géolocalisation, location API, android studio, application mobile, google, développement]
 author: fabrice_kiki
 comments: true
 fullview: false
-description: Intégrer la géolocalisation à votre application mobile Android, pour apporter aux utilisateurs une expérience plus authentique et réaliste.
+description: Intégrer la géolocalisation à votre application mobile Android, pour proposant aux utilisateurs des informations et services, relatifs à leur position géographique et à leur environnement.
 ---
 ### Problématique :
 Rendre votre application Android, plus utile et intuitive, en proposant aux utilisateurs des informations et services, relatifs à leur position géographique et à tout ce qui se passe autour d'eux.
 
 ### Pré requis
-Avoir une certaine connaissance de l’IDE (Envionnement de développement Intégré) [Android Studio](https://developer.android.com/studio/index.html). Intégrer à votre projet, une API de localisation fournie par Google Play Services (G.P.S.) , en ajoutant ce qui suit au fichier app.gradle : {% highlight bash %}compile 'com.google.android.gms:play-services-location:11.0.2'{% endhighlight%}. Intégrer un gestionnaire de permissions à la volée pour Android M et plus, en ajoutant ce qui suit au fichier app.gradle : {% highlight bash %}compile 'com.karumi:dexter:4.1.0'{% endhighlight%}. Le code source relatif à billet est disponible [ici]().
+Avoir une certaine connaissance de l’IDE (Envionnement de développement Intégré) [Android Studio](https://developer.android.com/studio/index.html). Intégrer à votre projet, une API de localisation fournie par Google Play Services (G.P.S.) , en ajoutant ce qui suit au fichier app.gradle : {% highlight bash %}compile 'com.google.android.gms:play-services-location:11.0.2'{% endhighlight%}. Intégrer un gestionnaire de permissions à la volée pour Android M et plus, en ajoutant ce qui suit au fichier app.gradle : {% highlight bash %}compile 'com.karumi:dexter:4.1.0'{% endhighlight%}. Le code source comptet opérationnel sera affiché à la fin du tutoriel.
 
 ### Connaitre la position actuelle de l'utilisateur
 Pour connaitre la position actuelle de l'utilisateur, votre application devra identifier la **récente position géographique connue** (the Last Known Location) occupée par le périphérique, sur le globe terrestre. Identifier cette position pour un appareil android, équivaut à reconnaitre __a priori__ la position actuelle de son utilisateur. Votre application fera donc appel au fournisseur de localisation fusionnée (__Fused Location Provider__) de G.P.S.
@@ -146,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Location location) {
                 if (location != null) {
-                    // Display the current location on the device's screen
+                    // Display the current location on the device screen
                     Toast.makeText(MainActivity.this, "Latitude is :" + location.getLatitude() + " and Longitude is: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Can't get user current location at the moment", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Cannot get user current location at the moment", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -225,4 +225,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 ### Conclusion 
-En cours de rédaction
+La plateforme Android, vus permet de différencier votre application, en utiliseant la puissance de la mobilité pour donner à vos utilisateurs des informations contextuelles sur l'endroit où ils se trouvent, quand ils s'y trouvent. À vous de faire vivre à vos utilisateurs, des expériences inoubliables avec votre application. Ils vous remercieront. Bonne chance !!
