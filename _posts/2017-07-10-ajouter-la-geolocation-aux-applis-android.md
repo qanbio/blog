@@ -56,7 +56,7 @@ Pour récupérer, les détails de la configuration actuelle du prériphérique d
 
 
 #### Inviter l'utilisateur à modifier la configuration de son appareil
-Pour inviter l'utilisateur à mofidier ses paramètres, l'application doit identifier l'état (__LocationSettingsResponse__) de la configuration du périphérique à partir d'une taupe (__OnSuccessListener__ ou __OnFailureListener__). La taupe est rattachée à l'objet Task précédemment créé pour récupérer la configuration actuelle du périphérique.
+Pour inviter l'utilisateur à mofidier ses paramètres, l'application doit identifier l'état (__LocationSettingsResponse__) de la configuration du périphérique à à l'aide de deux taupes : la taupe __OnSuccessListener__ qui s'activent lorsque les paramètres de configurations de l'appareil sont favorable à la localisation, et une autre __OnFailureListener__, qui se déclenche dans le cas contraire. Lorsque tout est Ok, l'application fait la requête de localisation. En cas de pépin, une boite  de dialogue invite l'utilisateur à adjuster lui-même la configuration de son téléphone pour que sa position actuelle soit trouvée avec le GPS intégré à son téléphone. Voici le bloc de code qui exécute ce qui est expliqué :
 
 {% highlight bash %}task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
     @Override
@@ -92,6 +92,137 @@ task.addOnFailureListener(this, new OnFailureListener() {
         }
     }
 });{% endhighlight%}
+
+### Le code complet fonctionnelle
+Voici un example complet d'activité d'une application qui identifie la position actuelle d'un utilisateur sur Android :
+{% highlight bash %}
+public class MainActivity extends AppCompatActivity {
+
+    private static final int REQUEST_CHECK_SETTINGS = 920;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Create an instance of the Fused Location Provider Client
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getLocationSettings();
+
+    }
+
+    private void getUserCurrentLocation() {
+        // Manage permissions at runtime for Android M
+        Dexter.withActivity(this).withPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                .withListener(new PermissionListener() {
+                    @SuppressLint("MissingPermission")
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        getLastKnownLocation();
+
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                    }
+                })
+                .check();
+    }
+
+    @SuppressLint("MissingPermission")
+    private void getLastKnownLocation() {
+        // call getLastLocation
+        fusedLocationProviderClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    // Display the current location on the device's screen
+                    Toast.makeText(MainActivity.this, "Latitude is :" + location.getLatitude() + " and Longitude is: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Can't get user current location at the moment", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
+    protected void getLocationSettings() {
+
+        // Create a location request
+        LocationRequest mLocationRequest = new LocationRequest();
+        mLocationRequest.setInterval(9000);
+        mLocationRequest.setFastestInterval(4000);
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        // Get current location settings
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                .addLocationRequest(mLocationRequest);
+
+        // Check if current location settings are convenient
+        SettingsClient client = LocationServices.getSettingsClient(this);
+        Task<LocationSettingsResponse> task = client.checkLocationSettings(builder.build());
+
+        // Add callback to location request task
+        task.addOnFailureListener(this, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                int statusCode = ((ApiException) e).getStatusCode();
+                switch (statusCode) {
+                    case CommonStatusCodes.RESOLUTION_REQUIRED:
+                        // Location settings are not satisfied, but this can be fixed
+                        // by showing the user a dialog.
+                        try {
+                            // Show the dialog by calling startResolutionForResult(),
+                            // and check the result in onActivityResult().
+                            ResolvableApiException resolvable = (ResolvableApiException) e;
+                            resolvable.startResolutionForResult(MainActivity.this,
+                                    REQUEST_CHECK_SETTINGS);
+                        } catch (IntentSender.SendIntentException sendEx) {
+                            // Ignore the error.
+                        }
+                        break;
+                    case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                        // Location settings are not satisfied. However, we have no way
+                        // to fix the settings so we won't show the dialog.
+                        break;
+                }
+            }
+        });
+
+
+        task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
+            @Override
+            public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
+                // All location settings are satisfied. The client can initialize
+                // location requests here.
+                getUserCurrentLocation();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CHECK_SETTINGS) {
+            if (resultCode == RESULT_OK) {
+                getUserCurrentLocation();
+            }
+        }
+    }
+}
+
+{% endhighlight%}
+
 
 ### Conclusion 
 En cours de rédaction
