@@ -225,4 +225,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 ### Conclusion 
-La plateforme Android, vus permet de différencier votre application, en utiliseant la puissance de la mobilité pour donner à vos utilisateurs des informations contextuelles sur l'endroit où ils se trouvent, quand ils s'y trouvent. À vous de faire vivre à vos utilisateurs, des expériences inoubliables avec votre application. Ils vous remercieront. Bonne chance !!
+La plateforme Android, vous permet de différencier votre application, en utiliseant la puissance de la mobilité pour donner à vos utilisateurs des informations contextuelles sur l'endroit où ils se trouvent, quand ils s'y trouvent. À vous de faire vivre à vos utilisateurs, des expériences inoubliables avec votre application. Ils vous remercieront. Bonne chance !!
