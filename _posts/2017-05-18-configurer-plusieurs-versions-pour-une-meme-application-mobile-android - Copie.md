@@ -5,7 +5,7 @@ categories: [tech]
 tags: [android, java, flavors, gradle, android studio, application mobile, google, versionning, build type, apk, app variants, développement]
 author: fabrice_kiki
 comments: true
-fullview: true
+fullview: false
 description: Développer une application Android devant être déployée en plusieurs versions (fichiers .APK) pour différentes cibles , notamment dev (pour le développement), recette (pour la recette), prod (pour la version stable et opérationnelle de l’application), avec des noms, des logos, des fonctionnalités, ou autres différences significatives.
 ---
 ### Problématique :

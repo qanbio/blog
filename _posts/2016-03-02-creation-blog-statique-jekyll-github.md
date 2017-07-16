@@ -5,7 +5,7 @@ categories: [tech]
 tags:  [jekyll, github, blog, markdown]
 author: paterne_gaye
 comments: true
-fullview: true
+fullview: false
 description: "Chez Qanbio, quand nous avons voulu créer notre blog, nous avions le choix entre plusieurs alternatives. Notamment les mastodontes : Blogger, Wordpress etc. Nous avons fini par opter pour un blog statique généré à l'aide de Jekyll et hébergé sur Github. Dans cet article nous allons présenter ce qui a motivé notre choix et la procédure pour développer un blog analogue."
 image: ../../../../assets/media/2016-03-02-creation-blog-statique-jekyll-github/jekyll.jpg
 ---

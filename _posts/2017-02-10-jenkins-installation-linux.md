@@ -5,7 +5,7 @@ categories: [tech]
 tags: [linux, debian, jenkins, hudson, ci, ic, "integration continue", "continuous integration" ]
 author: paterne_gaye
 comments: true
-fullview: true
+fullview: false
 description: Ce post est un aide-mémoire pour l'installation et la configuration basique de Jenkins sur une machine Linux Debian.
 ---
 
