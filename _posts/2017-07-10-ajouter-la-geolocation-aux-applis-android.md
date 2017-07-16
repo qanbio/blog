@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ajouter la géolocation à votre application Android [PARTIE 1]
+title: Ajouter la géolocation à votre application Android (1/2)
 categories: [tech]
 tags: [android, java, géolocalisation, location API, android studio, application mobile, google, développement]
 author: fabrice_kiki
