@@ -93,7 +93,7 @@ task.addOnFailureListener(this, new OnFailureListener() {
     }
 });{% endhighlight%}
 
-### Le code complet fonctionnelle
+### Exemple complet fonctionnel
 Voici un example complet d'activité d'une application qui identifie la position actuelle d'un utilisateur sur Android :
 {% highlight bash %}
 public class MainActivity extends AppCompatActivity {
