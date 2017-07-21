@@ -32,7 +32,7 @@ La prochaine étape consiste à créer une instance de type **FusedLocationProvi
 
 
 #### Obtenir la récente position de l'appareil d'un utilisateur
-Une fois le client de localisation créé, il suffit d'appeler la méthode __getLastLocation()__, pour déterminer la position actuelle de l'utlisateur. A cette méthode est rattachée une taupe, qui se déclenche lorsque la position est déterminée avec succès. En cas de succès, un objet de type Location est retourné, à partir duquel vous pourrez récupérer les coordonnées de latitude et de longitude de  l'emplacement géographique actuel de l'utilisateur.
+Une fois le client de localisation créé, il suffit d'appeler la méthode __getLastLocation()__, pour déterminer la position actuelle de l'utlisateur. A cette méthode est rattachée un callback, qui se déclenche lorsque la position est déterminée avec succès. En cas de succès, un objet de type Location est retourné, à partir duquel vous pourrez récupérer les coordonnées de latitude et de longitude de  l'emplacement géographique actuel de l'utilisateur.
 
 ![Obtenir la position actuelle](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/call_get_last_location.PNG "Obtenir la position actuelle")
  
@@ -56,7 +56,7 @@ Pour récupérer, les détails de la configuration actuelle du prériphérique d
 
 
 #### Inviter l'utilisateur à modifier la configuration de son appareil
-Pour inviter l'utilisateur à mofidier ses paramètres, l'application doit identifier l'état (__LocationSettingsResponse__) de la configuration du périphérique à à l'aide de deux taupes : la taupe __OnSuccessListener__ qui s'activent lorsque les paramètres de configurations de l'appareil sont favorable à la localisation, et une autre __OnFailureListener__, qui se déclenche dans le cas contraire. Lorsque tout est Ok, l'application fait la requête de localisation. En cas de pépin, une boite  de dialogue invite l'utilisateur à adjuster lui-même la configuration de son téléphone pour que sa position actuelle soit trouvée avec le GPS intégré à son téléphone. Voici le bloc de code qui exécute ce qui est expliqué :
+Pour inviter l'utilisateur à mofidier ses paramètres, l'application doit identifier l'état (__LocationSettingsResponse__) de la configuration du périphérique à à l'aide de deux taupes : le callback __OnSuccessListener__ qui s'activent lorsque les paramètres de configurations de l'appareil sont favorable à la localisation, et une autre __OnFailureListener__, qui se déclenche dans le cas contraire. Lorsque tout est Ok, l'application fait la requête de localisation. En cas de pépin, une boite  de dialogue invite l'utilisateur à adjuster lui-même la configuration de son téléphone pour que sa position actuelle soit trouvée avec le GPS intégré à son téléphone. Voici le bloc de code qui exécute ce qui est expliqué :
 
 {% highlight bash %}task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
     @Override
