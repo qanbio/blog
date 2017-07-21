@@ -27,13 +27,13 @@ Avoir une certaine connaissance de l’IDE (Envionnement de développement Inté
   ![actualiser les positions de l'utilisateur](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/start_location_update.PNG  "actualiser les positions de l'utilisateur")
 
 ### Implémenter un callback de type LocationCallback
-
+ Application de la méthode  requestLocationsUpdates() et ajout des paramètres
 ![implementer le callback] (../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/implement_location_callback.PNG "implementer le callback")
 
 ### Arrêter les mises-à-jour de localisation
 Lorsque l'application passe en pause sur l'appareil de l'utilisateur, pour une raison pou une autre, il est recommandé de désactiver la mise-à-jour de la localisation. 
 
-![implementer le callback] (../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/stop_location_updates.PNG "implementer le callback")
+![Stoper les callbacks] (../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/stop_location_updates.PNG "stoper les callbacks")
 
 ### Exemple complet fonctionnel
 Voici un exemple d'activité d'application android qui suit les changements de position de l'utlisateur sur le globe, __en temps réel__:
