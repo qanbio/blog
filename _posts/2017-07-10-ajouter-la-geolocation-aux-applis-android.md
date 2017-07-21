@@ -61,10 +61,9 @@ Pour inviter l'utilisateur à mofidier ses paramètres, l'application doit ident
 {% highlight bash %}task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
     @Override
     public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
-        // All location settings are convenient. 
-        // Call getLastLocation() method here 
-        
-    }
+        // All location settings are convenient.
+        // Call getLastLocation() method here
+            }
 });
 
 task.addOnFailureListener(this, new OnFailureListener() {
