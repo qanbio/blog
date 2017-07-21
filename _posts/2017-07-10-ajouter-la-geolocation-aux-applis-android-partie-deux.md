@@ -23,16 +23,16 @@ Avoir une certaine connaissance de l’IDE (Envionnement de développement Inté
   * rattacher une taupe de type **LocationCallback** pour récupérer les positions actualisées
   
   Voici comment cela se présente dans une méthode que nous avons nommé __startLocationUpdates__ :
-  ![actualiser les positions de l'utilisateur]("../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/start_location_update.PNG")
+  ![actualiser les positions de l'utilisateur](../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/start_location_update.PNG "actualiser les positions de l'utilisateur")
 
 ### Implémenter une taupe de type LocationCallback
 
-![implementer la taupe] ("../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/implement_location_callback.PNG")
+![implementer la taupe] (../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/implement_location_callback.PNG "implementer la taupe")
 
 ### Arrêter les mises-à-jour de localisation
 Lorsque l'application passe en pause sur l'appareil de l'utilisateur, pour une raison pou une autre, il est recommandé de désactiver la mise-à-jour de la localisation. 
 
-![implementer la taupe] ("../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/stop_location_updates.PNG")
+![implementer la taupe] (../../../../assets/media/2017-07-10-ajouter-la-geolocation-aux-applis-android/stop_location_updates.PNG "implementer la taupe")
 
 ### Exemple complet fonctionnel
 Voici un exemple d'activité d'application android qui suit les changements de position de l'utlisateur sur le globe, __en temps réel__:
