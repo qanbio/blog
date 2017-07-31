@@ -27,7 +27,7 @@ Dans la première partie de cet article nous  parlererons des Shared Preferences
 
 
 ### Shared Preferences
-les Shared Prefenrences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe ** sharedPreferences **.L'avantage réel d'utliser les shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
+les Shared Prefenrences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe **sharedPreferences**.L'avantage réel d'utliser les shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
 
 #### Comment  utiliser les Shared Preferences?  
 Pour avoir accès au Shared Preferences  nous avons principalement  deux méthodes:
@@ -84,9 +84,9 @@ Quand l'utilisateur désinstalle l'application, les fichiers sont automatiquemen
 
 #### Comment sauvegarder un fichier dans le stockage interne ?
 Pour créer et écrire dans un fichier privé en stockage interne il faut:
-*   Appeler ** openFileOutput(String fileName,int mode) **  avec fileName le nom du fichier et mode le mode d'accès : décris un peu plus haut;
-*   Utiliser ** write() ** pour écrire dans le fichier;
-*   Fermer le flux d'écriture avec ** close() **.
+*   Appeler **openFileOutput(String fileName,int mode)**  avec fileName le nom du fichier et mode le mode d'accès : décris un peu plus haut;
+*   Utiliser **write()** pour écrire dans le fichier;
+*   Fermer le flux d'écriture avec **close()**.
 
 Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère
 
@@ -107,9 +107,9 @@ Voici un exemple qui montre comment créer et sauvegarder un fichier contenant u
 #### Comment lire les données contenu dans un fichier sauvegarder en interne ?
 
 Pour lire le contenu d'un fichier interne il faut:
-* Appeler ** openFileInput(String fileName) ** avec fileName le nom du fichier à récupérer;
-* Utiliser ** read() ** pour lire les bytes à partir du fichier;
-* Fermer le flux d'écriture avec ** close() **.
+* Appeler **openFileInput(String fileName)** avec fileName le nom du fichier à récupérer;
+* Utiliser **read()** pour lire les bytes à partir du fichier;
+* Fermer le flux d'écriture avec **close()**.
 
 Voici un exemple qui montre la lecture du fichier créé précédemment
 
@@ -137,7 +137,7 @@ Chaque appareil Android prend en charge un stockage externe que nous pouvons uti
 #### Comment utliser le stockage externe ?
 Pour lire ou écrire des fichiers dans le stockage externe l'application doit:
 
- 1. déclarer les permissions ** READ_EXTERNAL_STORAGE ** ou ** WRITE_EXTERNAL_STORAGE ** dans le fichier manifest :
+ 1. déclarer les permissions **READ_EXTERNAL_STORAGE** ou **WRITE_EXTERNAL_STORAGE** dans le fichier manifest :
 
  { % highlight bash %}
 <manifest ...>
@@ -153,7 +153,7 @@ ou
     ...
 </manifest>
 { % endhighlight bash %}
-2. Vérifier la disponibilité du stockage grâce à ** getExternalStorageState() **;
+2. Vérifier la disponibilité du stockage grâce à **getExternalStorageState()**;
 3. Sauvegarder ou récupérer des fichiers
 
 Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère dans le dossier download de votre telephone
