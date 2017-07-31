@@ -17,17 +17,17 @@ Etre débutant ou developpeur professionnel d'application android.Utliser androi
 ###  Le stockage de données en local
 Pour stocker les données en local Android nous fournis plusieurs possiblités à savoir :
 * les données partagées (Shared Preferences),
-* ,
+* le stockage interne (Internal Storage) ,
 * le stockage externe (External Storage),
 * les bases  de données locales :
-*  Celle proposée par Android (SQLite),
-*  Et les autres (Realm ..).
+    *  Celle proposée par Android (SQLite),
+    *  Et les autres (Realm ..).
 le stockage interne (Internal Storage)
 Dans la première partie de cet article nous  parlererons des Shared Preferences, de l'Internal Storage et de l'External Storage.
 
 
 ### Shared Preferences
-les Shared Prefenrences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe.L'avantage réel d'utliser les shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
+les Shared Prefenrences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe ** sharedPreferences **.L'avantage réel d'utliser les shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
 
 #### Comment  utiliser les Shared Preferences?  
 Pour avoir accès au Shared Preferences  nous avons principalement  deux méthodes:
@@ -80,12 +80,179 @@ Un cas pratique est disponible sur mon compte github via ce lien
 ### Le stockage interne (Internal Storage)
 Pour stocker des données(fichiers) on peut aussi utliser le stockage interne de notre téléphone.
 Par défaut les fichiers  sauvegardés  dans le stockage interne sont privés à l'application.
-Quand l'utilisateur désinstalle l'application, les fichierrs sont automatiquement supprimés.. 
+Quand l'utilisateur désinstalle l'application, les fichiers sont automatiquement supprimés.
+
+#### Comment sauvegarder un fichier dans le stockage interne ?
+Pour créer et écrire dans un fichier privé en stockage interne il faut:
+*   Appeler ** openFileOutput(String fileName,int mode) **  avec fileName le nom du fichier et mode le mode d'accès : décris un peu plus haut;
+*   Utiliser ** write() ** pour écrire dans le fichier;
+*   Fermer le flux d'écriture avec ** close() **.
+
+Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère
+
+{ % highlight bash %}
+
+ private void saveInterne() throws IOException {
+
+            FileOutputStream outputStream= openFileOutput(MY_FILE_NAME,MODE_PRIVATE);
+            String audio_name="Best music for Africa";
+            outputStream.write(audio_name.getBytes());
+            outputStream.close();
+
+    }
+
+{ % endhighlight bash %}
 
 
+#### Comment lire les données contenu dans un fichier sauvegarder en interne ?
 
-### Autres tires
-texte ici
+Pour lire le contenu d'un fichier interne il faut:
+* Appeler ** openFileInput(String fileName) ** avec fileName le nom du fichier à récupérer;
+* Utiliser ** read() ** pour lire les bytes à partir du fichier;
+* Fermer le flux d'écriture avec ** close() **.
+
+Voici un exemple qui montre la lecture du fichier créé précédemment
+
+{ % highlight bash %}
+
+    private String getFromInterne() throws IOException {
+        String value = null;
+
+        FileInputStream inputStream=openFileInput(MY_FILE_NAME);
+        StringBuilder stringb= new StringBuilder();
+        int content;
+        while ((content=inputStream.read())!=-1){
+          value = String.valueOf(stringb.append((char)content));
+        }
+
+        return value ;
+    }
+
+{ % endhighlight bash %}
+
+
+### Le stockage Externe (External Storage)
+Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données.Mais le problème avec le stockahe externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimés quand il veut.Par contre on a une grande capacité de stockage.le stokage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela. 
+
+#### Comment utliser le stockage externe ?
+Pour lire ou écrire des fichiers dans le stockage externe l'application doit:
+
+ 1. déclarer les permissions ** READ_EXTERNAL_STORAGE ** ou ** WRITE_EXTERNAL_STORAGE ** dans le fichier manifest :
+
+ { % highlight bash %}
+<manifest ...>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    ...
+</manifest>
+{ % endhighlight bash %}
+ou
+
+{ % highlight bash %}
+<manifest ...>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    ...
+</manifest>
+{ % endhighlight bash %}
+2. Vérifier la disponibilité du stockage grâce à ** getExternalStorageState() **;
+3. Sauvegarder ou récupérer des fichiers
+
+Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère dans le dossier download de votre telephone
+
+{ % highlight bash %}
+//vérifier si la mémoire externe est disponible et qu'on peut écrire dessus
+ public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            Toast.makeText(this, "memoire externe disponible en écriture", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+        return false;
+    }
+
+
+     private void writeFile() {
+
+        if(isExternalStorageWritable()) {
+
+            //choisir le dossier Download comme dossier de stockge du fichier
+            File extStore = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            
+            //chemin du fichier incluant le nom du fichier
+            String path = extStore.getAbsolutePath() + "/" + fileName;
+            
+            // le message a écrit ans le fichier
+            String data = "I save something here";
+          
+          //création du fichier
+            try {
+                File myFile = new File(path);
+                FileOutputStream fOut = new FileOutputStream(myFile);
+                OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+                myOutWriter.append(data);
+                myOutWriter.close();
+                fOut.close();
+
+                Toast.makeText(getApplicationContext(), fileName + " saved", Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+       }else{
+           Toast.makeText(this, "Disque externe non disponible,ou non diponible en écriture", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+{ % endhighlight bash %}
+
+
+Lecture du fichier créé :
+
+{ % highlight bash %}
+
+ public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            Toast.makeText(this, "memoire externe disponible en lecture", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return false;
+    }
+
+     private void readFile() {
+
+        if(isExternalStorageReadable()) {
+
+            File extStore = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            // ==> /storage/emulated/0/note.txt
+            String path = extStore.getAbsolutePath() + "/" + fileName;
+            Log.i("ExternalStorageDemo", "Read file: " + path);
+
+            String s = "";
+            String fileContent = "";
+            try {
+                File myFile = new File(path);
+                FileInputStream fIn = new FileInputStream(myFile);
+                BufferedReader myReader = new BufferedReader(
+                        new InputStreamReader(fIn));
+
+                while ((s = myReader.readLine()) != null) {
+                    fileContent += s + "\n";
+                }
+                myReader.close();
+
+                //this.textView.setText(fileContent);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Toast.makeText(getApplicationContext(), fileContent, Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this, "la mémoire externe n'est pas lisible", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    { % endhighlight bash %}
 
 ### Conclusion 
-texte ici
+Android nous offre différentes possibilités pour stocker nos fichiers.Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe.On en conclu que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.
+Rendez-vous dans la deuxième partie de cet article pour parler de SQLiteet de Realm Database.
