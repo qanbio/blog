@@ -2,7 +2,7 @@
 layout: post
 title: stockage de données en local pour une application android 1/2
 categories: [tech]
-tags: [android, java, realm, database,SQLite]
+tags: [android, java, realm, sharedPreferences,Storage,Internal Storage,External Storage,database,SQLite]
 author: crepin_fadjo
 comments: true
 fullview: false
