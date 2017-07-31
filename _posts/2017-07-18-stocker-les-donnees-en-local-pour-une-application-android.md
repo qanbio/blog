@@ -90,7 +90,7 @@ Pour créer et écrire dans un fichier privé en stockage interne il faut:
 
 Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère
 
-{ % highlight bash %}
+{% highlight bash %}
 
  private void saveInterne() throws IOException {
 
@@ -101,7 +101,7 @@ Voici un exemple qui montre comment créer et sauvegarder un fichier contenant u
 
     }
 
-{ % endhighlight bash %}
+{% endhighlight%}
 
 
 #### Comment lire les données contenu dans un fichier sauvegarder en interne ?
@@ -113,7 +113,7 @@ Pour lire le contenu d'un fichier interne il faut:
 
 Voici un exemple qui montre la lecture du fichier créé précédemment
 
-{ % highlight bash %}
+{% highlight bash %}
 
     private String getFromInterne() throws IOException {
         String value = null;
@@ -128,7 +128,7 @@ Voici un exemple qui montre la lecture du fichier créé précédemment
         return value ;
     }
 
-{ % endhighlight bash %}
+{% endhighlight%}
 
 
 ### Le stockage Externe (External Storage)
@@ -139,26 +139,26 @@ Pour lire ou écrire des fichiers dans le stockage externe l'application doit:
 
  1. déclarer les permissions **READ_EXTERNAL_STORAGE** ou **WRITE_EXTERNAL_STORAGE** dans le fichier manifest :
 
- { % highlight bash %}
+ {% highlight bash %}
 <manifest ...>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     ...
 </manifest>
-{ % endhighlight bash %}
+{% endhighlight%}
 ou
 
-{ % highlight bash %}
+{% highlight bash %}
 <manifest ...>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     ...
 </manifest>
-{ % endhighlight bash %}
+{% endhighlight%}
 2. Vérifier la disponibilité du stockage grâce à **getExternalStorageState()**;
 3. Sauvegarder ou récupérer des fichiers
 
 Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère dans le dossier download de votre telephone
 
-{ % highlight bash %}
+{% highlight bash %}
 //vérifier si la mémoire externe est disponible et qu'on peut écrire dessus
  public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -202,12 +202,12 @@ Voici un exemple qui montre comment créer et sauvegarder un fichier contenant u
         }
     }
 
-{ % endhighlight bash %}
+{% endhighlight%}
 
 
 Lecture du fichier créé :
 
-{ % highlight bash %}
+{% highlight bash %}
 
  public boolean isExternalStorageReadable() {
         String state = Environment.getExternalStorageState();
@@ -251,7 +251,7 @@ Lecture du fichier créé :
         }
     }
 
-    { % endhighlight bash %}
+    {% endhighlight%}
 
 ### Conclusion 
 Android nous offre différentes possibilités pour stocker nos fichiers.Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe.On en conclu que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.
