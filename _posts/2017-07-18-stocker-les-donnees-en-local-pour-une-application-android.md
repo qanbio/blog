@@ -9,42 +9,48 @@ fullview: false
 description: Cet article va vous permettre de cerner les différents moyens pour stocker vos données en local pour une application android.
 ---
 ### Problématique :
-Au cours du developpement d'une application android,on aura besoin de stocker des données à un moment ou à un autre en local.La couleur préférée de l'utilisateur , ses paramètres,des fichiers telechargés sur internet ou charger depuis son téléphone.Quelles sont les possibilités qui nous sont offertes ?
+Au cours du développement d'une application Android, on aura besoin de stocker des données à un moment ou à un autre en local. La couleur préférée de l’utilisateur, ses paramètres, des fichiers téléchargés sur internet ou chargé depuis son téléphone. Quelles sont les possibilités qui nous sont offertes ?
 
-### Pré requis
+
+### Pré requis 
+
 Etre débutant ou developpeur professionnel d'application android.Utliser android Studio comme IDE(Environnement de Developpement Intégré).Connaitre java.
 
-###  Le stockage de données en local
-Pour stocker les données en local Android nous fournis plusieurs possiblités à savoir :
+###  Le stockage de données en local  
+
+Pour stocker les données en local Android nous fournit plusieurs possiblités à savoir :
 * les données partagées (Shared Preferences),
 * le stockage interne (Internal Storage) ,
 * le stockage externe (External Storage),
 * les bases  de données locales :
     *  Celle proposée par Android (SQLite),
-    *  Et les autres (Realm ..).
-le stockage interne (Internal Storage)
-Dans la première partie de cet article nous  parlererons des Shared Preferences, de l'Internal Storage et de l'External Storage.
+    *  Et les autres (Realm ..).  
+    Dans la première partie de cet article nous  parlererons des Shared Preferences, de l'Internal Storage et de l'External Storage.
 
 
 ### Shared Preferences
-les Shared Prefenrences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe **sharedPreferences**.L'avantage réel d'utliser les shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
+
+Les Shared Preferences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe **sharedPreferences**.L'avantage réel d'utiliser les Shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
+
 
 #### Comment  utiliser les Shared Preferences?  
 Pour avoir accès au Shared Preferences  nous avons principalement  deux méthodes:
-*  getPreferences(int mode)
+
+*  **getPreferences(int mode)**
+
 {% highlight bash %}
 SharedPreferences preferences= getPreferences(MODE_PRIVATE) ;
 {% endhighlight bash %}
 Utiliser ceci quand vous voulez utiliser un seul fichier pour stoker vos préférences.
 
-* getSharedPreferences(String filename,int mode)
+* **getSharedPreferences(String filename,int mode)**
 {% highlight bash %}
 SharedPreferences preferences=getSharedPreferences(myFile, MODE_PRIVATE);
 {% endhighlight bash %}
 Utiliser ceci quand vous voulez utliser plusieurs fichiers pour stocker vos préférences.
 
 ##### Que signifie le paramètre (int mode)?
-Cela correspond au mode d'accès des fichiers de sharedPreferences créé.Ainsi nous avons les modes:
+Cela correspond au mode d'accès des fichiers de sharedPreferences créés.Ainsi nous avons les modes:
 * MODE_PRIVATE, pour que le fichier créé ne soit accessible que par l'application qui l'a créé.
 * MODE_WORLD_READABLE,  pour que le fichier créé puisse être lu par n'importe quelle application.
 * MODE_WORLD_WRITEABLE, pour que le fichier créé puisse être lu et modifié par n'importe quelle application.
@@ -71,16 +77,19 @@ Supposons qu'on veut récupérer le String enrégistré précedemment.
 public String value=preferences.getString("MystringKey","DefautValue");
 
 {% endhighlight bash %}
-Avec DefaultValue une valeur par défaut qu'il faut spécifier au cas ou la valeur recherchée n'ait pas été trouvée.
+Avec DefaultValue une valeur par défaut qu'il faut spécifier au cas où la valeur recherchée n'ait pas été trouvée.
 
 NB: les Shared Preferences ne fonctionnent qu'avec les objets de type boolean, float, int, long et String.
 
-Un cas pratique est disponible sur mon compte github via ce lien
+Un cas pratique est disponible sur mon compte github via ce lien.
+
+
 
 ### Le stockage interne (Internal Storage)
-Pour stocker des données(fichiers) on peut aussi utliser le stockage interne de notre téléphone.
+Pour stocker des données (fichiers) on peut aussi utiliser le stockage interne de notre téléphone.
 Par défaut les fichiers  sauvegardés  dans le stockage interne sont privés à l'application.
 Quand l'utilisateur désinstalle l'application, les fichiers sont automatiquement supprimés.
+
 
 #### Comment sauvegarder un fichier dans le stockage interne ?
 Pour créer et écrire dans un fichier privé en stockage interne il faut:
@@ -131,8 +140,12 @@ Voici un exemple qui montre la lecture du fichier créé précédemment
 {% endhighlight%}
 
 
-### Le stockage Externe (External Storage)
-Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données.Mais le problème avec le stockahe externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimés quand il veut.Par contre on a une grande capacité de stockage.le stokage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela. 
+### Le stockage Externe (External Storage)  
+
+
+Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimés quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
+
+ 
 
 #### Comment utliser le stockage externe ?
 Pour lire ou écrire des fichiers dans le stockage externe l'application doit:
@@ -154,11 +167,16 @@ ou
 </manifest>
 {% endhighlight%}
 2. Vérifier la disponibilité du stockage grâce à **getExternalStorageState()**;
-3. Sauvegarder ou récupérer des fichiers
+3. Sauvegarder ou récupérer des fichiers  
 
-Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère dans le dossier download de votre telephone
+
+Pour lire ou écrire des fichiers dans le stockage externe l'application doit:
+Voici un exemple qui montre comment créer et sauvegarder un fichier contenant une chaine de caractère dans le dossier download de votre téléphone
+
+
 
 {% highlight bash %}
+
 //vérifier si la mémoire externe est disponible et qu'on peut écrire dessus
  public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -253,6 +271,9 @@ Lecture du fichier créé :
 
     {% endhighlight%}
 
-### Conclusion 
-Android nous offre différentes possibilités pour stocker nos fichiers.Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe.On en conclu que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.
-Rendez-vous dans la deuxième partie de cet article pour parler de SQLiteet de Realm Database.
+### Conclusion  
+ 
+Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On en conclu que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.  
+Rendez-vous dans la deuxième partie de cet article pour parler de SQLite et de Realm Database.
+
+
