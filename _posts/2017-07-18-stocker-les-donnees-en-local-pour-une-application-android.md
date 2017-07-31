@@ -71,7 +71,7 @@ public static final String PREFS_NAME = "MyPrefsFile";
 {% endhighlight bash%}
 
 #### Comment récupérer les données des SharedPreferences ?
-Supposons qu'on veut récupérer le String enrégistré précedemment.
+Récupérons le String enrégistré précedemment.
 {% highlight bash %}
 
 public String value=preferences.getString("MystringKey","DefautValue");
