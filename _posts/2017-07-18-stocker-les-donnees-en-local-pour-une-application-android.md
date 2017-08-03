@@ -32,7 +32,7 @@ Pour stocker les données en local Android nous fournit plusieurs possiblités �
 
 ### Shared Preferences
 
-Les Shared Preferences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe **sharedPreferences**.L'avantage réel d'utiliser les Shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
+Les Shared Preferences permettent de stocker des données par clé-valeur par l'intermédiaire de la Classe **sharedPreferences**. L'avantage réel d'utiliser les Shared Preferences est que les données stockées sont conservées même quand l'application est arrêtée ou tuée.
 
 
 #### Comment  utiliser les Shared Preferences?  
@@ -43,7 +43,7 @@ Pour avoir accès au Shared Preferences  nous avons principalement  deux méthod
 {% highlight bash %}
 SharedPreferences preferences= getPreferences(MODE_PRIVATE) ;
 {% endhighlight bash %}
-Utiliser ceci quand vous voulez utiliser un seul fichier pour stoker vos préférences.
+Utiliser ceci quand vous voulez utiliser un seul fichier pour stocker vos préférences.
 
 * **getSharedPreferences(String filename,int mode)**
 {% highlight bash %}
@@ -52,7 +52,7 @@ SharedPreferences preferences=getSharedPreferences(myFile, MODE_PRIVATE);
 Utiliser ceci quand vous voulez utliser plusieurs fichiers pour stocker vos préférences.
 
 ##### Que signifie le paramètre (int mode)?
-Cela correspond au mode d'accès des fichiers de sharedPreferences créés.Ainsi nous avons les modes:
+Cela correspond au mode d'accès des fichiers de sharedPreferences créés. Ainsi nous avons les modes:
 * MODE_PRIVATE, pour que le fichier créé ne soit accessible que par l'application qui l'a créé.
 * MODE_WORLD_READABLE,  pour que le fichier créé puisse être lu par n'importe quelle application.
 * MODE_WORLD_WRITEABLE, pour que le fichier créé puisse être lu et modifié par n'importe quelle application.
@@ -95,7 +95,7 @@ Quand l'utilisateur désinstalle l'application, les fichiers sont automatiquemen
 
 #### Comment sauvegarder un fichier dans le stockage interne ?
 Pour créer et écrire dans un fichier privé en stockage interne il faut:
-*   Appeler **openFileOutput(String fileName,int mode)**  avec fileName le nom du fichier et mode le mode d'accès : décris un peu plus haut;
+*   Appeler **openFileOutput(String fileName,int mode)**  avec fileName le nom du fichier et mode le mode d'accès : décrit un peu plus haut;
 *   Utiliser **write()** pour écrire dans le fichier;
 *   Fermer le flux d'écriture avec **close()**.
 
@@ -145,7 +145,11 @@ Voici un exemple qui montre la lecture du fichier créé précédemment
 ### Le stockage Externe (External Storage)  
 
 
+<<<<<<< e002c4bc28d63719e7c8c50d96a442283b80a047
 Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimér quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
+=======
+Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimer quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
+>>>>>>> partie 2 de l'article en cours
 
  
 
@@ -275,7 +279,11 @@ Lecture du fichier créé :
 
 ### Conclusion  
  
+<<<<<<< e002c4bc28d63719e7c8c50d96a442283b80a047
 Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On a donc remarqué que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.    
+=======
+Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On a donc remarqué que les Shared Preferences sont souvent utilisés pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données auxquelles l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.    
+>>>>>>> partie 2 de l'article en cours
 Rendez-vous dans la deuxième partie de cet article pour parler de SQLite et de Realm Database.
 
 
