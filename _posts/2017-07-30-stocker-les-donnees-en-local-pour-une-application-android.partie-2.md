@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stockage de données en local pour une application android 1/2
+title: Stockage de données en local pour une application android 2/2
 categories: [tech]
 tags: [android, java, realm, sharedPreferences,Storage,Internal Storage,External Storage,database,SQLite]
 author: crepin_fadjo
@@ -145,7 +145,7 @@ Voici un exemple qui montre la lecture du fichier créé précédemment
 ### Le stockage Externe (External Storage)  
 
 
-Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimér quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
+Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimés quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
 
  
 
@@ -275,7 +275,7 @@ Lecture du fichier créé :
 
 ### Conclusion  
  
-Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On a donc remarqué que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.    
+Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On en conclu que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.  
 Rendez-vous dans la deuxième partie de cet article pour parler de SQLite et de Realm Database.
 
 
