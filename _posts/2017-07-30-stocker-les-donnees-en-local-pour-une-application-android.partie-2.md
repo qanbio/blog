@@ -8,6 +8,8 @@ comments: true
 fullview: false
 description: Cet article va vous permettre de cerner les différents moyens pour stocker vos données en local pour une application android.
 ---
+
+![SQLite-Realm](../../../../assets/media/2017-07-18-stocker-les-donnees-en-local-pour-une-application-android/sqlite-realm.png " SQLite-Realm")
 ### Problématique :
 Certaines applications Android nécessite de persister des données en local.C'est le cas par exemple de la couleur préférée de l’utilisateur, ses paramètres, des fichiers téléchargés sur internet ou chargé depuis son téléphone. Nous allons explorer dans ce qui suit, les différentes alternatives offertes par l’écosystème Android.
 
@@ -22,6 +24,7 @@ Certaines applications Android nécessite de persister des données en local.C'e
 Dans la seconde partie de cet article nous parlerons de SQLite et de Realm Database.
 
 ###  Le stockage de données avec SQLite
+SQLite est une base de données OpenSource.Il est embarqué dans l'os android et donc dans toutes les applications android.On a donc pas besoin d'installations complémentaires pour l'utiliser.
 
 ### Conclusion  
  

@@ -8,6 +8,8 @@ comments: true
 fullview: false
 description: Cet article va vous permettre de cerner les différents moyens pour stocker vos données en local pour une application android.
 ---
+
+![stockage de données en local](../../../../assets/media/2017-07-18-stocker-les-donnees-en-local-pour-une-application-android/stockage-de-donnees-en-local.png " stockage de données en local")
 ### Problématique :
 Certaines applications Android nécessite de persister des données en local.C'est le cas par exemple de la couleur préférée de l’utilisateur, ses paramètres, des fichiers téléchargés sur internet ou chargé depuis son téléphone. Nous allons explorer dans ce qui suit, les différentes alternatives offertes par l’écosystème Android.
 
@@ -145,11 +147,7 @@ Voici un exemple qui montre la lecture du fichier créé précédemment
 ### Le stockage Externe (External Storage)  
 
 
-<<<<<<< e002c4bc28d63719e7c8c50d96a442283b80a047
-Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimér quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
-=======
 Chaque appareil Android prend en charge un stockage externe que nous pouvons utiliser pour stocker des données. Mais le problème avec le stockage externe est que l'utilisateur a accès au fichier et peut donc les déplacer ou les supprimer quand il veut. Par contre on a une grande capacité de stockage. Le stockage externe peut être une carte SD ou une partie du stockage interne dédiée pour cela.
->>>>>>> partie 2 de l'article en cours
 
  
 
@@ -279,11 +277,7 @@ Lecture du fichier créé :
 
 ### Conclusion  
  
-<<<<<<< e002c4bc28d63719e7c8c50d96a442283b80a047
-Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On a donc remarqué que les Shared Preferences sont souvent utilisé pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données dont l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.    
-=======
 Android nous offre différentes possibilités pour stocker nos fichiers en local. Dans la première partie de cet article on a parlé des Shared Preferences, du stockage interne et du stockage externe. On a donc remarqué que les Shared Preferences sont souvent utilisés pour stocker des paramètres utilisateur comme le thème et autre; le stockage interne pour sauvegarder des données auxquelles l'utilisateur n'aura pas accès et le stockage externe pour sauvegarder les fichiers un peu plus volumineux comme le son, les images, la vidéo.    
->>>>>>> partie 2 de l'article en cours
 Rendez-vous dans la deuxième partie de cet article pour parler de SQLite et de Realm Database.
 
 
