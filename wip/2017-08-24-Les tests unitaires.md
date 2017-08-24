@@ -1,26 +1,25 @@
 ---
 layout: post
-title: Stockage de données en local pour une application android 2/2
+title: Les tests unitaires
 categories: [tech]
-tags: [android, java, realm, sharedPreferences,Storage,Internal Storage,External Storage,database,SQLite]
+tags: [php, java, test unitaires, sharedPreferences,Storage,Internal Storage,External Storage,database,SQLite]
 author: crepin_fadjo
 comments: true
 fullview: false
-description: Cet article va vous permettre de cerner les différents moyens pour stocker vos données en local pour une application android.
+description: Cet article va vous permettre de savoir ce que sont les tests unitaires et pourquoi les implémenter
 ---
 
-![SQLite-Realm](../../../../assets/media/2017-07-18-stocker-les-donnees-en-local-pour-une-application-android/sqlite-realm.png " SQLite-Realm")
+![Tests unitaires](../../../../assets/media/2017-07-18-stocker-les-donnees-en-local-pour-une-application-android/sqlite-realm.png " Tests unitaires")
 ### Problématique :
-Certaines applications Android nécessite de persister des données en local.C'est le cas par exemple de la couleur préférée de l’utilisateur, ses paramètres, des fichiers téléchargés sur internet ou chargé depuis son téléphone. Nous allons explorer dans ce qui suit, les différentes alternatives offertes par l’écosystème Android.
+Au cours du développement d'une application ou d'un site web il nous est déja arrivé de constater qu'une fonctionnalité qui marchait bien au paravant à cesser de l'être ou que des fois  ça marche, des fois non.Et la on commence à se poser des questions.Qu'est ce qui ne marche pas?Où peut se situer le bug?Pourquoi ça marchait avant?.Tout ceci parce qu'on n'a pas mis en place les tests unitaires.
 
 
 ### Pré requis 
 
-* Etre débutant ou développeur professionnel d'application android;
-* Utliser android Studio comme IDE(Environnement de Developpement Intégré);
-* Connaitre java.
+Etre débutant ou développeur d'application;
 
-###  Le stockage de données en local 
+
+###  Les tests unitaires 
 Dans la seconde partie de cet article nous parlerons de SQLite et de Realm Database.
 
 ###  Le stockage de données avec SQLite
