@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Mise en place d'un serveur RapidPro sur un serveur debian
+title: "Mise en place d'un serveur RapidPro sur un serveur debian"
 categories: [tech]
 tags: [linux, debian, rapidpro]
-author:ginette
+author:ginette_hounkponou
 comments: true
 fullview: false
 description: Ce post est un aide-mémoire pour la mise en place du serveur rapidpro sur un serveur debian
