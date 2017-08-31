@@ -22,6 +22,14 @@ fabrice_kiki:
   twitter: xyz
   github: xyz
   email_md5: d3422ef3db556982f46d045b06561168
+  ginette_hounkponou:
+  name: Ginette HOUNKPONOU
+  bio: Developer
+  location: Cotonou
+  email: ginette.hounkponou@qanbio.com
+  twitter: Ginette_Yabo
+  github: ginetteH
+  email_md5: 566e6e3fabf70d33d77325a4fe8fdccb
 qanbio:
   name: QANBIO
   bio: IT Consulting, Training & Outsourcing
