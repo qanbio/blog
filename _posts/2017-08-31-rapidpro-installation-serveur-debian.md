@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Mise en place d'un serveur RapidPro sur un serveur debian"
+title: Connection à une instance MySQL depuis une machine distante
 categories: [tech]
-tags: [linux, debian, rapidpro]
-author:ginette_hounkponou
+tags: [linux, debian, mysql, db, sgbd, remote, connection, acces ]
+author: paterne_gaye
 comments: true
 fullview: false
-description: Ce post est un aide-mémoire pour la mise en place du serveur rapidpro sur un serveur debian
+description: Durant un projet de développement, on a souvent besoin d'accéder à une instance de MySQL installée non pas sur notre machine mais sur un serveur partagé dans le cloud par exemple ou même sur l'intranet. Nous allons nous intéresser à la configuration spécifique pour ce type d'accès distant.
 ---
-### Problématique :
+
+### Problématique
 texte ici
 
 ### Pré requis
