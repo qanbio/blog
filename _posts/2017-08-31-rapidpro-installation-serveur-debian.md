@@ -356,21 +356,24 @@ apt-cache show python-pip
 Virtualenv est un outil pour créer des environnements Python isolés. Virtualenv crée un dossier contenant tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin.
 
 Voici la commande pour installer Virtualenv
+{% highlight bash %}
 pip install virtualenv
 {% endhighlight %}
 
 Démarrer l’outil virtualenv, pour récupérer ses dépendances et l’activer
+{% highlight bash %}
 sudo /usr/bin/easy_install virtualenv
 {% endhighlight %}
 
 Vérifier que la commande est opérationnelle
+{% highlight bash %}
 virtualenv --version
 {% endhighlight %}
 
 
 Créer l’environnement virtuel 
-Exécutez la commande 
-
+Exécutez la commande
+{% highlight bash %}
 sudo virtualenv env
 {% endhighlight %}
 
@@ -378,7 +381,7 @@ Cette commande va créer un dossier dans le répertoire actif, pour contenir les
 Le nom de l’environnement ainsi créé est env
 
 Activer l’environnement virtuel du projet
-
+{% highlight bash %}
 source env/bin/activate
 {% endhighlight %}
 
@@ -388,7 +391,7 @@ L’activation de l’environnement fera apparaître le nom de l’environnement
 Désormais, tout paquet que vous installerez depuis l’environnement, avec pip sera placé dans le dossier env, isolé de l'installation globale Python.
 
 Installer les composants supplémentaires 
-
+{% highlight bash %}
 sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 {% endhighlight %}
 
@@ -396,7 +399,7 @@ Finaliser installation env virtuel
 Dans le projet de Rapidpro, se trouve le fichier pip-freeze.txt. Ce fichier contient la liste des dépendances utiles pour finaliser la mise en place de l’environnement virtuel.
 
 Faite la commande suivante pour restaurer l’environnement env et importe toutes les librairies nécessaire pour RapidPro, y compris DJANGO.
-
+{% highlight bash %}
 sudo pip install -r pip-freeze.txt
 {% endhighlight %}
 
