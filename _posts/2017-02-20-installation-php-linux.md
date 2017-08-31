@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Installation de php en ligne de commande sur une machine Linux
+title: "Mise en place d'un serveur RapidPro sur un serveur debian"
 categories: [tech]
-tags: [php, linux, debian, installation, setup]
-author: crepin_fadjo
+tags: [linux, debian, rapidpro] 
+author: ginette_hounkponou
 comments: true
 fullview: false
-description: Ce post est un aide-mémoire pour l'installation en ligne de commande de php
+description: Ce post est un aide-mémoire pour la mise en place du serveur rapidpro sur un serveur debian 
 ---
 ## PHP
 >PHP: Hypertext Preprocessor, plus connu sous son sigle PHP (acronyme récursif), est un langage de programmation libre7, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP6, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet.
