@@ -26,7 +26,10 @@ Dans ce qui va suivre, nous allons successivement installer ces différents comp
 RapidPro requiert la création d’un utilisateur temba avec des droits d’administrateur
 
 Créer l’utilisateur temba:
+{% highlight bash %}
 sudo adduser temba
+{% endhighlight %}
+![Ajout de l'utilisteur Linux *temba*](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/adduser_temba.png "Ajout de l'utilisteur Linux *temba*")
 
 Ajouter l’utilisateur temba au groupe d’administrateur sudo:
 {% highlight bash %}
@@ -38,7 +41,6 @@ Basculer vers le compte de l’utilisateur temba :
 su - temba
 {% endhighlight %}
 
-![Ajout de l'utilisteur Linux *temba*](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/adduser_temba.png "Ajout de l'utilisteur Linux *temba*")
 
 ### Installation de NodeJS
 Nous allons d'abord installer l'utilitaire *NVM* qui permet de gérer facilement plusieurs versions de NodeJS. 
@@ -51,14 +53,14 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | 
 ![Installer NVM](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer_nvm.png "Installer NVM")
 
 
-Se déconnecter et se reconnecter pour forcer l’initialisation de l’environnement  et se reconnecter
+Nous allons à présent nous déconnecter puis nous reconnecter afin forcer l’initialisation de l’environnement suite à l'installation de NVM.
 
 {% highlight bash %}
 exit 
 su - temba
 {% endhighlight %}
 
-Vérifier que la commande nvm fonctionne correctement
+Nous pouvons vérifier que la commande nvm fonctionne correctement
 
 {% highlight bash %}
 nvm current
