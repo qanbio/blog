@@ -142,7 +142,7 @@ sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/lessc /usr/bin/lessc
 {% endhighlight %}
 
 
-###Installation de CoffeeScript
+### Installation de CoffeeScript
 A présent, nous allons installer les outils de développement web côté serveur. Il s’agit de CoffeeScript un langage au dessus de JavaScript qui apporte un peu de sucre syntaxique au langage.
 
 Installer CoffeeScript
@@ -155,6 +155,115 @@ Une fois l’installation terminée, les commandes ‘coffee’ et ‘cake’, v
 {% highlight bash %}
 sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/coffee /usr/bin/coffee
 {% endhighlight %}
+
+### Installation de Bower
+ Bower est un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
+
+{% highlight bash %}
+npm install bower -g
+{% endhighlight %}
+
+### Installation de PostgreSQL
+Nous allons commencer par installer le Système de gestion de base de données PostgreSQL ainsi que son plugin PostGIS qui permet de manipuler les données géospatiales.
+
+Identifier le nom de code de votre distribution linux. Ce nom nous servira à l’étape 2.,  pour préciser la source où sera récupéré Postgresql
+{% highlight bash %}
+lsb_release -c
+{% endhighlight %}
+
+           Stretch est le nom de code de développement de Debian 9.
+
+Créer le fichier /etc/apt/sources.list.d/pgdg.list
+{% highlight bash %}
+sudo touch /etc/apt/sources.list.d/pgdg.list
+{% endhighlight %}
+
+Ouvrir le fichier /etc/apt/sources.list.d/pgdg.list  et rajouter la ligne suivante
+deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
+
+Importer la clé du dépôt de Postgresql
+{% highlight bash %}
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+{% endhighlight %}
+
+Mettre à jour la liste de paquets :
+{% highlight bash %}
+sudo apt-get update
+{% endhighlight %}
+
+Installer PostgreSQL et PostGis :
+{% highlight bash %}
+sudo apt-get install postgresql postgis
+{% endhighlight %}
+
+Vérifier que Postgresql est bien installé :
+{% highlight bash %}
+which psql
+psql --version
+{% endhighlight %}
+
+Vérifier que l’utilisateur postgres a été créé :
+Par défaut un nouvel utilisateur postgresql est créé après l’installation de PostgreSQL. Il faut tout de même vérifier que l’utilisateur postgres a été créé par défaut
+{% highlight bash %}
+sudo -i -u postgres
+{% endhighlight %}
+
+Créer l’utilisateur temba pour postgres :
+Grace à l’utilisateur Linux postgres avec lequel nous sommes connectés maintenant, nous avons accès à un ensemble d'utilitaires du SGBD Postgres. A l’aide de l’utilitaire “createuser” nous allons créer un user Postgres nommé temba et correspondant au user Linux temba. Le mot de passe de cet utilisateur temba dans Postgres sera temba.
+{% highlight bash %}
+createuser temba -P -d
+{% endhighlight %}
+L’option “-d” va permettre au nouvel utilisateur de créer des bases de données tandis que l’option “-P” va nous forcer à définir un mot de passe.
+
+Créer la base de donnée temba
+{% highlight bash %}
+createdb temba
+{% endhighlight %}
+
+Lancer la console Postgres
+{% highlight bash %}
+ psql
+{% endhighlight %}
+
+A noter que comme nous étions logués dans Linux en tant que postgres, la commande précédente nous connecte dans Postgres en tant que postgres.
+
+Dans Postgres, donner au user temba les droits de superuser
+{% highlight bash %}
+ALTER USER temba WITH SUPERUSER;
+{% endhighlight %}
+
+Dans la console Postgres, attribuer les privilèges de ‘super user’ à l’utilisateur postgresql nommé temba. Cela lui permettra d’ajouter des extensions à sa base de données
+
+Se deconnecter de la console Postgres
+
+Ensuite, il faut se déconnecter de la base de données avec la commande:
+{% highlight bash %}
+\q
+{% endhighlight %}
+Se logger dans Linux en tant que temba
+{% highlight bash %}
+su - temba
+{% endhighlight %}
+Passer à la console de Postgresql avec la commande :
+{% highlight bash %}
+psql
+{% endhighlight %}
+Vérifier que le user temba est connecté
+{% highlight bash %}
+\conninfo
+{% endhighlight %}
+
+
+Activer les extensions Postgis pour la base de données temba avec les commandes respectives :
+{% highlight bash %}
+create extension postgis;
+create extension postgis_topology;
+create extension hstore;
+{% endhighlight %}
+
+Déconnectez-vous de la base de données (\q) et allez dans le dossier personnel du compte temba (cd ~)
+
+
 ### Conclusion 
 texte ici
 
@@ -169,95 +278,6 @@ texte ici
 {% endhighlight %}
 
 ======================================================================================================================================================================
-
-Installation de Bower
- Bower est un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
-
-npm install bower -g
-
-Installation de PostgreSQL
-
-Nous allons commencer par installer le Système de gestion de base de données PostgreSQL ainsi que son plugin PostGIS qui permet de manipuler les données géospatiales. 
-
-Identifier le nom de code de votre distribution linux. Ce nom nous servira à l’étape 2.,  pour préciser la source où sera récupéré Postgresql
-lsb_release -c
-
-           Stretch est le nom de code de développement de Debian 9.
-
-Créer le fichier /etc/apt/sources.list.d/pgdg.list         
-sudo touch /etc/apt/sources.list.d/pgdg.list 
-
-Ouvrir le fichier /etc/apt/sources.list.d/pgdg.list  et rajouter la ligne suivante
-deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
-         
- 
-Importer la clé du dépôt de Postgresql
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-
-
-
-Mettre à jour la liste de paquets :
-sudo apt-get update
-
-Installer PostgreSQL et PostGis : 
-sudo apt-get install postgresql postgis
-
-Vérifier que Postgresql est bien installé :
-which psql 
-psql --version
-
-
-Vérifier que l’utilisateur postgres a été créé :
-Par défaut un nouvel utilisateur postgresql est créé après l’installation de PostgreSQL. Il faut tout de même vérifier que l’utilisateur postgres a été créé par défaut
-sudo -i -u postgres
-
-
-
-Créer l’utilisateur temba pour postgres :
-Grace à l’utilisateur Linux postgres avec lequel nous sommes connectés maintenant, nous avons accès à un ensemble d'utilitaires du SGBD Postgres. A l’aide de l’utilitaire “createuser” nous allons créer un user Postgres nommé temba et correspondant au user Linux temba. Le mot de passe de cet utilisateur temba dans Postgres sera temba.
-createuser temba -P -d
-L’option “-d” va permettre au nouvel utilisateur de créer des bases de données tandis que l’option “-P” va nous forcer à définir un mot de passe.
-
-Créer la base de donnée temba
-createdb temba
-
-Lancer la console Postgres
- psql
-
-A noter que comme nous étions logués dans Linux en tant que postgres, la commande précédente nous connecte dans Postgres en tant que postgres.  
-
-Dans Postgres, donner au user temba les droits de superuser
-ALTER USER temba WITH SUPERUSER;
-
-Dans la console Postgres, attribuer les privilèges de ‘super user’ à l’utilisateur postgresql nommé temba. Cela lui permettra d’ajouter des extensions à sa base de données
-
-
-
-
-Se deconnecter de la console Postgres
-
-Ensuite, il faut se déconnecter de la base de données avec la commande:
-\q
-
-Se logger dans Linux en tant que temba
-su - temba
-Passer à la console de Postgresql avec la commande :
-psql.
-
-Vérifier que le user temba est connecté 
-\conninfo
-
-
-
-Activer les extensions Postgis pour la base de données temba avec les commandes respectives :
-create extension postgis;
-create extension postgis_topology;
-create extension hstore;
-
-
-Déconnectez-vous de la base de données (\q) et allez dans le dossier personnel du compte temba (cd ~)
-
-
 
 Il s’agit de récupérer le projet RapidPro depuis Github vers votre serveur, avec l’outil Git. Git est un 
  Récupérer le code source de RapidProsystème de contrôle de version pour suivre les changements dans les fichiers informatiques et coordonner le travail sur ces fichiers parmi plusieurs personnes. 
