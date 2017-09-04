@@ -97,6 +97,7 @@ echo $PATH
 sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/node /usr/bin/node
 {% endhighlight %}
 
+![Verifier PATH](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_path_apres_node_install.png "Verifier le chemin dans path")
 
 ### Installation de Redis
 Nous allons maintenant installer Redis, un Système de gestion de base de données “mémoire” de type “clés - valeurs” .
@@ -146,6 +147,7 @@ which lessc
 sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/lessc /usr/bin/lessc
 {% endhighlight %}
 
+![Verifier less](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/less_version_lien_symbolique.png "Verifier version less")
 
 ### Installation de CoffeeScript
 A présent, nous allons installer les outils de développement web côté serveur. Il s’agit de CoffeeScript un langage au dessus de JavaScript qui apporte un peu de sucre syntaxique au langage.
@@ -161,12 +163,16 @@ Une fois l’installation terminée, les commandes ‘coffee’ et ‘cake’, v
 sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/coffee /usr/bin/coffee
 {% endhighlight %}
 
+![Installer coffee](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer_coffee_lien_symboliq.png "installer coffee")
+
 ### Installation de Bower
  Bower est un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
 
 {% highlight bash %}
 npm install bower -g
 {% endhighlight %}
+
+![Installer bower](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer_bower.png "installer bower")
 
 ### Installation de PostgreSQL
 Nous allons commencer par installer le Système de gestion de base de données PostgreSQL ainsi que son plugin PostGIS qui permet de manipuler les données géospatiales.
@@ -176,6 +182,7 @@ Identifier le nom de code de votre distribution linux. Ce nom nous servira à l�
 lsb_release -c
 {% endhighlight %}
 
+![Verifier nom de code linux](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/nom_de_code_linux.png "Verifier nom de code linux")
            Stretch est le nom de code de développement de Debian 9.
 
 Créer le fichier /etc/apt/sources.list.d/pgdg.list
@@ -190,6 +197,8 @@ Importer la clé du dépôt de Postgresql
 {% highlight bash %}
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 {% endhighlight %}
+
+![Importer cle postgress](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/copier_clé_postgress.png "Importer cle postgress")
 
 Mettre à jour la liste de paquets :
 {% highlight bash %}
