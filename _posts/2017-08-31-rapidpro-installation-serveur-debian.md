@@ -168,7 +168,7 @@ sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/coffee /usr/bin/coffee
 ![Installer coffee](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer_coffee_lien_symboliq.png "installer coffee")
 
 ### Installation de Bower
- Bower est un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
+Nous allons maintenant installer Bower, un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
 
 {% highlight bash %}
 npm install bower -g
@@ -222,11 +222,13 @@ psql --version
 
 ![Verifier postgress install](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_postgress_install.png "Verifier postgress install")
 
-Vérifier que l’utilisateur postgres a été créé :
+Vérifions que l’utilisateur postgres a été créé :
 Par défaut un nouvel utilisateur postgresql est créé après l’installation de PostgreSQL. Il faut tout de même vérifier que l’utilisateur postgres a été créé par défaut
 {% highlight bash %}
 sudo -i -u postgres
 {% endhighlight %}
+
+![Verifier utilisateur postgress](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_utilisateur_postgress_créé.png "Verifier utilisateur postgress")
 
 Créer l’utilisateur temba pour postgres :
 Grace à l’utilisateur Linux postgres avec lequel nous sommes connectés maintenant, nous avons accès à un ensemble d'utilitaires du SGBD Postgres. A l’aide de l’utilitaire “createuser” nous allons créer un user Postgres nommé temba et correspondant au user Linux temba. Le mot de passe de cet utilisateur temba dans Postgres sera temba.
