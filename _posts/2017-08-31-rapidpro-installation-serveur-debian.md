@@ -185,6 +185,7 @@ lsb_release -c
 {% endhighlight %}
 
 ![Verifier nom de code linux](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/nom_de_code_linux.png "Verifier nom de code linux")
+
            Stretch est le nom de code de développement de Debian 9.
 
 Créer le fichier /etc/apt/sources.list.d/pgdg.list
@@ -359,7 +360,9 @@ Voici la commande pour installer Virtualenv
 {% highlight bash %}
 pip install virtualenv
 {% endhighlight %}
+
 ![Installer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer-virtual_env.png "Installer environnement virtuel")
+
 Démarrer l’outil virtualenv, pour récupérer ses dépendances et l’activer
 {% highlight bash %}
 sudo /usr/bin/easy_install virtualenv
@@ -381,6 +384,7 @@ Cette commande va créer un dossier dans le répertoire actif, pour contenir les
 Le nom de l’environnement ainsi créé est env
 
 ![Creer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/creer_env_virtuel.png "Creer environnement virtuel")
+
 Activer l’environnement virtuel du projet
 {% highlight bash %}
 source env/bin/activate
@@ -448,7 +452,5 @@ http://docs.python-guide.org/en/latest/dev/virtualenvs/
 https://www.tqhosting.com/kb/446/How-to-install-PostgreSQL-95-on-Debian-8-Jessie.html
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-9-4-on-debian-8
 
-
-export PATH=/home/temba/.nvm/versions/node/v6.11.2/bin:$PATH
 
 https://askubuntu.com/questions/370368/after-installing-coffee-script-the-coffee-command-is-found-but-does-nothing
