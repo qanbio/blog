@@ -41,7 +41,7 @@ Basculer vers le compte de l’utilisateur temba :
 su - temba
 {% endhighlight %}
 
-
+![Basculer vers le compte de temba](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/su_temba.png "Basculer vers le compte de temba")
 ### Installation de NodeJS
 Nous allons d'abord installer l'utilitaire *NVM* qui permet de gérer facilement plusieurs versions de NodeJS. 
 
@@ -138,6 +138,8 @@ Installer le compilateur par npm
 npm install -g less
 {% endhighlight %}
 
+![Verifier less](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer_less1.png "Verifier version less")
+
 Vérifier que le compilateur Lessc est bien installé
 {% highlight bash %}
 which lessc
@@ -193,6 +195,8 @@ sudo touch /etc/apt/sources.list.d/pgdg.list
 Ouvrir le fichier /etc/apt/sources.list.d/pgdg.list  et rajouter la ligne suivante
 deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
 
+![Modifier fichier postgress](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/modifier_fichier_postgress.png "Modifier fichier postgress")
+
 Importer la clé du dépôt de Postgresql
 {% highlight bash %}
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -216,6 +220,8 @@ which psql
 psql --version
 {% endhighlight %}
 
+![Verifier postgress install](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_postgress_install.png "Verifier postgress install")
+
 Vérifier que l’utilisateur postgres a été créé :
 Par défaut un nouvel utilisateur postgresql est créé après l’installation de PostgreSQL. Il faut tout de même vérifier que l’utilisateur postgres a été créé par défaut
 {% highlight bash %}
@@ -227,6 +233,9 @@ Grace à l’utilisateur Linux postgres avec lequel nous sommes connectés maint
 {% highlight bash %}
 createuser temba -P -d
 {% endhighlight %}
+
+![Creer l'utilsateur temba pour postgress](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/creer_temba_postgress.png "Creer l'utilsateur temba pour postgress")
+
 L’option “-d” va permettre au nouvel utilisateur de créer des bases de données tandis que l’option “-P” va nous forcer à définir un mot de passe.
 
 Créer la base de donnée temba
@@ -246,6 +255,8 @@ Dans Postgres, donner au user temba les droits de superuser
 ALTER USER temba WITH SUPERUSER;
 {% endhighlight %}
 
+![Donner les droits de superutilisateur a temba](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/lancer_console_postgress_donner_droits_superUser.png "Donner les droits de superutilisateur a temba")
+
 Dans la console Postgres, attribuer les privilèges de ‘super user’ à l’utilisateur postgresql nommé temba. Cela lui permettra d’ajouter des extensions à sa base de données
 
 Se deconnecter de la console Postgres
@@ -258,6 +269,9 @@ Se logger dans Linux en tant que temba
 {% highlight bash %}
 su - temba
 {% endhighlight %}
+
+![Se logger en tant que temba](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/postgress_se_logger_en_tant_q_temba .png "Se logger en tant que temba")
+
 Passer à la console de Postgresql avec la commande :
 {% highlight bash %}
 psql
@@ -267,6 +281,7 @@ Vérifier que le user temba est connecté
 \conninfo
 {% endhighlight %}
 
+![Verifier que temba est connecte](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_q_temba_est_connecte_postgress .png "Verifier que temba est connecte")
 
 Activer les extensions Postgis pour la base de données temba avec les commandes respectives :
 {% highlight bash %}
@@ -274,6 +289,8 @@ create extension postgis;
 create extension postgis_topology;
 create extension hstore;
 {% endhighlight %}
+
+![Activer extensions postgis](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/activer_extensions_postgis.png "Activer extensions postgis")
 
 Déconnectez-vous de la base de données (\q) et allez dans le dossier personnel du compte temba (cd ~)
 
@@ -294,6 +311,7 @@ Récupérer le dépôt de RapidPro sur le serveur
  git clone https://github.com/rapidpro/rapidpro.git
 {% endhighlight %}
 
+![Cloner git ](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/clone_git.png "Cloner git")
 
 ### Construire l’environnement virtuel
 Lorsqu’on parcourt le projet Rapidpro, on trouve divers fichiers.
@@ -301,6 +319,8 @@ Lorsqu’on parcourt le projet Rapidpro, on trouve divers fichiers.
 cd ~/rapidpro
 ls -la
 {% endhighlight %}
+
+![Construire environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/cd_rapidpro_configurer_environnement.png "Construire environnement virtuel")
 
 Nous allons d’abord créer un lien symbolique  /home/temba/rapidpro/temba/settings.py  qui va pointer vers le fichier de configuration  /home/temba/rapidpro/temba/settings.py.dev :
 {% highlight bash %}
@@ -328,6 +348,8 @@ Vérifier que pip est installé par défaut avec Python.
 apt-cache show python-pip
 {% endhighlight %}
 
+![Verifier python install](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_python_installé.png "Verifier python install")
+
 ### Installer et démarrer l’outil virtualenv
 Virtualenv est un outil pour créer des environnements Python isolés. Virtualenv crée un dossier contenant tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin.
 
@@ -335,7 +357,7 @@ Voici la commande pour installer Virtualenv
 {% highlight bash %}
 pip install virtualenv
 {% endhighlight %}
-
+![Installer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/installer-virtual_env.png "Installer environnement virtuel")
 Démarrer l’outil virtualenv, pour récupérer ses dépendances et l’activer
 {% highlight bash %}
 sudo /usr/bin/easy_install virtualenv
@@ -346,16 +368,23 @@ Vérifier que la commande est opérationnelle
 virtualenv --version
 {% endhighlight %}
 
+![Demarrer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/demarrer_virtual_env.png "Demarrer environnement virtuel")
+
 ### Créer l’environnement virtuel 
-Exécutez la commande sudo virtualenv env
+Exécutez la commande
+{% highlight bash %}
+sudo virtualenv env
+{% endhighlight %}
 Cette commande va créer un dossier dans le répertoire actif, pour contenir les fichiers exécutables Python et une copie de la bibliothèque pip, laquelle vous pouvez utiliser pour installer d'autres paquets.
 Le nom de l’environnement ainsi créé est env
 
+![Creer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/creer_env_virtuel.png "Creer environnement virtuel")
 Activer l’environnement virtuel du projet
 {% highlight bash %}
 source env/bin/activate
 {% endhighlight %}
-L’activation de l’environnement fera apparaître le nom de l’environnement entre parenthèses au début du prompt 
+L’activation de l’environnement fera apparaître le nom de l’environnement entre parenthèses au début du prompt
+![Activer environnement virtuel](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/activer_env_virtuel.png "Activer environnement virtuel")
 
 Désormais, tout paquet que vous installerez depuis l’environnement, avec pip sera placé dans le dossier env, isolé de l'installation globale Python.
 
@@ -384,11 +413,13 @@ Charger les  dépendances listées dans le fichier bower.js avec la commande :
 bower install
 {% endhighlight %}
 
-Modifier les configurations d’accès à la webapp
+### Modifier les configurations d’accès à la webapp
 Il faut indiquer à Django l’IP du serveur sur lequel sera déployé Rapidpro
 {% highlight bash %}
 sudo vi  /home/temba/rapidpro/temba/settings.py.dev
 {% endhighlight %}
+
+![Modifier config webApp](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/modifier_config_webapp.png "Modifier config webApp")
 
 ### Migration et démarrage de Rapidpro
 Vous devriez maintenant pouvoir exécuter toutes les migrations et initialiser votre serveur de développement Rapidpro. Ce processus inclut : la migration, l’initialisation de tous les groupes d'utilisateurs et les autorisations. Le processus peut durer jusqu'à plusieurs minutes. Ce vaut le coup de patienter.
@@ -405,22 +436,8 @@ sudo python manage.py runserver 0.0.0.0:8000
 Vérifier que Rapidpro est accessible pour les clients web
 Taper l’adresse publique de votre serveur avec le port 8000
 
-### Conclusion 
-texte ici
-
-{% highlight bash %}
-
-{% endhighlight %}
-
-
-{% highlight bash %}
-
-{% endhighlight %}
-
-======================================================================================================================================================================
-
-
-====sources
+![Interface RapidPro](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/RapidPro.png "Interface RapidPro")
+### Sources
 
 https://rapidpro.github.io/rapidpro/docs/development/
 https://travis-ci.org/rapidpro/rapidpro/builds/124720331
@@ -433,7 +450,3 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgres
 export PATH=/home/temba/.nvm/versions/node/v6.11.2/bin:$PATH
 
 https://askubuntu.com/questions/370368/after-installing-coffee-script-the-coffee-command-is-found-but-does-nothing
-
-
-
-
