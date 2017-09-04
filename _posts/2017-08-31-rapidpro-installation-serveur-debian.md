@@ -98,8 +98,31 @@ sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/node /usr/bin/node
 {% endhighlight %}
 
 
-### Titre 2
-texte ici
+### Installation de Redis
+Nous allons maintenant installer Redis, un Système de gestion de base de données “mémoire” de type “clés - valeurs” .
+
+Installation de Redis
+
+{% highlight bash %}
+sudo apt-get update
+sudo apt-get install redis-server
+{% endhighlight %}
+
+Vérifier que Redis s’est bien installé
+{% highlight bash %}
+redis-server -v
+{% endhighlight %}
+
+Vérifier la version du client, nécessaire pour se connecter au serveur Redis
+{% highlight bash %}
+redis-cli -v
+{% endhighlight %}
+
+Démarrer le serveur Redis et faire un ping pour vérifier que le serveur est en marche. En retour le serveur vous renvoie un PONG
+{% highlight bash %}
+redis-server
+redis-cli ping
+{% endhighlight %}
 
 ### Autres tires
 texte ici
@@ -119,30 +142,6 @@ texte ici
 {% endhighlight %}
 
 ======================================================================================================================================================================
-
-
-
-Installation de Redis
-Nous allons maintenant installer Redis, un Système de gestion de base de données “mémoire” de type “clés - valeurs” .
-
-Installation de Redis
-sudo apt-get update 
-sudo apt-get install redis-server
-
-Vérifier que Redis s’est bien installé
-redis-server -v
-
-
- Vérifier la version du client, nécessaire pour se connecter au serveur Redis
-redis-cli -v
-
-Démarrer le serveur Redis et faire un ping pour vérifier que le serveur est en marche. En retour le serveur vous renvoie un PONG
-redis-server
-redis-cli ping
-
-
-
-
 
 Installation de Less
 Less un langage au dessus de CSS qui permet de rajouter notamment des fonctions et des opérateurs au CSS. Less est utilisé dans la Webapp RapidPro. Nous allons donc installer le compilateur LESSC qui permettra de convertir les fichiers .less en format .css
