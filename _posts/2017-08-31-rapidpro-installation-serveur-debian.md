@@ -263,7 +263,56 @@ create extension hstore;
 
 Déconnectez-vous de la base de données (\q) et allez dans le dossier personnel du compte temba (cd ~)
 
+### Cloner le projet RapidPro
+Il s’agit de récupérer le projet RapidPro depuis Github vers votre serveur, avec l’outil Git. Git est un système de contrôle de version pour suivre les changements dans les fichiers informatiques et coordonner le travail sur ces fichiers parmi plusieurs personnes.
 
+Installation de git
+Installer git sur le serveur s’il n’est pas disponible :
+{% highlight bash %}
+sudo apt-get install git -y
+{% endhighlight %}
+L’option y permet de répondre automatiquement ‘yes’ à toutes les confirmations interactives
+
+Récupérer le code source
+
+Récupérer le dépôt de RapidPro sur le serveur
+{% highlight bash %}
+ git clone https://github.com/rapidpro/rapidpro.git
+{% endhighlight %}
+
+
+### Construire l’environnement virtuel
+Lorsqu’on parcourt le projet Rapidpro, on trouve divers fichiers.
+{% highlight bash %}
+cd ~/rapidpro
+ls -la
+{% endhighlight %}
+
+Nous allons d’abord créer un lien symbolique  /home/temba/rapidpro/temba/settings.py  qui va pointer vers le fichier de configuration  /home/temba/rapidpro/temba/settings.py.dev :
+{% highlight bash %}
+sudo ln -s  /home/temba/rapidpro/temba/settings.py.dev /home/temba/rapidpro/temba/settings.py
+{% endhighlight %}
+
+Installation de Python et ses paquets
+Rapidpro est écrit en Python. Vous devriez toujours utiliser un environnement virtuel pour exécuter votre application RapidPro. Les dépendances nécessaire pour RapidPro se trouvent dans pip-freeze.txt.
+Installation de Python et de Pip
+(une mise à jour du système (Debian) suffit pour nous avoir Python à jour sur la machine)
+{% highlight bash %}
+sudo apt-get update
+sudo apt-get -y upgrade
+{% endhighlight %}
+Vérifier que l’installation est bien effectuée
+{% highlight bash %}
+python  --version
+{% endhighlight %}
+Installer python-pip
+{% highlight bash %}
+sudo apt-get install python-pip
+{% endhighlight %}
+Vérifier que pip est installé par défaut avec Python.
+{% highlight bash %}
+apt-cache show python-pip
+{% endhighlight %}
 ### Conclusion 
 texte ici
 
@@ -278,42 +327,6 @@ texte ici
 {% endhighlight %}
 
 ======================================================================================================================================================================
-
-Il s’agit de récupérer le projet RapidPro depuis Github vers votre serveur, avec l’outil Git. Git est un 
- Récupérer le code source de RapidProsystème de contrôle de version pour suivre les changements dans les fichiers informatiques et coordonner le travail sur ces fichiers parmi plusieurs personnes. 
-
-Installation de git
-Installer git sur le serveur s’il n’est pas disponible : 
-sudo apt-get install git -y 
-L’option y permet de répondre automatiquement ‘yes’ à toutes les confirmations interactives
-
-Récupérer le code source
-
-Récupérer le dépôt de RapidPro sur le serveur  
- git clone https://github.com/rapidpro/rapidpro.git
-
-
-
-Construire l’environnement virtuel
-Lorsqu’on parcourt le projet Rapidpro, on trouve divers fichiers.
-cd ~/rapidpro 
-ls -la
-
-Nous allons d’abord créer un lien symbolique  /home/temba/rapidpro/temba/settings.py  qui va pointer vers le fichier de configuration  /home/temba/rapidpro/temba/settings.py.dev : 
-sudo ln -s  /home/temba/rapidpro/temba/settings.py.dev /home/temba/rapidpro/temba/settings.py
- Installation de Python et ses paquets
-Rapidpro est écrit en Python. Vous devriez toujours utiliser un environnement virtuel pour exécuter votre application RapidPro. Les dépendances nécessaire pour RapidPro se trouvent dans pip-freeze.txt.
-Installation de Python et de Pip
-(une mise à jour du système (Debian) suffit pour nous avoir Python à jour sur la machine)
-sudo apt-get update
-sudo apt-get -y upgrade
-Vérifier que l’installation est bien effectuée
-python  --version
-Installer python-pip
-sudo apt-get install python-pip
-Vérifier que pip est installé par défaut avec Python. 
-apt-cache show python-pip
-
 
 
 Installer et démarrer l’outil virtualenv
