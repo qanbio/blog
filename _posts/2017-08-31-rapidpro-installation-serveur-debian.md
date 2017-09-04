@@ -293,7 +293,7 @@ Nous allons d’abord créer un lien symbolique  /home/temba/rapidpro/temba/sett
 sudo ln -s  /home/temba/rapidpro/temba/settings.py.dev /home/temba/rapidpro/temba/settings.py
 {% endhighlight %}
 
-Installation de Python et ses paquets
+### Installation de Python et ses paquets
 Rapidpro est écrit en Python. Vous devriez toujours utiliser un environnement virtuel pour exécuter votre application RapidPro. Les dépendances nécessaire pour RapidPro se trouvent dans pip-freeze.txt.
 Installation de Python et de Pip
 (une mise à jour du système (Debian) suffit pour nous avoir Python à jour sur la machine)
@@ -313,9 +313,86 @@ Vérifier que pip est installé par défaut avec Python.
 {% highlight bash %}
 apt-cache show python-pip
 {% endhighlight %}
+
+### Installer et démarrer l’outil virtualenv
+Virtualenv est un outil pour créer des environnements Python isolés. Virtualenv crée un dossier contenant tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin.
+
+Voici la commande pour installer Virtualenv
+{% highlight bash %}
+pip install virtualenv
+{% endhighlight %}
+
+Démarrer l’outil virtualenv, pour récupérer ses dépendances et l’activer
+{% highlight bash %}
+sudo /usr/bin/easy_install virtualenv
+{% endhighlight %}
+
+Vérifier que la commande est opérationnelle
+{% highlight bash %}
+virtualenv --version
+{% endhighlight %}
+
+### Créer l’environnement virtuel 
+Exécutez la commande sudo virtualenv env
+Cette commande va créer un dossier dans le répertoire actif, pour contenir les fichiers exécutables Python et une copie de la bibliothèque pip, laquelle vous pouvez utiliser pour installer d'autres paquets.
+Le nom de l’environnement ainsi créé est env
+
+Activer l’environnement virtuel du projet
+{% highlight bash %}
+source env/bin/activate
+{% endhighlight %}
+L’activation de l’environnement fera apparaître le nom de l’environnement entre parenthèses au début du prompt 
+
+Désormais, tout paquet que vous installerez depuis l’environnement, avec pip sera placé dans le dossier env, isolé de l'installation globale Python.
+
+Installer les composants supplémentaires
+{% highlight bash %}
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+{% endhighlight %}
+
+Finaliser installation env virtuel
+Dans le projet de Rapidpro, se trouve le fichier pip-freeze.txt. Ce fichier contient la liste des dépendances utiles pour finaliser la mise en place de l’environnement virtuel.
+
+Faite la commande suivante pour restaurer l’environnement env et importe toutes les librairies nécessaire pour RapidPro, y compris DJANGO.
+{% highlight bash %}
+sudo pip install -r pip-freeze.txt
+{% endhighlight %}
+
+Vérifier que Django est bien installé :
+{% highlight bash %}
+django-admin --version
+{% endhighlight %}
+
+### Installer les scripts Bower pour Rapidpro
+A la racine du projet Rapidpro, il y a un fichier bower.json. Comme son nom l’indique, ce fichier sera exploité par l’outil Bower pour télécharger les dépendances Node du projet et gérer les composants frontend.
+Charger les  dépendances listées dans le fichier bower.js avec la commande :
+{% highlight bash %}
+bower install
+{% endhighlight %}
+
+Modifier les configurations d’accès à la webapp
+Il faut indiquer à Django l’IP du serveur sur lequel sera déployé Rapidpro
+{% highlight bash %}
+sudo vi  /home/temba/rapidpro/temba/settings.py.dev
+{% endhighlight %}
+
+### Migration et démarrage de Rapidpro
+Vous devriez maintenant pouvoir exécuter toutes les migrations et initialiser votre serveur de développement Rapidpro. Ce processus inclut : la migration, l’initialisation de tous les groupes d'utilisateurs et les autorisations. Le processus peut durer jusqu'à plusieurs minutes. Ce vaut le coup de patienter.
+
+Migrer la webapp et synchroniser la base de données
+{% highlight bash %}
+sudo python manage.py migrate
+{% endhighlight %}
+
+Démarrer le serveur
+{% highlight bash %}
+sudo python manage.py runserver 0.0.0.0:8000
+{% endhighlight %}
+Vérifier que Rapidpro est accessible pour les clients web
+Taper l’adresse publique de votre serveur avec le port 8000
+
 ### Conclusion 
 texte ici
-
 
 {% highlight bash %}
 
@@ -327,87 +404,6 @@ texte ici
 {% endhighlight %}
 
 ======================================================================================================================================================================
-
-
-Installer et démarrer l’outil virtualenv
-Virtualenv est un outil pour créer des environnements Python isolés. Virtualenv crée un dossier contenant tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin.
-
-Voici la commande pour installer Virtualenv
-pip install virtualenv
-
-
-Démarrer l’outil virtualenv, pour récupérer ses dépendances et l’activer
-sudo /usr/bin/easy_install virtualenv
-
-Vérifier que la commande est opérationnelle
-virtualenv --version
-
-
-
-
-
-Créer l’environnement virtuel 
-Exécutez la commande sudo virtualenv env
-Cette commande va créer un dossier dans le répertoire actif, pour contenir les fichiers exécutables Python et une copie de la bibliothèque pip, laquelle vous pouvez utiliser pour installer d'autres paquets.
-Le nom de l’environnement ainsi créé est env
-
-Activer l’environnement virtuel du projet
-source env/bin/activate
-L’activation de l’environnement fera apparaître le nom de l’environnement entre parenthèses au début du prompt 
-
-
-Désormais, tout paquet que vous installerez depuis l’environnement, avec pip sera placé dans le dossier env, isolé de l'installation globale Python.
-
-Installer les composants supplémentaires 
-sudo apt-get install build-essential libssl-dev libffi-dev python-dev
- 
-Finaliser installation env virtuel
-Dans le projet de Rapidpro, se trouve le fichier pip-freeze.txt. Ce fichier contient la liste des dépendances utiles pour finaliser la mise en place de l’environnement virtuel.
-
-Faite la commande suivante pour restaurer l’environnement env et importe toutes les librairies nécessaire pour RapidPro, y compris DJANGO.
-
-sudo pip install -r pip-freeze.txt
-
-Vérifier que Django est bien installé :
-django-admin --version
-
-Installer les scripts Bower pour Rapidpro
-A la racine du projet Rapidpro, il y a un fichier bower.json. Comme son nom l’indique, ce fichier sera exploité par l’outil Bower pour télécharger les dépendances Node du projet et gérer les composants frontend.
-Charger les  dépendances listées dans le fichier bower.js avec la commande :
-bower install
-
-Modifier les configurations d’accès à la webapp  
-Il faut indiquer à Django l’IP du serveur sur lequel sera déployé Rapidpro
-sudo vi  /home/temba/rapidpro/temba/settings.py.dev
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Migration et démarrage de Rapidpro
-Vous devriez maintenant pouvoir exécuter toutes les migrations et initialiser votre serveur de développement Rapidpro. Ce processus inclut : la migration, l’initialisation de tous les groupes d'utilisateurs et les autorisations. Le processus peut durer jusqu'à plusieurs minutes. Ce vaut le coup de patienter.
-
-Migrer la webapp et synchroniser la base de données
-sudo python manage.py migrate
-
-Démarrer le serveur
-sudo python manage.py runserver 0.0.0.0:8000
-Vérifier que Rapidpro est accessible pour les clients web
-Taper l’adresse publique de votre serveur avec le port 8000 
-
-
-
 
 
 ====sources
