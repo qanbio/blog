@@ -124,12 +124,39 @@ redis-server
 redis-cli ping
 {% endhighlight %}
 
-### Autres tires
-texte ici
+### Installation de Less
+Less un langage au dessus de CSS qui permet de rajouter notamment des fonctions et des opérateurs au CSS. Less est utilisé dans la Webapp RapidPro. Nous allons donc installer le compilateur LESSC qui permettra de convertir les fichiers .less en format .css
 
+Installer le compilateur par npm
+{% highlight bash %}
+npm install -g less
+{% endhighlight %}
+
+Vérifier que le compilateur Lessc est bien installé
+{% highlight bash %}
+which lessc
+{% endhighlight %}
+
+{% highlight bash %}
+sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/lessc /usr/bin/lessc
+{% endhighlight %}
+
+
+###Installation de CoffeeScript
+A présent, nous allons installer les outils de développement web côté serveur. Il s’agit de CoffeeScript un langage au dessus de JavaScript qui apporte un peu de sucre syntaxique au langage.
+
+Installer CoffeeScript
+{% highlight bash %}
+npm install -g coffeescript
+{% endhighlight %}
+
+Une fois l’installation terminée, les commandes ‘coffee’ et ‘cake’, vont automatiquement explorer le répertoire personnel de l’utilisateur temba (~) pour trouver la version de CoffeeScript qui est installée en local.
+
+{% highlight bash %}
+sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/coffee /usr/bin/coffee
+{% endhighlight %}
 ### Conclusion 
 texte ici
-
 
 
 {% highlight bash %}
@@ -142,35 +169,6 @@ texte ici
 {% endhighlight %}
 
 ======================================================================================================================================================================
-
-Installation de Less
-Less un langage au dessus de CSS qui permet de rajouter notamment des fonctions et des opérateurs au CSS. Less est utilisé dans la Webapp RapidPro. Nous allons donc installer le compilateur LESSC qui permettra de convertir les fichiers .less en format .css
-
-Installer le compilateur par npm
-npm install -g less
-
-
-
-Vérifier que le compilateur Lessc est bien installé
-which lessc
-
-
-
-sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/lessc /usr/bin/lessc
-
-
-Installation de CoffeeScript
-A présent, nous allons installer les outils de développement web côté serveur. Il s’agit de CoffeeScript un langage au dessus de JavaScript qui apporte un peu de sucre syntaxique au langage.
-
-Installer CoffeeScript
-npm install -g coffeescript
-
-Une fois l’installation terminée, les commandes ‘coffee’ et ‘cake’, vont automatiquement explorer le répertoire personnel de l’utilisateur temba (~) pour trouver la version de CoffeeScript qui est installée en local.
-
-
-
-sudo ln -sf /home/temba/.nvm/versions/node/v6.11.2/bin/coffee /usr/bin/coffee
-
 
 Installation de Bower
  Bower est un gestionnaire de packages semblable à npm, mais  en plus des dépendances Node, il gère les composants (html, css, js, etc...) front-end des webapp. Il faut installer bower avec le module bower.
