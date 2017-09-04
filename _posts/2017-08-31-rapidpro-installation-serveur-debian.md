@@ -113,16 +113,20 @@ Vérifier que Redis s’est bien installé
 redis-server -v
 {% endhighlight %}
 
+![Verifier Redis](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_redis_version.png "verifier Redis")
+
 Vérifier la version du client, nécessaire pour se connecter au serveur Redis
 {% highlight bash %}
 redis-cli -v
 {% endhighlight %}
+![Verifier Redis client](../../../../assets/assets/media/2017-08-31-rapidpro-installation-serveur-debian/verifier_version_redis_client.png "verifier Redis client")
 
 Démarrer le serveur Redis et faire un ping pour vérifier que le serveur est en marche. En retour le serveur vous renvoie un PONG
 {% highlight bash %}
 redis-server
 redis-cli ping
 {% endhighlight %}
+![Demarrer Redis](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/demarrer_redis_server.png"demarrer Redis")
 
 ### Installation de Less
 Less un langage au dessus de CSS qui permet de rajouter notamment des fonctions et des opérateurs au CSS. Less est utilisé dans la Webapp RapidPro. Nous allons donc installer le compilateur LESSC qui permettra de convertir les fichiers .less en format .css
