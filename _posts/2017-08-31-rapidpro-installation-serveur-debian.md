@@ -186,7 +186,7 @@ lsb_release -c
 
 ![Verifier nom de code linux](../../../../assets/media/2017-08-31-rapidpro-installation-serveur-debian/nom_de_code_linux.png "Verifier nom de code linux")
 
-           Stretch est le nom de code de développement de Debian 9.
+Stretch est le nom de code de développement de Debian 9.
 
 Créer le fichier /etc/apt/sources.list.d/pgdg.list
 {% highlight bash %}
