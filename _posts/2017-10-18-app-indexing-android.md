@@ -67,7 +67,7 @@ Cet attribut renseigne le nom de domaine. Par exemple, le nom de domaine est [ww
 
 Ce attribut précise le chemin de l’URI qui pointe vers l’activité. Pour notre exemple, le préfix est : ~/home~. Le chemin de l’URI doit toujours commencer par un slash “/”
 
-* [android:category](https://developer.android.com/guide/topics/manifest/category-element.html) :
+* L'attribut [android:category](https://developer.android.com/guide/topics/manifest/category-element.html) :
 
 Ajouter la valeur **android.intent.category.BROWSABLE** à cet attribut, pour que l’activité associée au Filter Intent, soit prise proposée à l’utilisateur comme action, lorsqu’il aura cliqué sur l’URI mappée dans un navigateur web ou dans une autre application. Ajoutez également une catégorie de type.
 
