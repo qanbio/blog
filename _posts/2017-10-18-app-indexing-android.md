@@ -27,9 +27,19 @@ Ajouter des **App Links** Android à votre application en suivant les étapes su
 Dans le présent article, nous allons nous focaliser sur comment ajouter les Intent Filters, et comment définir les Deep Links avec Android Studio.
  
 # Concept de App Link et Deep Link
- 
+
+Avant d'aller plus loin dans le post, clarifions les concoepts de **Deep links** et **App Links** pour Android.
+
+## Deep Links (Liens profonds)
+
+Ce sont des URL, qui amènent  l'utilisateur directement vers un contenu spécifique dans votre application (ex: affichage d'un text, d'une image, d'une vidéo, etc...). En Android, il est possible de définir des Deep Links en ajoutant des <a href="https://developer.android.com/guide/components/intents-filters.html">Intents Fiters</a> puis, d'extraire des informatiosn utiles des Intents appelant votre application, pour déterminer l'activité convemable à lancer.
+
+## Android App Links
+
+Introduits à partir de la version Marshmallow de l'OS Android, les App Links permettent à une application d'être désignée par l'utilisateur comme étant l'application par défaut à lancer pour ouvrir un lien sur le téléphone. Et si  l'utilisateur ne désire plus utiliser une application comme application par défaut, il peut toutefois la révoquer dans les paramètres de son téléphone.
 
 # Créer des Intent Filter pour les URIs
+
 
 
 # Gérer les appels de votre Deep Link
