@@ -20,7 +20,7 @@ Permettre à Google Search de présenter votre application Android comme destina
 
 Ajouter des **App Links** Android à votre application en suivant les étapes suivantes :
 
-* Définissant des Intent Filters qui ouvrent le contenu précis de votre application à l'aide des URL HTTP (ou Deep Link).
+* Définir des URLs appelés Deep Links, qui ouvrent le contenu précis de votre application grâce aux Intent Filters.
 * Prouver que vous êtes effectivement le propriétaire, à la fois votre application et les URL du site Web.
 
 Dans le présent article, nous allons nous focaliser sur comment ajouter les Intent Filters, et comment définir les Deep Links avec Android Studio.
@@ -41,8 +41,14 @@ Introduits à partir de la version Marshmallow de l'OS Android, les App Links pe
 * Les utilisateurs qui n'ont pas accès à votre site web, peuvent toutefois avoir le contenu recherché sur leur téléphone
 * Les utilisateurs sont plus engagés parce qu'ils accècent directement au contenu de votre application web, depuis le moteur de recherche Google. Ils n'ont pas besoin de passer par un protocole  connexion pour les contenus généraux et publics.
 
-# Créer des Intent Filter pour les URIs
+# Créer des Deep Links avec des Intent Filters
 
+Un **Intent Filter** est une expression définie dans le fichier manifest.xml d'une application, pour spécifier le format de requête ( extérieures ou internes) qui vont déclencher l'activation d'un composant dans cette application.
+Dans le contexte des Deep Links, un Intent Filter est défini pour mapper une URL à une activité. L'Intent Filter doit renseigner les attributs suivants :
+
+* Le tag <a href="https://developer.android.com/guide/topics/manifest/action-element.html">**<action>**</a> fera que l’Intent Filter sera accessible depuis Google Search. La valeur est  <a href="https://developer.android.com/reference/android/content/Intent.html#ACTION_VIEW">android.intent.action.VIEW</a>.
+
+* Le tag <a href="https://developer.android.com/guide/topics/manifest/data-element.html">**<data>**</a> définit l’URI précis auquel sera mappé l’activité de votre application. Le tag data doit inclure les attributs suivants :
 
 
 # Gérer les appels de votre Deep Link
