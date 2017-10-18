@@ -55,6 +55,31 @@ Le tag ACTION fera que l’Intent Filter sera accessible depuis Google Search. L
 
 Le tag DATA définit l’URI précis auquel sera mappé l’activité de votre application. Le tag data doit inclure les attributs suivants :
 
+* L'attribut [android:scheme](https://developer.android.com/guide/topics/manifest/data-element.html#scheme)
+
+L'attribut renseigne le nom du schéma de l’URI. La valeur est soit **http** ou bien **https**. Cet attribut est obligatoire.
+
+* L'attribut [android](https://developer.android.com/guide/topics/manifest/data-element.html#host)
+
+Cet attribut renseigne le nom de domaine. Par exemple, le nom de domaine est [www.qanbio.com](http://www.qanbio.com). Cet attribut est obligatoire.
+
+* L'attribut [android:path](https://developer.android.com/guide/topics/manifest/data-element.html#path) :
+
+Ce attribut précise le chemin de l’URI qui pointe vers l’activité. Pour notre exemple, le préfix est : ~/home~. Le chemin de l’URI doit toujours commencer par un slash “/”
+
+* [android:category](https://developer.android.com/guide/topics/manifest/category-element.html) :
+
+Ajouter la valeur **android.intent.category.BROWSABLE** à cet attribut, pour que l’activité associée au Filter Intent, soit prise proposée à l’utilisateur comme action, lorsqu’il aura cliqué sur l’URI mappée dans un navigateur web ou dans une autre application. Ajoutez également une catégorie de type.
+
+Incluez également la catégorie **android.intent.category.DEFAULT**. Cela permet à votre application de répondre aux intentions implicites. Sans cela, l'activité ne peut être démarrée que si l'intention spécifie le nom de votre composant d'application.
+
+Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welcome”, pour créer un Deep Link avec l’URI (http://www.qanbio.com)
+
+
+
+
+
+
 
 # Gérer les appels de votre Deep Link
 
