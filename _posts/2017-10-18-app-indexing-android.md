@@ -99,7 +99,6 @@ Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welco
 # Gérer les appels de votre Deep Link
 
 Une fois que le système a démarré votre activité à l'aide d'un Intent Filter, vous pouvez utiliser les données fournies par l’Intent pour déterminer le résultat à afficher. Appelez les méthodes [getData ()](https://developer.android.com/reference/android/content/Intent.html#getData()) et [getAction ()](https://developer.android.com/reference/android/content/Intent.html#getAction()) pour extraire les données et les actions associées à l'intention entrante.
-
 Ces deux méthodes peuvent être appelées a n’importe quelle phase  du [cycle de vie](https://developer.android.com/guide/components/activities/activity-lifecycle.html) de l'activité. Mais les phases recommandées sont  **onCreate ()** ou **onStart ()**, et **onNewIntent()**.
 
 Dans l'exemple ci-dessous, la méthode  handleIncomingIntent(), récupère l'URL à partir de laquelle, l'activité a été appelée. Cette méthode sera exécutée durant la phase de création de l'activité (méthode _onCreate()_), et à chaque nouvel appel entrant (méthode _onNewIntent_):
@@ -136,7 +135,21 @@ private void handleIncomingIntent(Intent intent) {
 {% endhighlight%}
 
 
-# Tester votre Deep Link
+# Tester votre Deep Link avec ADB
+
+Place au teste. Utilisez le programme Android Debug Bridge (ADB) pour tester que les Deep links  associés vos actitivés sont fonctionnels et que vos Intent Filters ont été bien paramétrés. 
+Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur. Voici le formattage de la commande
+
+{% higkight bash %}
+adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d <mettez ici l’URI à tester sans les chevrons>
+{%endhighlight%}
+
+Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome](http://www.qanbio.com/welcome), il faut executer la commande :
+{% higkight bash %}adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d http://www.qanbio.com/welcome{%endhighlight%}
+
+Si le mappage d'URL a été bien élaboré,  Android Studio lance votre application dans le périphérique ou l'émulateur à l'activité spécifiée et affiche la boîte de dialogue des actions. Dans cette boîte de dialogue, vous verrez le nom de votre activité en liaison avec l’URI mappée. Sélectionnez le nom de votre activité et elle sera lancée directement.
+
+__**NB : **__
 
 
 # Conclusion
