@@ -156,6 +156,9 @@ Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome]
 
 Si le mappage d'URL a été bien élaboré,  Android Studio lance votre application dans le périphérique ou l'émulateur et affiche directement l'activité spécifiée et affiche la boîte de dialogue des actions. Dans cette boîte de dialogue, vous verrez le nom de votre activité en liaison avec l’URI mappée. Sélectionnez le nom de votre activité et elle sera lancée directement.
 
+
+Le code source pour le présent post est disponible sur le [Github de Qanbio](https://github.com/qanbio/android-app-indexing-demo)
+
 # Conclusion
 
 Vous pouvez ajouter votre application dans la recherche Google avec les App Links Android. Si les utilisateurs ont installé votre application, ils peuvent l'exécuter et accéder directement au contenu qu'ils recherchent. L'indexation des applications suscite l'engagement des utilisateurs de votre application en les aidant à trouver du contenu public et personnel directement sur leur appareil. Pour activer les App Links pour une application en production, il faut en plus des Deep Links, valider l'association entre l'application et le site web, dans la [console de Google Search](https://support.google.com/webmasters/answer/6212023?hl=fr).
