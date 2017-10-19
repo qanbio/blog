@@ -67,7 +67,7 @@ Cet attribut renseigne le nom de domaine. Par exemple, le nom de domaine est [ww
 
 Ce attribut précise le chemin de l’URI qui pointe vers l’activité. Pour notre exemple, le préfix est : ~/home~. Le chemin de l’URI doit toujours commencer par un slash “/”
 
-* [android:category](https://developer.android.com/guide/topics/manifest/category-element.html) :
+* L'attribut [android:category](https://developer.android.com/guide/topics/manifest/category-element.html) :
 
 Ajouter la valeur **android.intent.category.BROWSABLE** à cet attribut, pour que l’activité associée au Filter Intent, soit prise proposée à l’utilisateur comme action, lorsqu’il aura cliqué sur l’URI mappée dans un navigateur web ou dans une autre application. Ajoutez également une catégorie de type.
 
@@ -76,7 +76,24 @@ Incluez également la catégorie **android.intent.category.DEFAULT**. Cela perme
 Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welcome”, pour créer un Deep Link avec l’URI (http://www.qanbio.com)
 
 
+{% highlight bash %}<activity
+   android:name=".Welcome"
+   android:label="@string/title_activity_welcome"
+   android:theme="@style/AppTheme.NoActionBar">
 
+   <intent-filter>
+       <action android:name="android.intent.action.VIEW" />
+       <category android:name="android.intent.category.DEFAULT" />
+       <category android:name="android.intent.category.BROWSABLE" />
+<!-- Accepter les URIs qui commencent par l’URL "http://www.qanbio.com/welcome” -->
+       <data
+           android:scheme="http"
+           android:host="www.qanbio.com"
+<!-- noter que le caractère "/" is obligatoire en début pour l’attribut path-->
+           android:path="/welcome" />
+   </intent-filter>
+</activity>
+{% endhighlight%}
 
 
 
