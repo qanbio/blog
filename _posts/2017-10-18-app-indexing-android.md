@@ -98,8 +98,8 @@ Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welco
 
 # Gérer les appels de votre Deep Link
 
-Une fois que le système a démarré votre activité à l'aide d'un Intent Filter, vous pouvez utiliser les données fournies par l’Intent pour déterminer le résultat à afficher. Appelez les méthodes [getData ()](https://developer.android.com/reference/android/content/Intent.html#getData()) et [getAction ()](https://developer.android.com/reference/android/content/Intent.html#getAction()) pour extraire les données et les actions associées à l'intention entrante. Ces deux méthodes peuvent être à appelées a n’importe quelle méthode du [cycle de vie](https://developer.android.com/guide/components/activities/activity-lifecycle.html) de l'activité. Mais les méthodes recommandées sont  **onCreate ()** ou **onStart ()**, et **onNewIntent()**.
-L’extrait suivant montre comment extraire des données d'un Intent :
+Une fois que le système a démarré votre activité à l'aide d'un Intent Filter, vous pouvez utiliser les données fournies par l’Intent pour déterminer le résultat à afficher. Appelez les méthodes [getData ()](https://developer.android.com/reference/android/content/Intent.html#getData()) et [getAction ()](https://developer.android.com/reference/android/content/Intent.html#getAction()) pour extraire les données et les actions associées à l'intention entrante. Ces deux méthodes peuvent être appelées a n’importe quelle phase  du [cycle de vie](https://developer.android.com/guide/components/activities/activity-lifecycle.html) de l'activité. Mais les phases recommandées sont  **onCreate ()** ou **onStart ()**, et **onNewIntent()**.
+Dans l'exemple ci-dessous, la méthode  handleIncomingIntent(), récupère l'URL à partir de laquelle, l'activité a été appelée. Cette méthode sera exécutée durant la phase de création de l'activité (méthode _onCreate()_), et à chaque nouvel appel entrant (méthode _onNewIntent_):
 
 
 {% highlight bash %}
