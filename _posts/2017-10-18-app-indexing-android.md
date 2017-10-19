@@ -138,12 +138,14 @@ private void handleIncomingIntent(Intent intent) {
 # Tester votre Deep Link avec ADB
 
 Place au teste. Utilisez le programme Android Debug Bridge (ADB) pour tester que les Deep links  associés vos actitivés sont fonctionnels et que vos Intent Filters ont été bien paramétrés. 
-Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur. Voici le formattage de la commande
+Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur. 
+**Voici le formattage de la commande**
 
 {% highlight bash %}
 adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d <mettez ici l’URI à tester sans les chevrons>
 {% endhighlight%}
 
+** Example**
 Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome](http://www.qanbio.com/welcome), il faut executer la commande :
 {% highlight bash %}adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d http://www.qanbio.com/welcome{% endhighlight%}
 
