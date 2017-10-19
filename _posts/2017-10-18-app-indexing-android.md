@@ -98,9 +98,39 @@ Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welco
 
 # Gérer les appels de votre Deep Link
 
-Une fois que le système a démarré votre activité à l'aide d'un Intent Filter, vous pouvez utiliser les données fournies par l’Intent pour déterminer le résultat à afficher. Appelez les méthodes [getData ()](https://developer.android.com/reference/android/content/Intent.html#getData()) et [getAction ()](https://developer.android.com/reference/android/content/Intent.html#getAction()) pour extraire les données et les actions associées à l'intention entrante. Ces deux méthodes peuvent être à appelées a n’importe quelle méthode du [cycle de vie](https://developer.android.com/guide/components/activities/activity-lifecycle.html) de l'activité. Mais les méthodes recommandées sont  onCreate () ou onStart (), et onNewIntent().
+Une fois que le système a démarré votre activité à l'aide d'un Intent Filter, vous pouvez utiliser les données fournies par l’Intent pour déterminer le résultat à afficher. Appelez les méthodes [getData ()](https://developer.android.com/reference/android/content/Intent.html#getData()) et [getAction ()](https://developer.android.com/reference/android/content/Intent.html#getAction()) pour extraire les données et les actions associées à l'intention entrante. Ces deux méthodes peuvent être à appelées a n’importe quelle méthode du [cycle de vie](https://developer.android.com/guide/components/activities/activity-lifecycle.html) de l'activité. Mais les méthodes recommandées sont  **onCreate ()** ou **onStart ()**, et **onNewIntent()**.
 L’extrait suivant montre comment extraire des données d'un Intent :
 
+
+{% highlight bash %}
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.welcome);
+   Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+   setSupportActionBar(toolbar);
+   webView = (WebView) findViewById(R.id.webview);
+   if (getSupportActionBar() != null) {
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+   handleIncomingIntent(getIntent());
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+   super.onNewIntent(intent);
+   handleIncomingIntent(intent);
+}
+
+private void handleIncomingIntent(Intent intent) {
+   String appLinkAction = intent.getAction();
+   Uri appLinkData = intent.getData();
+   if (Intent.ACTION_VIEW.equals(appLinkAction) && appLinkData != null) {
+       String path = appLinkData.getLastPathSegment();
+       //...ajouter le code  approprié à votre logique ici
+   }
+}
+{% endhighlight%}
 
 # Tester votre Deep Link
 
