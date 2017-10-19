@@ -138,21 +138,24 @@ private void handleIncomingIntent(Intent intent) {
 # Tester votre Deep Link avec ADB
 
 Place au teste. Utilisez le programme Android Debug Bridge (ADB) pour tester que les Deep links  associés vos actitivés sont fonctionnels et que vos Intent Filters ont été bien paramétrés. 
-Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur. 
+Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur.
+
 **Voici le formattage de la commande**
 
 {% highlight bash %}
-adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d <mettez ici l’URI à tester sans les chevrons>
+adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d < mettre ici l’URI à tester sans les chevrons >
 {% endhighlight%}
 
-** Example**
+**Exampples**
 Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome](http://www.qanbio.com/welcome), il faut executer la commande :
 {% highlight bash %}adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d http://www.qanbio.com/welcome{% endhighlight%}
 
 Si le mappage d'URL a été bien élaboré,  Android Studio lance votre application dans le périphérique ou l'émulateur à l'activité spécifiée et affiche la boîte de dialogue des actions. Dans cette boîte de dialogue, vous verrez le nom de votre activité en liaison avec l’URI mappée. Sélectionnez le nom de votre activité et elle sera lancée directement.
 
 
-__**NB : **__
+[!demo](../../../../assets/media/2017-10-18-app-indexing-android/qanbio-app-indexing.gif)
+
+**NB :**
 
 
 # Conclusion
