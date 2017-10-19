@@ -152,7 +152,9 @@ Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome]
 
 Si le mappage d'URL a été bien élaboré,  Android Studio lance votre application dans le périphérique ou l'émulateur à l'activité spécifiée et affiche la boîte de dialogue des actions. Dans cette boîte de dialogue, vous verrez le nom de votre activité en liaison avec l’URI mappée. Sélectionnez le nom de votre activité et elle sera lancée directement.
 
+<div align="center">
 <img src="../../../../assets/media/2017-10-18-app-indexing-android/qanbio-app-indexing.gif" alt="Demo" height="534" width="300" ALIGN="middle">
+</div>
 
 **NB :**
 
