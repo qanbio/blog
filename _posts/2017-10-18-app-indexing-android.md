@@ -85,11 +85,11 @@ Voici en guise d’exemple, l’intent Filter ajoutée à une activité “Welco
        <action android:name="android.intent.action.VIEW" />
        <category android:name="android.intent.category.DEFAULT" />
        <category android:name="android.intent.category.BROWSABLE" />
-<!-- Accepter les URIs qui commencent par l’URL "http://www.qanbio.com/welcome” -->
+<!-- Accepter les URIs qui commencent par l’URL "http://www.qanbio.com/welcome" -->
        <data
            android:scheme="http"
            android:host="www.qanbio.com"
-<!-- noter que le caractère "/" is obligatoire en début pour l’attribut path-->
+<!-- noter que le caractère "/" is obligatoire en début pour l’attribut path -->
            android:path="/welcome" />
    </intent-filter>
 </activity>
