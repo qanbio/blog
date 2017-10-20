@@ -146,7 +146,7 @@ Vous pouvez exécuter la commande adb sur un périphérique ou un émulateur.
 adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d < mettre ici l’URI à tester sans les chevrons >
 {% endhighlight%}
 
-**Exampples**
+**Exemples**
 Par exemple, pour tester le Deep Link de l’URI [http://www.qanbio.com/welcome](http://www.qanbio.com/welcome), il faut executer la commande :
 {% highlight bash %}adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d http://www.qanbio.com/welcome{% endhighlight%}
 
