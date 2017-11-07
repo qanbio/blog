@@ -25,6 +25,8 @@ Une [activité](https://developer.android.com/reference/android/app/Activity.htm
 <img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/apps-interactions.png" alt="apps-interactions" height="428" width="300" ALIGN="middle">
 </div>
 
+
+
 Petit rappel pour implémenter une nouvelle activité à votre application dans Android Studio :
 
 * Créer une instance JAVA de la classe  Activity ou AppCompatActivity
