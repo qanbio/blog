@@ -22,7 +22,7 @@ Utiliser les [Intents](https://developer.android.com/reference/android/content/I
 Une [activité](https://developer.android.com/reference/android/app/Activity.html) représente un seul écran dans votre application Android et est liée à une interface avec laquelle l'utilisateur peut interagir. Par exemple, une application de messagerie peut avoir une activité qui affiche une liste de nouveaux messages, une autre activité pour composer un texto et une autre activité pour lire des messages archivés. Votre application est une collection d'activités que vous créez vous-même ou bien qui appartiennent aux autres applications, mais que vous réutilisez quand même.
 
 <div align="center">
-<img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/apps-interactions.png" alt="apps-interactions" height="534" width="300" ALIGN="middle">
+<img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/apps-interactions.png" alt="apps-interactions" height="428" width="300" ALIGN="middle">
 </div>
 
 Petit rappel pour implémenter une nouvelle activité à votre application dans Android Studio :
