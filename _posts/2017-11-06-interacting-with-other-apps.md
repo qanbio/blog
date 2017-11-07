@@ -9,11 +9,8 @@ fullview: false
 description: Ce post montre comment faire interagir votre application avec les autres applications disponibles sur le téléphone de l'utilisateur.
 ---
 # Prérequis
-
 <a href="https://developer.android.com/studio/index.html?gclid=Cj0KCQjw95vPBRDVARIsAKvPd3Ljl-9BwN6bjz3QhsKkLdxyCAg9wpZzgkSsKCPhK7JfBBKxqWP6c7waAiQTEALw_wcB">Android Studio 2.3.3</a> ou une version supérieure.
 
-# Problématique
-Android Studio version 2.2.3 ou supérieure
 
 # Problématique
 Utiliser les Itents (intentions) pour permettre à votre application mobile d'interagir avec les autres applications et d'échanger des ressources avec elles.
