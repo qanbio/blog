@@ -15,7 +15,7 @@ description: Ce post montre comment faire interagir votre application avec les a
 # Problématique
 Utiliser les [Intents](https://developer.android.com/reference/android/content/Intent.html) (intentions) pour permettre à votre application mobile d'interagir avec les autres applications et d'échanger des ressources avec celles-ci.
 
-# Concepts d’Intentions et d’activités
+# Introduction
 
 Une application Android est avant tout une collection d'[activités](https://developer.android.com/reference/android/app/Activity.html). Chaque activité représente un écran de cette application. Pour permettre à l’utilisateur de naviguer d'un écran à un autre, les applications utilisent le mécanisme  des Intent (ce qui signifie littéralement intention). En Android, la classe [Intent](https://developer.android.com/reference/android/content/Intent.html) permet à une application de fournir au téléphone, des paramètres utiles pour déclencher l’affichage d’une activité, dans le but d’effectuer des tâches précises (par exemple, démarrer une activité pour prendre une photo, une autre pour envoyer un email, et consorts).
 
@@ -25,7 +25,7 @@ Une application Android est avant tout une collection d'[activités](https://dev
 </div>
 <br/>
 
-# Les [Intents](https://developer.android.com/reference/android/content/Intent.html) (ou intentions)
+# Les [Intents](https://developer.android.com/reference/android/content/Intent.html)
 
 Il y a 2 types d’intentions en Android :
 
