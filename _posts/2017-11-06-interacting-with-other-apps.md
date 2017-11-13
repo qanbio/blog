@@ -2,7 +2,7 @@
 layout: post
 title: Interagir avec d'autres applications avec les objets Intents
 categories: [tech]
-tags: [Android, Google Search, Deep link, Mobile]
+tags: [Android, Activity, Intent, Mobile]
 author: fabrice_kiki
 comments: true
 fullview: false
@@ -54,4 +54,51 @@ La méthode **startActivity()**  prend en argument l’objet *messageIntent* et 
 
 ## Les **Intents implicites**
 
-L'autre forme d'*intent* est celle qui ne cible aucune activité en particulier. Vous déclarez l’action à exécuter à travers l’Intention, et le système du téléphone se charge de scanner toutes les applications installées là-dessus, et d'y retrouver les activités appropriées capabes d'exécuter le type d’action spécifiée **et qui sont publiquement accessibles**.
+L'*intent* implicite est une façon plus flexible d'utiliser les intetions en Android.
+
+Vous n'avez pas besoin de spéfifier l'activité ou l'autre composant à exécuter. Vous déclarez simplement l’action à exécuter à travers l’intention, et le système du téléphone se charge de scanner toutes les applications installées là-dessus pour trouver celle qui peut effecuter l'action pour le compte de votre application.
+
+Si une seule activité correspond, cette activité est lancée. S'il existe plusieurs activités correspondantes, l'utilisateur se voit proposer un sélecteur d'application qui lui permet de choisir l'application à laquelle il souhaite effectuer la tâche. **En utilisant les *intents implicites* votre application peut donc interagir avec les autres applications d'un téléphone.**
+
+# Envoyer des intentions implicites aux autres applications
+Pour envoyer une intention implicite, il faut :
+
+1. Dans l'activité d'envoi, créez un nouvel objet Intent sans préciser la cible.
+
+2. Associer l'action à exécuter pour le compte de l'objet Intent.
+
+3. Verifier qu'il y a au moins une activité capable de répondre à l'objet Intent.
+
+4. Envoyer l'intent au système du téléphone avec les méthodes *startActivity()* ou *startActivityForResult()*.
+
+## Créer une instance d'Intention implicite
+
+{% highlight bash %}Intent sendIntent = new Intent();{%endhighlight%}
+<br/>
+Vous pouvez directement déclarer l'action à executer en paramètre pour le constructeur :
+
+{% highlight bash %}Intent sendIntent = new Intent(Intent.ACTION_VIEW);{%endhighlight%}
+
+L'exemple suivant montre comment joindre des données (valeurs primitive, chaines de caractères) en *extras* à l'obect Intent, pour qu'elles soient transférées à l'activité qui executera l'action associée.
+
+{% highlight bash %}
+
+Intent sendIntent = new Intent();
+sendIntent.setAction(Intent.ACTION_SEND);
+// La variable textMessage mis en paramètre pour joindre du texte
+sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+sendIntent.setType("text/plain");
+
+{%endhighlight%}
+
+Ici se trouve la [liste exhaustive](https://chromium.googlesource.com/android_tools/+/febed84a3a3cb7c2cb80d580d79c31e22e9643a5/sdk/platforms/android-23/data/activity_actions.txt) de toutes les actions qui peuvent être définies à travers une intention implicite avec Android.
+
+<br/>
+
+## Valider une intention impicite avant l'envoi
+
+## Afficher le sélecteur des applications
+
+# Recevoir des intentions implicites
+
+# Conclusion
