@@ -29,7 +29,7 @@ Une application Android est avant tout une collection d'[activités](https://dev
 
 Il y a 2 types d’intentions en Android :
 
-## Intents explicites
+### Intents explicites
 
 Les *Intents* explicites sont utilsés dans les cas où l'on veut démarrer une activité dont on connait précisément le nom (et idéalement le nom de package). Il suffit de préciser ces informations en tant que paramètres.
 
@@ -52,18 +52,18 @@ La méthode **startActivity()**  prend en argument l’objet *messageIntent* et 
 
 <br/>
 
-## Les **Intents implicites**
+### Les Intents implicites
 
 L'*intent* implicite est une façon plus flexible d'utiliser les intetions en Android.
 
 Vous n'avez pas besoin de spéfifier l'activité ou l'autre composant à exécuter. Vous déclarez simplement l’action à exécuter à travers l’intention, et le système du téléphone se charge de scanner toutes les applications installées là-dessus pour trouver celle qui peut effecuter l'action pour le compte de votre application.
 
-Si une seule activité correspond, cette activité est lancée. S'il existe plusieurs activités correspondantes, l'utilisateur se voit proposer un sélecteur d'application qui lui permet de choisir l'application à laquelle il souhaite effectuer la tâche. **En utilisant les *intents implicites* votre application peut donc interagir avec les autres applications d'un téléphone.**
+Si une seule activité correspond, cette activité est lancée. S'il existe plusieurs activités correspondantes, l'utilisateur se voit proposer un sélecteur d'application qui lui permet de choisir l'application à laquelle il souhaite effectuer la tâche. **En utilisant les *intents implicites*, votre application peut donc interagir avec les autres applications d'un téléphone.**
 
-# Envoyer des intentions implicites aux autres applications
+# Dialoguer avec les autres applications
 Pour envoyer une intention implicite, il faut :
 
-1. Dans l'activité d'envoi, créez un nouvel objet Intent sans préciser la cible.
+1. Dans l'activité d'envoi, créez un nouvel objet Intent, SANS préciser la cible.
 
 2. Associer l'action à exécuter pour le compte de l'objet Intent.
 
@@ -71,7 +71,7 @@ Pour envoyer une intention implicite, il faut :
 
 4. Envoyer l'intent au système du téléphone avec les méthodes *startActivity()* ou *startActivityForResult()*.
 
-## Créer une instance d'Intention implicite
+### Créer une instance d'Intention implicite
 
 {% highlight bash %}Intent sendIntent = new Intent();{%endhighlight%}
 <br/>
@@ -85,7 +85,7 @@ L'exemple suivant montre comment joindre des données (valeurs primitive, chaine
 
 Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
-// La variable textMessage mis en paramètre pour joindre du texte
+// La variable textMessage mise en paramètre pour joindre du texte en extras
 sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
 sendIntent.setType("text/plain");
 
