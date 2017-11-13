@@ -68,7 +68,7 @@ Pour envoyer une intention implicite, il faut :
 
 3. Verifier qu'il y a au moins une activité capable de répondre à l'objet Intent.
 
-4. Envoyer l'intent au système du téléphone avec les méthodes *startActivity()* ou *startActivityForResult()*.
+4. Envoyer l'intent au système du téléphone avec les méthodes *startActivity()* (ou *startActivityForResult()* si le resultat de l'action doit être retournée par le composant qui l'exécutera).
 
 ### Créer une instance d'Intention implicite
 
@@ -88,12 +88,34 @@ sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
 sendIntent.setType("text/plain");
 {%endhighlight%}
 
-Ici se trouve la [liste exhaustive](https://chromium.googlesource.com/android_tools/+/febed84a3a3cb7c2cb80d580d79c31e22e9643a5/sdk/platforms/android-23/data/activity_actions.txt) de toutes les actions qui peuvent être définies à travers une intention implicite avec Android.
+Voici la [liste exhaustive](https://chromium.googlesource.com/android_tools/+/febed84a3a3cb7c2cb80d580d79c31e22e9643a5/sdk/platforms/android-23/data/activity_actions.txt) de toutes les actions qui peuvent être définies à travers une intention implicite avec Android.
 
 ## Valider une intention impicite avant l'envoi
 
+Lorsque vous définissez une intention implicite avec une action, il se peut qu'il n'y ait aucune
+activité sur l'appareil capable de gérer votre demande. Si vous envoyez une intention et qu'il n'y a pas de correspondance appropriée, votre application va planter. Pour y remédier, il faut donc vérifier qu'une activité ou un autre composant est disponible pour recevoir votre intention, AVANT d'appeler la méthode *startActivity()*.
+
+ Pour cela, utilisez la méthode *resolveActivity()* comme suit :
+
+{%highlight bash%}
+if (sendIntent.resolveActivity(getPackageManager()) != null) {
+startActivity(chooser);
+}
+{%endhighlight%}
+
+Si la méthode *resolveActivity()* ne retourne pas *null*, cela signifie qu'il y au moins une application qui possède une activité en mesure de prendre en charge l'intention implicite. Et donc, vous pouvez ensuite envoyer l'intention avec *startActivity()* (ou *startActivityForResult()* si le resultat de l'action doit etre retournée par le composant qui l'exécutera).
 
 ## Afficher le sélecteur des applications
+
+Lorsqu'il y a une multitude d'applications capable de répondre favorablement à la requête d'une intention implicite, le système Android présente à l'utilisateur, le **sélectionneur d'application**. Le sélectionneur d'applications permet à l'utilisateur de choisir volontairement l'application qui executera la tache associée à l'intention implicite déclenchée par une autre application sur son appareil.
+
+
+<br/>
+<div align="center">
+<img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/selectionneur-de-applications.png" alt="apps-interactions" height="428" width="300" ALIGN="middle">
+</div>
+<br/>
+
 
 
 # Recevoir des intentions implicites
