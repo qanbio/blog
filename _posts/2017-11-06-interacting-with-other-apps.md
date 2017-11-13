@@ -35,11 +35,12 @@ Les *Intents* explicites sont utilsés dans les cas où l'on veut démarrer une 
 
 Par exemple, si vous souhaitez démarrer une activité *AfficherMessageActivity* (appartenant à votre application de messagerie) pour afficher un message, vous pouvez utiliser le code suivant :
 
+
 {% highlight bash %}
 Intent messageIntent = new Intent(this, AfficherMessageActivity.class);
 startActivity(messageIntent);
 {% endhighlight%}
-<br/>
+
 
 Le constructeur **Intent()** prend deux arguments pour une intention explicite :
 
@@ -47,10 +48,8 @@ Le constructeur **Intent()** prend deux arguments pour une intention explicite :
 
 * La *cible* : ici, l'activité ciblée est AfficherMessageActivity.
 
-
 La méthode **startActivity()**  prend en argument l’objet *messageIntent* et l’envoie au système Android. Android excécute une instance AfficherMessageActivity, pour votre application. La nouvelle activité apparaît sur l'écran et l'activité appelante est mise en pause.
 
-<br/>
 
 ### Les Intents implicites
 
@@ -74,7 +73,7 @@ Pour envoyer une intention implicite, il faut :
 ### Créer une instance d'Intention implicite
 
 {% highlight bash %}Intent sendIntent = new Intent();{%endhighlight%}
-<br/>
+
 Vous pouvez directement déclarer l'action à executer en paramètre pour le constructeur :
 
 {% highlight bash %}Intent sendIntent = new Intent(Intent.ACTION_VIEW);{%endhighlight%}
@@ -82,23 +81,23 @@ Vous pouvez directement déclarer l'action à executer en paramètre pour le con
 L'exemple suivant montre comment joindre des données (valeurs primitive, chaines de caractères) en *extras* à l'obect Intent, pour qu'elles soient transférées à l'activité qui executera l'action associée.
 
 {% highlight bash %}
-
 Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
 // La variable textMessage mise en paramètre pour joindre du texte en extras
 sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
 sendIntent.setType("text/plain");
-
 {%endhighlight%}
 
 Ici se trouve la [liste exhaustive](https://chromium.googlesource.com/android_tools/+/febed84a3a3cb7c2cb80d580d79c31e22e9643a5/sdk/platforms/android-23/data/activity_actions.txt) de toutes les actions qui peuvent être définies à travers une intention implicite avec Android.
 
-<br/>
-
 ## Valider une intention impicite avant l'envoi
+
 
 ## Afficher le sélecteur des applications
 
+
 # Recevoir des intentions implicites
 
+
 # Conclusion
+
