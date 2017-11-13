@@ -112,7 +112,7 @@ Lorsqu'il y a une multitude d'applications capable de répondre favorablement à
 
 <br/>
 <div align="center">
-<img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/selectionneur-de-applications.png" alt="apps-interactions" height="428" width="300" ALIGN="middle">
+<img src="../../../../assets/media/2017-11-06-interacting-with-other-apps/selectionneur-de-applications.png" alt="apps-interactions" height="640" width="360" ALIGN="middle">
 </div>
 <br/>
 
