@@ -32,6 +32,8 @@ Voici le résultat si un appareil est déjà connecté :
 {% highlight bash %}List of devices attached
 XXXXXXXXX   device{%endhighlight%}
 
+Si la commande n'est pas reconnue, ajouter le chemin d'accès de adb.exe, à vos variables d'environnement.
+
 Définir le port TCP sur lequel le débogueur sera fonctionnel (par exemple, le port 7777:
 {% highlight bash %}adb shell setprop service.adb.tcp.port 7777
 adb tcpip 7777{%endhighlight%}
