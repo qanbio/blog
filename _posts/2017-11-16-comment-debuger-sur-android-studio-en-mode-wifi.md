@@ -44,4 +44,5 @@ Retourner sur l'ordinateur et executer la commande *adb adresseip:port*, par exe
 
 Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage.
 
-Et voilà ! Vous êtes en mode débogage WIFI !
+
+*Et voilà ! Vous êtes en mode débogage WIFI !*
