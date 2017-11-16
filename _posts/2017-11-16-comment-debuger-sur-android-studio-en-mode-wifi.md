@@ -46,7 +46,15 @@ Vérifier l'addresse IP de votre smartphone (par exemple 192.168.9.118) . Pour c
 Retourner sur l'ordinateur et executer la commande *adb adresseip:port*, par exemple :
 {%highlight bash%}adb connect 192.168.9.118:7777{%endhighlight%}
 
-Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage.
+Une fois que le débogueur a basculé sur le réseau internet, vous aurez une réponse satisfaisante dans le genre :
+{%highlight bash%}connected to 192.168.9.118:7777{%endhighlight%}
+
+Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage avec la commande 
+{% highlight bash %}adb devices{%endhighlight%}
+
+Le résultat sera similaire à ceci :
+{% highlight bash %}connected to 192.168.8.114:7777
+{%endhighlight%}
 
 
 **Et voilà ! Vous êtes en mode débogage WIFI !**
