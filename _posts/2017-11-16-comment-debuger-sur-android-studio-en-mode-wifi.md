@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Débogage avec Android Studio en mode WIFI
+title: Débogage avec Android Studio en mode WIFI SANS plugin
 categories: [tech]
 tags: [Android, ABD, WIFI, ADB WIFI, Deboggage, Debug]
 author: fabrice_kiki
