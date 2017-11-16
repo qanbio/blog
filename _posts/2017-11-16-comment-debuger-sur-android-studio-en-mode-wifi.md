@@ -39,7 +39,7 @@ Voici le bon résultat :
 Vérifier l'addresse IP de votre smartphone (par exemple 192.168.9.118) . Pour cela, sur votre smartphone aller dans :
 *Paramètres -> À propos du téléphone -> État -> Adresse IP*
 
-Executer la commande *adb adresseip:port*, par exemple :
+Retourner sur l'ordinateur et executer la commande *adb adresseip:port*, par exemple :
 {%highlight bash%}adb connect 192.168.9.118:7777{%endhighlight%}
 
 Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage.
