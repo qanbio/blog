@@ -32,7 +32,7 @@ XXXXXXXXX   device{%endhighlight%}
 
 Définir le port TCP sur lequel le débogueur sera fonctionnel (par exemple, le port 7777:
 {% highlight bash %}adb shell setprop service.adb.tcp.port 7777
-adb tcpip 4444{%endhighlight%}
+adb tcpip 7777{%endhighlight%}
 Voici le bon résultat :
 {%highlight bash%}restarting in TCP mode port: 7777{%endhighlight%}
 
