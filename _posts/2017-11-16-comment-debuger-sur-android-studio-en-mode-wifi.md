@@ -24,7 +24,7 @@ Trouver et exécuter le ficher *adb.exe* dans le sous-dossier */platform-tools* 
 
 {% highlight bash %}cd /sdk/platform-tools/{%endhighlight%}
 
-Brancher votre smartphone à l'ordinareur en mode débogage avec un câble USB. Cela ne sera jusqu'au bout du processus. Ensuite, on pourra se passer du câble.
+Brancher votre smartphone à l'ordinareur en mode débogage avec un câble USB. Ça sera nécessaire jusqu'au bout du processus. Ensuite, on pourra se passer du câble.
 Vérifer la liste des smartphones connectés à votre ordinateur en mode débogage :
 
 {% highlight bash %}adb devices{%endhighlight%}
