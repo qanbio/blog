@@ -24,7 +24,7 @@ Trouver et exécuter le ficher *adb.exe* dans le sous-dossier */platform-tools* 
 
 {% highlight bash %}cd /sdk/platform-tools/{%endhighlight%}
 
-Brancher votre smartphone à l'ordinareur en mode débogage avec un câble USB. Cela ne sera jusqu'au bout du processus. Ensuite, on pourra se passer du câble.
+Brancher votre smartphone à l'ordinareur en mode débogage avec un câble USB. Ça sera nécessaire jusqu'au bout du processus. Ensuite, on pourra se passer du câble.
 Vérifer la liste des smartphones connectés à votre ordinateur en mode débogage :
 
 {% highlight bash %}adb devices{%endhighlight%}
@@ -46,7 +46,15 @@ Vérifier l'addresse IP de votre smartphone (par exemple 192.168.9.118) . Pour c
 Retourner sur l'ordinateur et executer la commande *adb adresseip:port*, par exemple :
 {%highlight bash%}adb connect 192.168.9.118:7777{%endhighlight%}
 
-Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage.
+Une fois que le débogueur a basculé sur le réseau internet, vous aurez une réponse satisfaisante dans le genre :
+{%highlight bash%}connected to 192.168.9.118:7777{%endhighlight%}
+
+Vérifer encore la liste des smartphones connectés à votre ordinateur en mode débogage avec la commande 
+{% highlight bash %}adb devices{%endhighlight%}
+
+Le résultat sera similaire à ceci :
+{% highlight bash %}connected to 192.168.8.114:7777
+{%endhighlight%}
 
 
 **Et voilà ! Vous êtes en mode débogage WIFI !**
