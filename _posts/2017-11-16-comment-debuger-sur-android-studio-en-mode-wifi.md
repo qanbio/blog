@@ -43,7 +43,7 @@ Voici le bon résultat :
 Vérifier l'addresse IP de votre smartphone (par exemple 192.168.9.118) . Pour cela, sur votre smartphone aller dans :
 *Paramètres -> À propos du téléphone -> État -> Adresse IP*
 
-Retourner sur l'ordinateur et executer la commande *adb adresseip:port*, par exemple :
+Retourner sur l'ordinateur et executer la commande *adb connect adresseip:port*, par exemple :
 {%highlight bash%}adb connect 192.168.9.118:7777{%endhighlight%}
 
 Une fois que le débogueur a basculé sur le réseau internet, vous aurez une réponse satisfaisante dans le genre :
@@ -53,8 +53,9 @@ Vérifer encore la liste des smartphones connectés à votre ordinateur en mode 
 {% highlight bash %}adb devices{%endhighlight%}
 
 Le résultat sera similaire à ceci :
-{% highlight bash %}connected to 192.168.8.114:7777
+{% highlight bash %}List of devices attached
+192.168.9.118:7777      device
 {%endhighlight%}
 
 
-**Et voilà ! Vous êtes en mode débogage WIFI !**
+**Et voilà ! Vous êtes en mode débogage WIFI ! Vous pouvez débrancher le câble USB**
