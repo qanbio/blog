@@ -28,11 +28,10 @@ Vérifer la liste des smartphones connectés à votre ordinateur en mode déboga
 
 {% highlight bash %}adb devices{%endhighlight%}
  
-Voici le résultat si un appareil est déjà connecté :
+Voici le résultat si un appareil est déjà connecté (Si la commande n'est pas reconnue, ajouter le chemin d'accès de adb.exe, à vos variables d'environnement) :
+
 {% highlight bash %}List of devices attached
 XXXXXXXXX   device{%endhighlight%}
-
-Si la commande n'est pas reconnue, ajouter le chemin d'accès de adb.exe, à vos variables d'environnement.
 
 Définir le port TCP sur lequel le débogueur sera fonctionnel (par exemple, le port 7777:
 {% highlight bash %}adb shell setprop service.adb.tcp.port 7777
