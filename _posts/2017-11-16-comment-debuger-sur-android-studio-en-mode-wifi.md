@@ -14,11 +14,13 @@ description: Ce article montre comment faire du débogage avec Android Studio sa
 
 
 # Problématique
+
 Habituellement, le développeur Android déboge ses applications sur un smartphone connecté à son ordinateur via un câble USB. Mais il arrive bien des fois que le câble se détériore par l'usure. Pour pâlier à ce problème, il peut déboguer avec Android Studio sans utiliser un câble USB, et sans installer de plugin particulier. Tout ce qu'il lui faut c'est une connexion internet stable.
 
 # Procédure en invite de commande
 
-Trouver l'executable *adb.exe* dans le sous-dossier */platform-tools* du *sdk* de Android Studio :
+Trouver et exécuter le ficher *adb.exe* dans le sous-dossier */platform-tools* du *sdk* de Android Studio :
+(Pour retrouver facilement le chemin du sdk en passant par Android Studio : *File -> Settings -> Android SDK -> Android SDK location*.)
 
 {% highlight bash %}cd /sdk/platform-tools/{%endhighlight%}
 
